@@ -1,456 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>使用Hexo + Github Pages搭建个人独立博客 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo系统环境配置要使用Hexo，需要在你的系统中支持Nodejs以及Git，如果还没有，那就开始安装吧！
-###安装Node.js###下载Node.js参考地址：安装Node.js
-安装Git下载地址：http://git-scm.com/download/
-安装Hexo$ cd d:/hexo
-$ npm install hexo-cli -g
-$ hexo init blog
-$ cd">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用Hexo + Github Pages搭建个人独立博客">
-<meta property="og:url" content="http://yoursite.com/2016/09/26/Hexo+Github Pages搭建个人博客/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="hexo系统环境配置要使用Hexo，需要在你的系统中支持Nodejs以及Git，如果还没有，那就开始安装吧！
-###安装Node.js###下载Node.js参考地址：安装Node.js
-安装Git下载地址：http://git-scm.com/download/
-安装Hexo$ cd d:/hexo
-$ npm install hexo-cli -g
-$ hexo init blog
-$ cd">
-<meta property="og:image" content="https://raw.githubusercontent.com/dushao103500/You-must-know/master/images/blogDemo.jpg">
-<meta property="og:updated_time" content="2016-09-26T14:36:31.889Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Hexo + Github Pages搭建个人独立博客">
-<meta name="twitter:description" content="hexo系统环境配置要使用Hexo，需要在你的系统中支持Nodejs以及Git，如果还没有，那就开始安装吧！
-###安装Node.js###下载Node.js参考地址：安装Node.js
-安装Git下载地址：http://git-scm.com/download/
-安装Hexo$ cd d:/hexo
-$ npm install hexo-cli -g
-$ hexo init blog
-$ cd">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/dushao103500/You-must-know/master/images/blogDemo.jpg">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+extends base
 
-</head>
+block title
+  title= page.title + ' | ' + config.title
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Hexo+Github Pages搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/26/Hexo+Github Pages搭建个人博客/" class="article-date">
-  <time datetime="2016-09-26T14:35:46.466Z" itemprop="datePublished">2016-09-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      使用Hexo + Github Pages搭建个人独立博客
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="hexo系统环境配置"><a href="#hexo系统环境配置" class="headerlink" title="hexo系统环境配置"></a>hexo系统环境配置</h2><p>要使用Hexo，需要在你的系统中支持Nodejs以及Git，如果还没有，那就开始安装吧！</p>
-<p>###安装Node.js###<br><strong>下载Node.js</strong><br>参考地址：<a href="http:/http://www.runoob.com/nodejs/nodejs-install-setup.html/" target="_blank" rel="external">安装Node.js</a></p>
-<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>下载地址：<a href="https://git-scm.com/download/" target="_blank" rel="external">http://git-scm.com/download/</a></p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><pre><code>$ cd d:/hexo
-$ npm install hexo-cli -g
-$ hexo init blog
-$ cd blog
-$ npm install
-$ hexo g # 或者hexo generate
-$ hexo s # 或者hexo server，可以在http://localhost:4000/ 查看
-</code></pre><p><strong>这里有必要提下Hexo常用的几个命令：</strong></p>
-<p>1、hexo generate (hexo g) 生成静态文件，会在当前目录下生成一个新的叫做public的文件夹/</p>
-<p>2、hexo server (hexo s) 启动本地web服务，用于博客的预览<br>hexo deploy (hexo d) </p>
-<p>3、部署播客到远端（比如github, heroku等平台）</p>
-<p><strong>另外还有其他几个常用命令：</strong></p>
-<pre><code>$ hexo new &quot;postName&quot; #新建文章
-$ hexo new page &quot;pageName&quot; #新建页面
-</code></pre><p><strong>常用简写</strong></p>
-<pre><code>$ hexo n == hexo new
-$ hexo g == hexo generate
-$ hexo s == hexo server
-$ hexo d == hexo deploy
-</code></pre><p><strong>常用组合</strong></p>
-<pre><code>$ hexo d -g #生成部署
-$ hexo s -g #生成预览
-</code></pre><p>现在我们打开<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>已经可以看到一篇内置的blog了。<br><img src="https://raw.githubusercontent.com/dushao103500/You-must-know/master/images/blogDemo.jpg" alt=""></p>
-<p><strong>目前我安装所用的本地环境如下：(可以通过hexo -v查看)</strong></p>
-<pre><code>hexo: 3.2.0
-hexo-cli: 1.0.1
-os: Windows_NT 6.3.9600 win32 x64
-http_parser: 2.5.2
-node: 4.4.1
-v8: 4.5.103.35
-uv: 1.8.0
-zlib: 1.2.8
-ares: 1.10.1-DEV
-icu: 56.1
-modules: 46
-openssl: 1.0.2g
-</code></pre><h3 id="Hexo主题设置"><a href="#Hexo主题设置" class="headerlink" title="Hexo主题设置"></a>Hexo主题设置</h3><p>这里以主题yilia为例进行说明。</p>
-<p><strong>安装主题</strong></p>
-<pre><code>$ hexo clean
-$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
-</code></pre><p><strong>启用主题</strong></p>
-<pre><code>$ cd themes/yilia
-$ git pull
-$ hexo g # 生成
-$ hexo s # 启动本地web服务器
-</code></pre><p>现在打开<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>，会看到我们已经应用了一个新的主题。</p>
-<h2 id="Github-Pages设置"><a href="#Github-Pages设置" class="headerlink" title="Github Pages设置"></a>Github Pages设置</h2><h3 id="什么是Github-Pages"><a href="#什么是Github-Pages" class="headerlink" title="什么是Github Pages"></a>什么是Github Pages</h3><p><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> 本用于介绍托管在GitHub的项目，不过，由于他的空间免费稳定，用来做搭建一个博客再好不过了。</p>
-<p>每个帐号只能有一个仓库来存放个人主页，而且仓库的名字必须是username/username.github.io，这是特殊的命名约定。你可以通过<a href="http://username.github.io/" target="_blank" rel="external">http://username.github.io</a> 来访问你的个人主页。</p>
-<p>这里特别提醒一下，需要注意的个人主页的网站内容是在master分支下的。</p>
-<h3 id="创建自己的Github-Pages"><a href="#创建自己的Github-Pages" class="headerlink" title="创建自己的Github Pages"></a>创建自己的Github Pages</h3><p>注册GitHub及使用Github Pages的过程已经有很多文章讲过，在此不再详述，可以参考：</p>
-<p><a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">如何搭建一个独立博客——简明Github Pages与Hexo教程</a></p>
-<p>在这里我创建了一个github repo叫做 <a href="https://dushao103500.github.io/" target="_blank" rel="external">dushao103500.github.io </a>创建完成之后，需要有一次提交(git commit)操作，然后就可以通过链接<a href="https://dushao103500.github.io/" target="_blank" rel="external">http://dushao103500.github.io</a> 访问了。（现在还没有内容，别着急）</p>
-<h2 id="部署Hexo到Github-Pages"><a href="#部署Hexo到Github-Pages" class="headerlink" title="部署Hexo到Github Pages"></a>部署Hexo到Github Pages</h2><p>这一步恐怕是最关键的一步了，让我们把在本地web环境下预览到的博客部署到github上，然后就可以直接通过<a href="http://dushao103500.github.io" target="_blank" rel="external">http://dushao.github.io</a>访问了。不过很多教程文章对这个步骤语焉不详，这里着重说下。</p>
-<p><strong>首先需要明白所谓部署到github的原理</strong></p>
-<p>1、之前步骤中在Github上创建的那个特别的repo（dushao103500.github.io）一个最大的特点就是其master中的html静态文件，可以通过链接<a href="http://dushao103500.github.io" target="_blank" rel="external">http://dushao103500.github.io</a>来直接访问。</p>
-<p>2、Hexo -g 会生成一个静态网站（第一次会生成一个public目录），这个静态文件可以直接访问。</p>
-<p>3、需要将hexo生成的静态网站，提交(git commit)到github上。</p>
-<p>明白了原理，怎么做自然就清晰了。</p>
-<h3 id="使用hexo-deploy部署"><a href="#使用hexo-deploy部署" class="headerlink" title="使用hexo deploy部署"></a>使用hexo deploy部署</h3><p>hexo deploy可以部署到很多平台，具体可以参考这个链接. 如果部署到github，需要在配置文件_config.xml中作如下修改：</p>
-<pre><code>deploy:
-  type: git
-  repo: git@github.com:jiji262/jiji262.github.io.git
-  branch: master
-</code></pre><p>然后在命令行中执行</p>
-<pre><code>hexo d
-</code></pre><p>即可完成部署。</p>
-<h3 id="踩坑提醒"><a href="#踩坑提醒" class="headerlink" title="踩坑提醒"></a>踩坑提醒</h3><p>（1）注意需要提前安装一个扩展：</p>
-<pre><code>$ npm install hexo-deployer-git --save
-</code></pre><p>（2）如果出现下面这样的错误：</p>
-<pre><code>Permission denied (publickey).
-fatal: Could not read from remote repository.
-Please make sure you have the correct access rights
-and the repository exists.
-</code></pre><p>则是因为没有设置好public key所致。<br>在本机生成public key(参考<a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">github帮助</a>)：</p>
-<pre><code>＃ssh-keygen -t rsa -b 4096 -C &quot;xxx@xxx.com&quot;
-</code></pre><p>然后在<code>#user_id/.ssh</code>目录下会生成两个文件，<code>id_rsa.pub</code>和<code>id_rsa.</code><br>然后登陆github，在<a href="https://github.com/settings/ssh" target="_blank" rel="external">SSH设置页面</a>添加上刚才的public key文件也就是<code>id_rsa.pub</code>的内容即可。</p>
-<h3 id="使用git命令行部署（optional）"><a href="#使用git命令行部署（optional）" class="headerlink" title="使用git命令行部署（optional）"></a>使用git命令行部署（optional）</h3><p>不幸的是，上述命令虽然简单方便，但是偶尔会有莫名其妙的问题出现，因此，我们也可以追本溯源，使用git命令来完成部署的工作。</p>
-<p><strong>clone github repo</strong></p>
-<pre><code>$ cd d:/hexo/blog
-$ git clone https://github.com/jiji262/jiji262.github.io.git .deploy/jiji262.github.io
-</code></pre><p>将我们之前创建的repo克隆到本地，新建一个目录叫做.deploy用于存放克隆的代码。</p>
-<p><strong>创建一个deploy脚本文件</strong></p>
-<pre><code>hexo generate
-cp -R public/* .deploy/jiji262.github.io
-cd .deploy/jiji262.github.io
-git add .
-git commit -m “update”
-git push origin master
-</code></pre><p>简单解释一下，hexo generate生成public文件夹下的新内容，然后将其拷贝至jiji262.github.io的git目录下，然后使用git commit命令提交代码到jiji262.github.io这个repo的master branch上。</p>
-<p>需要部署的时候，执行这段脚本就可以了（比如可以将其保存为deploy.sh）。执行过程中可能需要让你输入Github账户的用户名及密码，按照提示操作即可。</p>
-<h3 id="Hexo-主题配置"><a href="#Hexo-主题配置" class="headerlink" title="Hexo 主题配置"></a>Hexo 主题配置</h3><p>每个不同的主题会需要不同的配置，主题配置文件在主题目录下的<code>_config.yml</code>。<br>以我们使用的<code>yilia</code>主题为例，其提供如下的配置项<code>theme\yilia_config.yml</code>：</p>
-<pre><code># Header
-menu:
-  主页: /
-  所有文章: /archives
-  # 随笔: /tags/随笔
-
-# SubNav
-subnav:
-  github: &quot;dushao103500&quot;
-  weibo: &quot;DanD逆光之处是暖伤&quot;
-  rss: &quot;#&quot;
-  zhihu: &quot;#&quot;
-  #douban: &quot;#&quot;
-  #mail: &quot;dushao1314@foxmail.com&quot;
-  #facebook: &quot;#&quot;
-  #google: &quot;#&quot;
-  #twitter: &quot;#&quot;
-  #linkedin: &quot;#&quot;
-
-rss: /atom.xml
-
-# Content
-excerpt_link: more
-fancybox: true
-mathjax: true
-
-# Miscellaneous
-google_analytics: &apos;&apos;
-favicon: /favicon.png
-
-#你的头像url
-avatar: &quot;&quot;
-#是否开启分享
-share: true
-#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
-#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
-duoshuo: true
-#是否开启云标签
-tagcloud: true
-
-#是否开启友情链接
-#不开启——
-#friends: false
-
-#是否开启“关于我”。
-#不开启——
-#aboutme: false
-#开启——
-aboutme: 我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
-</code></pre><h2 id="其他高级使用技巧"><a href="#其他高级使用技巧" class="headerlink" title="其他高级使用技巧"></a>其他高级使用技巧</h2><h3 id="绑定独立域名"><a href="#绑定独立域名" class="headerlink" title="绑定独立域名"></a>绑定独立域名</h3><p><strong><a href="http://www.net.cn/" target="_blank" rel="external">购买域名</a></strong></p>
-<p>在你的域名注册提供商那里配置DNS解析，获取GitHub的IP地址点击，进入source目录下，<code>添加CNAME文件</code></p>
-<pre><code>$ cd source/
-$ touch CNAME
-$ vim CNAME # 输入你的域名
-$ git add CNAME
-$ git commit -m &quot;add CNAME&quot;
-</code></pre><p><strong>使用图床</strong></p>
-<p>使用<a href="http://www.qiniu.com/" target="_blank" rel="external">七牛云存储</a></p>
-<p>自己在github上搭建的图床，需要首先注册七牛账号使用。<br><strong>添加插件</strong></p>
-<p>添加sitemap和feed插件</p>
-<pre><code>$ npm install hexo-generator-feed
-$ npm install hexo-generator-sitemap
-</code></pre><p>修改<code>_config.yml</code>，增加以下内容</p>
-<pre><code># Extensions
-Plugins:
-- hexo-generator-feed
-- hexo-generator-sitemap
-#Feed Atom
-feed:
-  type: atom
-  path: atom.xml
-  limit: 20
-#sitemap
-sitemap:
-  path: sitemap.xml
-</code></pre><p>配完之后，就可以访问<a href="http://dushao103500.github.io" target="_blank" rel="external">http://dushao103500.github.io</a>，发现已经成功生成了。</p>
-<p><strong>添加404公益页面</strong></p>
-<p>GitHub Pages有提供制作404页面的指引：<a href="https://help.github.com/articles/creating-a-custom-404-page-for-your-github-pages-site/" target="_blank" rel="external">Custom 404 Pages</a>。</p>
-<p>直接在根目录下创建自己的404.html或者404.md就可以。但是自定义404页面仅对绑定顶级域名的项目才起作用，GitHub默认分配的二级域名是不起作用的，使用hexo server在本机调试也是不起作用的。</p>
-<p>推荐使用<a href="http://www.qq.com/404/" target="_blank" rel="external">腾讯公益404</a>。</p>
-<p>添加about页面</p>
-<pre><code>$ hexo new page &quot;about&quot;
-</code></pre><p>之后在<code>\source\about\index.md</code>目录下会生成一个<code>index.md</code>文件，打开输入个人信息即可，如果想要添加版权信息，可以在文件末尾添加：</p>
-<pre><code>&lt;div style=&quot;font-size:12px;border-bottom: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; BACKGROUND: #f6f6f6; HEIGHT: 120px; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid&quot;&gt;
-&lt;div style=&quot;MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px&quot;&gt;
-&lt;IMG alt=&quot;&quot; src=&quot;https://avatars1.githubusercontent.com/u/168751?v=3&amp;s=140&quot; width=90 height=100&gt;
-&lt;/div&gt;
-&lt;div style=&quot;LINE-HEIGHT: 200%; MARGIN-TOP: 10px; COLOR: #000000&quot;&gt;
-本文链接：&lt;a href=&quot;&lt;%= post.link %&gt;&quot;&gt;&lt;%= post.title %&gt;&lt;/a&gt; &lt;br/&gt;
-作者： 
-&lt;a href=&quot;http://dushao103500.github.io/&quot;&gt;杜少&lt;/a&gt; &lt;br/&gt;出处： 
-&lt;a href=&quot;http://dushao103500.github.io/&quot;&gt;http://jiji262.github.io/&lt;/a&gt;
-&lt;br/&gt;本文基于&lt;a target=&quot;_blank&quot; title=&quot;Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)&quot; href=&quot;http://creativecommons.org/licenses/by-sa/4.0/&quot;&gt; 知识共享署名-相同方式共享 4.0 &lt;/a&gt;
-国际许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名 
-&lt;a href=&quot;http://jiji262.github.io/&quot;&gt;杜少&lt;/a&gt;及链接。
-&lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p><strong>添加Fork me on Github</strong></p>
-<p><a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">获取代码</a>，选择你喜欢的代码添加到<code>hexo/themes/yilia/layout/layout.ejs</code>的末尾即可，注意要将代码里的you改成你的Github账号名。</p>
-<p>添加支付宝捐赠按钮及二维码支付</p>
-<p><strong>支付宝捐赠按钮</strong></p>
-<p>在<code>D:\hexo\themes\yilia\layout_widget</code>目录下新建一个<code>zhifubao.ejs</code>文件，内容如下：</p>
-<pre><code>&lt;p class=&quot;asidetitle&quot;&gt;打赏他&lt;/p&gt;
-&lt;div&gt;
-&lt;form action=&quot;https://shenghuo.alipay.com/send/payment/fill.htm&quot; method=&quot;POST&quot; target=&quot;_blank&quot; accept-charset=&quot;GBK&quot;&gt;
-    &lt;br/&gt;
-    &lt;input name=&quot;optEmail&quot; type=&quot;hidden&quot; value=&quot;your 支付宝账号&quot; /&gt;
-    &lt;input name=&quot;payAmount&quot; type=&quot;hidden&quot; value=&quot;默认捐赠金额(元)&quot; /&gt;
-    &lt;input id=&quot;title&quot; name=&quot;title&quot; type=&quot;hidden&quot; value=&quot;博主，打赏你的！&quot; /&gt;
-    &lt;input name=&quot;memo&quot; type=&quot;hidden&quot; value=&quot;你Y加油，继续写博客！&quot; /&gt;
-    &lt;input name=&quot;pay&quot; type=&quot;image&quot; value=&quot;转账&quot; src=&quot;http://7xig3q.com1.z0.glb.clouddn.com/alipay-donate-website.png&quot; /&gt;
-&lt;/form&gt;
-&lt;/div&gt;
-</code></pre><p>添加完该文件之后，要在<code>D:/hexo/themes/yilia/_config.yml</code>文件中启用，如下所示，添加zhifubao</p>
-<pre><code>widgets:
-- category
-- tag
-- links
-- tagcloud
-- zhifubao
-- rss
-</code></pre><p><strong>二维码捐赠</strong></p>
-<p>首先需要到这里获取你的支付宝账户的二维码图片，支付宝提供了自定义功能，可以添加自定义文字。</p>
-<p>我的二维码扫描捐赠添加在about页面，当然你也可以添加到其它页面，在<code>D:\hexo\blog\source\about</code>下有<code>index.md</code>打开，在适当位置添加</p>
-<pre><code>&lt;center&gt;
-欢迎您捐赠本站，您的支持是我最大的动力！
-![][http://7xsxyo.com1.z0.glb.clouddn.com/2016/04/15/FoJ1F6Ht0CNaYuCdE2l52F-Fk9Vk202.png]
-&lt;/center&gt;
-&lt;br/&gt;
-</code></pre><p>可以让图片居中显示，注意将图片链接地址换成你的即可。</p>
-<p><strong>添加百度站内搜索</strong></p>
-<p><a href="http://zhanzhang.baidu.com/guide/index" target="_blank" rel="external">点击进入</a>，点击其它工具-&gt;站内检索-&gt;现在使用-&gt;新建搜索引擎-&gt;查看代码，将代码里的id值复制，打开<code>/d/hexo/themes/jacman/_config.xml</code>，配置成如下即可。</p>
-<pre><code>baidu_search:     ## http://zn.baidu.com/
-  enable: true
-  id: &quot;1433674487421172828&quot; ## e.g. &quot;783281470518440642&quot;  for your baidu search id
-  site: http://zhannei.baidu.com/cse/search ## your can change to your site instead of the default
-</code></pre><p><strong>使用不蒜子添加访客统计</strong></p>
-<p>详情参考搞定你的网站计数，具体做法很简单，就是在你的<code>themes/your themes/layout/_partial/footer.ejs</code>底部加入这段脚本</p>
-<pre><code>&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;
-</code></pre><p>然后在``中间添加如下统计信息即可</p>
-<pre><code>本站总访问量 &lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt; 次, 访客数 &lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;
-</code></pre><p>不蒜子的官方服务网站是不蒜子，目前最大的弊端就是不开放注册，所以对于运行了一段时间的网站，不蒜子的数据都是从1开始，没办法设置，只有等后期开放注册之后，登入网站才能对统计计数进行设置。</p>
-<h3 id="至此，Hexo-Github-Pages搭建个人博客完成"><a href="#至此，Hexo-Github-Pages搭建个人博客完成" class="headerlink" title="至此，Hexo+Github Pages搭建个人博客完成"></a>至此，Hexo+Github Pages搭建个人博客完成</h3><p><strong>快去告诉你们的小伙伴吧</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/26/Hexo+Github Pages搭建个人博客/" data-id="citk6vyhw000100soxbr591mi" class="article-share-link">Delen</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/09/26/javascript你必须要知道的面试题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Nieuwer</strong>
-      <div class="article-nav-title">
-        
-          javascript你必须要知道的面试题
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/09/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ouder</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/09/26/javascript你必须要知道的面试题/">javascript你必须要知道的面试题</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/26/Hexo+Github Pages搭建个人博客/">使用Hexo + Github Pages搭建个人独立博客</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/25/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
-</html>
+block content
+  .post
+    h1.post-title= page.title
+    .post-meta= page.date.format('ll')
+      if page.categories.length > 0
+        span= ' | '
+        span.category
+          for category in page.categories.toArray()
+            a(href=url_for(category.path))= category.name
+      if theme.busuanzi == true
+        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
+        span#busuanzi_container_page_pv= ' | '
+          span#busuanzi_value_page_pv
+          span= ' ' + __('Hits')
+    if theme.duoshuo
+      a.ds-thread-count(data-thread-key=page.path, href=url_for(page.path) + '#comments')
+    if theme.disqus
+      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
+    if page.toc
+      div(class='clear')
+        div(id='toc' class='toc-article')
+          div(class='toc-title')= __('contents')
+          != toc(page.content)
+    .post-content
+      != page.content
+    if theme.shareto == true
+      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
+      a.article-share-link(data-url='#{page.permalink}', data-id='#{page._id}')= __('shareto')
+    include _partial/tag
+    include _partial/post_nav
+    if theme.duoshuo
+      div(class='ds-share flat' data-thread-key=page.path, data-title=page.title, data-url=page.permalink)
+         .ds-share-inline
+            ul.ds-share-icons-16
+              li(data-toggle='ds-share-icons-more')
+                a(class='ds-more' href='javascript:void(0);') 分享到：
+              li
+                a(class='ds-weibo' href='javascript:void(0);' data-service='weibo') 微博
+              li
+                a(class='ds-qzone' href='javascript:void(0);' data-service='qzone') QQ空间
+              li
+                a(class='ds-qqt' href='javascript:void(0);' data-service='qqt') 腾讯微博
+              li
+                a(class='ds-wechat' href='javascript:void(0);' data-service='wechat') 微信
+            .ds-share-icons-more
+    include _partial/comments
