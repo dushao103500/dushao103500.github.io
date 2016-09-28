@@ -84,7 +84,7 @@
 
 
 
-<meta name="description" content="1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：
+<meta name="description" content="1.使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：
 let obj = {};
 let arr = [];
 
@@ -94,17 +94,17 @@ console.log(t">
 <meta property="og:title" content="javascript你必须要知道的面试题">
 <meta property="og:url" content="http://yoursite.com/2016/09/26/javascript你必须要知道的面试题/index.html">
 <meta property="og:site_name" content="杜少博客">
-<meta property="og:description" content="1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：
+<meta property="og:description" content="1.使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：
 let obj = {};
 let arr = [];
 
 console.log(typeof obj === &amp;apos;object&amp;apos;);  //true
 console.log(t">
 <meta property="og:image" content="https://raw.githubusercontent.com/dushao103500/You-must-know/master/images/15_3.png">
-<meta property="og:updated_time" content="2016-09-28T10:32:15.178Z">
+<meta property="og:updated_time" content="2016-09-28T11:10:15.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript你必须要知道的面试题">
-<meta name="twitter:description" content="1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：
+<meta name="twitter:description" content="1.使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：
 let obj = {};
 let arr = [];
 
@@ -322,7 +322,7 @@ console.log(t">
       
 
       
-        <h3 id="1、使用-typeof-bar-“object”-判断-bar-是不是一个对象有神马潜在的弊端？如何避免这种弊端？"><a href="#1、使用-typeof-bar-“object”-判断-bar-是不是一个对象有神马潜在的弊端？如何避免这种弊端？" class="headerlink" title="1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？"></a>1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？</h3><p>使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：</p>
+        <h3 id="1-使用-typeof-bar-“object”-判断-bar-是不是一个对象有神马潜在的弊端？如何避免这种弊端？"><a href="#1-使用-typeof-bar-“object”-判断-bar-是不是一个对象有神马潜在的弊端？如何避免这种弊端？" class="headerlink" title="1.使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？"></a>1.使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？</h3><p>使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：</p>
 <pre><code>let obj = {};
 let arr = [];
 
@@ -338,7 +338,7 @@ console.log(Object.prototype.toString.call(arr));  //[object Array]
 console.log(Object.prototype.toString.call(null));  //[object Null]
 </code></pre><p>另外，为了珍爱生命，请远离 ==：<br>珍爱生命</p>
 <p>而 [] === false 是返回 false 的。</p>
-<h3 id="2、下面的代码会在-console-输出神马？为什么？"><a href="#2、下面的代码会在-console-输出神马？为什么？" class="headerlink" title="2、下面的代码会在 console 输出神马？为什么？"></a>2、下面的代码会在 console 输出神马？为什么？</h3><pre><code>(function(){
+<h3 id="2-下面的代码会在-console-输出神马？为什么？"><a href="#2-下面的代码会在-console-输出神马？为什么？" class="headerlink" title="2.下面的代码会在 console 输出神马？为什么？"></a>2.下面的代码会在 console 输出神马？为什么？</h3><pre><code>(function(){
   var a = b = 3;
 })();
 
@@ -351,7 +351,7 @@ console,log(typeof a); //undefined
 <pre><code>b = 3;
 var a = b;
 </code></pre><p>所以 b 成了全局变量，而 a 是自执行函数的一个局部变量。</p>
-<h3 id="3、下面的代码会在-console-输出神马？为什么？"><a href="#3、下面的代码会在-console-输出神马？为什么？" class="headerlink" title="3、下面的代码会在 console 输出神马？为什么？"></a>3、下面的代码会在 console 输出神马？为什么？</h3><pre><code>var myObject = {
+<h3 id="3-下面的代码会在-console-输出神马？为什么？"><a href="#3-下面的代码会在-console-输出神马？为什么？" class="headerlink" title="3.下面的代码会在 console 输出神马？为什么？"></a>3.下面的代码会在 console 输出神马？为什么？</h3><pre><code>var myObject = {
     foo: &quot;bar&quot;,
     func: function() {
         var self = this;
@@ -370,7 +370,7 @@ myObject.func();
             console.log(&quot;inner func:  self.foo = &quot; + self.foo);
 }(self));
 </code></pre><p>如果对闭包不熟悉，可以戳此：从作用域链谈闭包</p>
-<h3 id="4、将-JavaScript-代码包含在一个函数块中有神马意思呢？为什么要这么做？"><a href="#4、将-JavaScript-代码包含在一个函数块中有神马意思呢？为什么要这么做？" class="headerlink" title="4、将 JavaScript 代码包含在一个函数块中有神马意思呢？为什么要这么做？"></a>4、将 JavaScript 代码包含在一个函数块中有神马意思呢？为什么要这么做？</h3><p>换句话说，为什么要用立即执行函数表达式（Immediately-Invoked Function Expression）。</p>
+<h3 id="4-将-JavaScript-代码包含在一个函数块中有神马意思呢？为什么要这么做？"><a href="#4-将-JavaScript-代码包含在一个函数块中有神马意思呢？为什么要这么做？" class="headerlink" title="4.将 JavaScript 代码包含在一个函数块中有神马意思呢？为什么要这么做？"></a>4.将 JavaScript 代码包含在一个函数块中有神马意思呢？为什么要这么做？</h3><p>换句话说，为什么要用立即执行函数表达式（Immediately-Invoked Function Expression）。</p>
 <p>IIFE 有两个比较经典的使用场景，一是类似于在循环中定时输出数据项，二是类似于 JQuery/Node 的插件和模块开发。</p>
 <pre><code>for(var i = 0; i &lt; 5; i++) {
     setTimeout(function() {
@@ -389,8 +389,8 @@ myObject.func();
 <pre><code>(function($) { 
         //代码
  } )(jQuery);
-</code></pre><h3 id="5、在严格模式-‘use-strict’-下进行-JavaScript-开发有神马好处？"><a href="#5、在严格模式-‘use-strict’-下进行-JavaScript-开发有神马好处？" class="headerlink" title="5、在严格模式(‘use strict’)下进行 JavaScript 开发有神马好处？"></a>5、在严格模式(‘use strict’)下进行 JavaScript 开发有神马好处？</h3><p>消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;<br>消除代码运行的一些不安全之处，保证代码运行的安全；<br>提高编译器效率，增加运行速度；<br>为未来新版本的Javascript做好铺垫。</p>
-<h3 id="6、下面两个函数的返回值是一样的吗？为什么？"><a href="#6、下面两个函数的返回值是一样的吗？为什么？" class="headerlink" title="6、下面两个函数的返回值是一样的吗？为什么？"></a>6、下面两个函数的返回值是一样的吗？为什么？</h3><pre><code>function foo1()
+</code></pre><h3 id="5-在严格模式-‘use-strict’-下进行-JavaScript-开发有神马好处？"><a href="#5-在严格模式-‘use-strict’-下进行-JavaScript-开发有神马好处？" class="headerlink" title="5.在严格模式(‘use strict’)下进行 JavaScript 开发有神马好处？"></a>5.在严格模式(‘use strict’)下进行 JavaScript 开发有神马好处？</h3><p>消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;<br>消除代码运行的一些不安全之处，保证代码运行的安全；<br>提高编译器效率，增加运行速度；<br>为未来新版本的Javascript做好铺垫。</p>
+<h3 id="6-下面两个函数的返回值是一样的吗？为什么？"><a href="#6-下面两个函数的返回值是一样的吗？为什么？" class="headerlink" title="6.下面两个函数的返回值是一样的吗？为什么？"></a>6.下面两个函数的返回值是一样的吗？为什么？</h3><pre><code>function foo1()
 {
   return {
       bar: &quot;hello&quot;
@@ -416,7 +416,7 @@ console.log(test);  //3
   };
 }
 </code></pre><p>所以第二个函数是返回 undefined。</p>
-<h3 id="7、神马是-NaN，它的类型是神马？怎么测试一个值是否等于-NaN"><a href="#7、神马是-NaN，它的类型是神马？怎么测试一个值是否等于-NaN" class="headerlink" title="7、神马是 NaN，它的类型是神马？怎么测试一个值是否等于 NaN?"></a>7、神马是 NaN，它的类型是神马？怎么测试一个值是否等于 NaN?</h3><p>NaN 是 Not a Number 的缩写，JavaScript 的一种特殊数值，其类型是 Number，可以通过 isNaN(param) 来判断一个值是否是 NaN：</p>
+<h3 id="7-神马是-NaN，它的类型是神马？怎么测试一个值是否等于-NaN"><a href="#7-神马是-NaN，它的类型是神马？怎么测试一个值是否等于-NaN" class="headerlink" title="7.神马是 NaN，它的类型是神马？怎么测试一个值是否等于 NaN?"></a>7.神马是 NaN，它的类型是神马？怎么测试一个值是否等于 NaN?</h3><p>NaN 是 Not a Number 的缩写，JavaScript 的一种特殊数值，其类型是 Number，可以通过 isNaN(param) 来判断一个值是否是 NaN：</p>
 <pre><code>console.log(isNaN(NaN)); //true
 console.log(isNaN(23)); //false
 console.log(isNaN(&apos;ds&apos;)); //true
@@ -427,7 +427,7 @@ console.log(undefined === undefined); //false
 console.log(typeof NaN); //number
 console.log(Object.prototype.toString.call(NaN)); //[object Number]
 </code></pre><p>ES6 中，isNaN() 成为了 Number 的静态方法：Number.isNaN().</p>
-<h3 id="8、解释一下下面代码的输出"><a href="#8、解释一下下面代码的输出" class="headerlink" title="8、解释一下下面代码的输出"></a>8、解释一下下面代码的输出</h3><pre><code>console.log(0.1 + 0.2);   //0.30000000000000004
+<h3 id="8-解释一下下面代码的输出"><a href="#8-解释一下下面代码的输出" class="headerlink" title="8.解释一下下面代码的输出"></a>8.解释一下下面代码的输出</h3><pre><code>console.log(0.1 + 0.2);   //0.30000000000000004
 console.log(0.1 + 0.2 == 0.3);  //false
 </code></pre><p>JavaScript 中的 number 类型就是浮点型，JavaScript 中的浮点数采用IEEE-754 格式的规定，这是一种二进制表示法，可以精确地表示分数，比如1/2，1/8，1/1024，每个浮点数占64位。但是，二进制浮点数表示法并不能精确的表示类似0.1这样 的简单的数字，会有舍入误差。</p>
 <p>由于采用二进制，JavaScript 也不能有限表示 1/10、1/2 等这样的分数。在二进制中，1/10(0.1)被表示为 0.00110011001100110011…… 注意 0011 是无限重复的，这是舍入误差造成的，所以对于 0.1 + 0.2 这样的运算，操作数会先被转成二进制，然后再计算：</p>
@@ -451,7 +451,7 @@ console.log(add(0.15,0.2256)); //0.3756
     return x.toPrecision() + y.toPrecision()
 }
 console.log(add(0.1,0.2));  //&quot;0.10.2&quot;
-</code></pre><h3 id="9、实现函数-isInteger-x-来判断-x-是否是整数"><a href="#9、实现函数-isInteger-x-来判断-x-是否是整数" class="headerlink" title="9、实现函数 isInteger(x) 来判断 x 是否是整数"></a>9、实现函数 isInteger(x) 来判断 x 是否是整数</h3><p>可以将 x 转换成10进制，判断和本身是不是相等即可：</p>
+</code></pre><h3 id="9-实现函数-isInteger-x-来判断-x-是否是整数"><a href="#9-实现函数-isInteger-x-来判断-x-是否是整数" class="headerlink" title="9.实现函数 isInteger(x) 来判断 x 是否是整数"></a>9.实现函数 isInteger(x) 来判断 x 是否是整数</h3><p>可以将 x 转换成10进制，判断和本身是不是相等即可：</p>
 <pre><code>function isInteger(x) { 
     return parseInt(x, 10) === x; 
 }
@@ -462,19 +462,19 @@ Number.isInteger(25.1) // false
 Number.isInteger(&quot;15&quot;) // false
 Number.isInteger(true) // false
 </code></pre><p>JavaScript能够准确表示的整数范围在 -2^53 到 2^53 之间（不含两个端点），超过这个范围，无法精确表示这个值。ES6 引入了Number.MAX_SAFE_INTEGER 和 Number.MIN_SAFE_INTEGER这两个常量，用来表示这个范围的上下限，并提供了 Number.isSafeInteger() 来判断整数是否是安全型整数。</p>
-<h3 id="10、在下面的代码中，数字-1-4-会以什么顺序输出？为什么会这样输出？"><a href="#10、在下面的代码中，数字-1-4-会以什么顺序输出？为什么会这样输出？" class="headerlink" title="10、在下面的代码中，数字 1-4 会以什么顺序输出？为什么会这样输出？"></a>10、在下面的代码中，数字 1-4 会以什么顺序输出？为什么会这样输出？</h3><pre><code>(function() {
+<h3 id="10-在下面的代码中，数字-1-4-会以什么顺序输出？为什么会这样输出？"><a href="#10-在下面的代码中，数字-1-4-会以什么顺序输出？为什么会这样输出？" class="headerlink" title="10.在下面的代码中，数字 1-4 会以什么顺序输出？为什么会这样输出？"></a>10.在下面的代码中，数字 1-4 会以什么顺序输出？为什么会这样输出？</h3><pre><code>(function() {
     console.log(1); 
     setTimeout(function(){console.log(2)}, 1000); 
     setTimeout(function(){console.log(3)}, 0); 
     console.log(4);
 })();
 </code></pre><p>这个就不多解释了，主要是 JavaScript 的定时机制和时间循环，不要忘了，JavaScript 是单线程的。详解可以参考 从setTimeout谈JavaScript运行机制。</p>
-<h3 id="11、写一个少于-80-字符的函数，判断一个字符串是不是回文字符串"><a href="#11、写一个少于-80-字符的函数，判断一个字符串是不是回文字符串" class="headerlink" title="11、写一个少于 80 字符的函数，判断一个字符串是不是回文字符串"></a>11、写一个少于 80 字符的函数，判断一个字符串是不是回文字符串</h3><pre><code>function isPalindrome(str) {
+<h3 id="11-写一个少于-80-字符的函数，判断一个字符串是不是回文字符串"><a href="#11-写一个少于-80-字符的函数，判断一个字符串是不是回文字符串" class="headerlink" title="11.写一个少于 80 字符的函数，判断一个字符串是不是回文字符串"></a>11.写一个少于 80 字符的函数，判断一个字符串是不是回文字符串</h3><pre><code>function isPalindrome(str) {
     str = str.replace(/\W/g, &apos;&apos;).toLowerCase();
     return (str == str.split(&apos;&apos;).reverse().join(&apos;&apos;));
 }
 </code></pre><p>这个题我在 codewars 上碰到过，并收录了一些不错的解决方式，可以戳这里：Palindrome For Your Dome</p>
-<h3 id="12、写一个按照下面方式调用都能正常工作的-sum-方法"><a href="#12、写一个按照下面方式调用都能正常工作的-sum-方法" class="headerlink" title="12、写一个按照下面方式调用都能正常工作的 sum 方法"></a>12、写一个按照下面方式调用都能正常工作的 sum 方法</h3><pre><code>console.log(sum(2,3));   // Outputs 5
+<h3 id="12-写一个按照下面方式调用都能正常工作的-sum-方法"><a href="#12-写一个按照下面方式调用都能正常工作的-sum-方法" class="headerlink" title="12.写一个按照下面方式调用都能正常工作的 sum 方法"></a>12.写一个按照下面方式调用都能正常工作的 sum 方法</h3><pre><code>console.log(sum(2,3));   // Outputs 5
 console.log(sum(2)(3));  // Outputs 5
 </code></pre><p>针对这个题，可以判断参数个数来实现：</p>
 <pre><code>function sum() {
@@ -488,7 +488,7 @@ console.log(sum(2)(3));  // Outputs 5
   }
 
 }
-</code></pre><h3 id="13、根据下面的代码片段回答后面的问题"><a href="#13、根据下面的代码片段回答后面的问题" class="headerlink" title="13、根据下面的代码片段回答后面的问题"></a>13、根据下面的代码片段回答后面的问题</h3><pre><code>for (var i = 0; i &lt; 5; i++) {
+</code></pre><h3 id="13-根据下面的代码片段回答后面的问题"><a href="#13-根据下面的代码片段回答后面的问题" class="headerlink" title="13.根据下面的代码片段回答后面的问题"></a>13.根据下面的代码片段回答后面的问题</h3><pre><code>for (var i = 0; i &lt; 5; i++) {
   var btn = document.createElement(&apos;button&apos;);
   btn.appendChild(document.createTextNode(&apos;Button &apos; + i));
   btn.addEventListener(&apos;click&apos;, function(){ console.log(i); });
@@ -496,7 +496,7 @@ console.log(sum(2)(3));  // Outputs 5
 }
 </code></pre><p>1、点击 Button 4，会在控制台输出什么？<br>2、给出一种符合预期的实现方式</p>
 <p>答：1、点击5个按钮中的任意一个，都是输出5<br>2、参考 IIFE。</p>
-<h3 id="14、下面的代码会输出什么？为什么？"><a href="#14、下面的代码会输出什么？为什么？" class="headerlink" title="14、下面的代码会输出什么？为什么？"></a>14、下面的代码会输出什么？为什么？</h3><pre><code>var arr1 = &quot;john&quot;.split(&apos;&apos;); j o h n
+<h3 id="14-下面的代码会输出什么？为什么？"><a href="#14-下面的代码会输出什么？为什么？" class="headerlink" title="14.下面的代码会输出什么？为什么？"></a>14.下面的代码会输出什么？为什么？</h3><pre><code>var arr1 = &quot;john&quot;.split(&apos;&apos;); j o h n
 var arr2 = arr1.reverse(); n h o j
 var arr3 = &quot;jones&quot;.split(&apos;&apos;); j o n e s
 arr2.push(arr3);
@@ -509,7 +509,7 @@ console.log(&quot;array 2: length=&quot; + arr2.length + &quot; last=&quot; + ar
 </blockquote>
 <p>reverse() 会改变数组本身，并返回原数组的引用。</p>
 <p>slice 的用法请参考：slice</p>
-<h3 id="15、下面的代码会输出什么？为什么？"><a href="#15、下面的代码会输出什么？为什么？" class="headerlink" title="15、下面的代码会输出什么？为什么？"></a>15、下面的代码会输出什么？为什么？</h3><pre><code>console.log(1 +  &quot;2&quot; + &quot;2&quot;);
+<h3 id="15-下面的代码会输出什么？为什么？"><a href="#15-下面的代码会输出什么？为什么？" class="headerlink" title="15.下面的代码会输出什么？为什么？"></a>15.下面的代码会输出什么？为什么？</h3><pre><code>console.log(1 +  &quot;2&quot; + &quot;2&quot;);
 console.log(1 +  +&quot;2&quot; + &quot;2&quot;);
 console.log(1 +  -&quot;1&quot; + &quot;2&quot;);
 console.log(+&quot;1&quot; +  &quot;1&quot; + &quot;2&quot;);
@@ -532,7 +532,7 @@ console.log(&apos;A&apos; - &apos;B&apos;);  // NaN
 </code></pre><p>这张图是运算转换的规则</p>
 <p><img src="https://raw.githubusercontent.com/dushao103500/You-must-know/master/images/15_3.png" alt=""></p>
 <p>3、运算符转换</p>
-<h3 id="16、如果-list-很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？"><a href="#16、如果-list-很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？" class="headerlink" title="16、如果 list 很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？"></a>16、如果 list 很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？</h3><pre><code>var list = readHugeList();
+<h3 id="16-如果-list-很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？"><a href="#16-如果-list-很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？" class="headerlink" title="16.如果 list 很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？"></a>16.如果 list 很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？</h3><pre><code>var list = readHugeList();
 
 var nextListItem = function() {
     var item = list.pop();
@@ -554,12 +554,12 @@ var nextListItem = function() {
     }
 };
 </code></pre><p>解决方式的原理请参考第10题。</p>
-<h3 id="17、什么是闭包？举例说明"><a href="#17、什么是闭包？举例说明" class="headerlink" title="17、什么是闭包？举例说明"></a>17、什么是闭包？举例说明</h3><p>可以参考此篇：<a href="http://www.liuhaihua.cn/archives/152190.html" target="_blank" rel="external">从作用域链谈闭包</a></p>
-<h3 id="18、下面的代码会输出什么？为啥？"><a href="#18、下面的代码会输出什么？为啥？" class="headerlink" title="18、下面的代码会输出什么？为啥？"></a>18、下面的代码会输出什么？为啥？</h3><pre><code>for (var i = 0; i &lt; 5; i++) {
+<h3 id="17-什么是闭包？举例说明"><a href="#17-什么是闭包？举例说明" class="headerlink" title="17.什么是闭包？举例说明"></a>17.什么是闭包？举例说明</h3><p>可以参考此篇：<a href="http://www.liuhaihua.cn/archives/152190.html" target="_blank" rel="external">从作用域链谈闭包</a></p>
+<h3 id="18-下面的代码会输出什么？为啥？"><a href="#18-下面的代码会输出什么？为啥？" class="headerlink" title="18.下面的代码会输出什么？为啥？"></a>18.下面的代码会输出什么？为啥？</h3><pre><code>for (var i = 0; i &lt; 5; i++) {
   setTimeout(function() { console.log(i); }, i * 1000 );
 }
 </code></pre><p>请往前面翻，参考第4题，解决方式已经在上面了</p>
-<h3 id="19、解释下列代码的输出"><a href="#19、解释下列代码的输出" class="headerlink" title="19、解释下列代码的输出"></a>19、解释下列代码的输出</h3><pre><code>console.log(&quot;0 || 1 = &quot;+(0 || 1));
+<h3 id="19-解释下列代码的输出"><a href="#19-解释下列代码的输出" class="headerlink" title="19.解释下列代码的输出"></a>19.解释下列代码的输出</h3><pre><code>console.log(&quot;0 || 1 = &quot;+(0 || 1));
 console.log(&quot;1 || 2 = &quot;+(1 || 2));
 console.log(&quot;0 &amp;&amp; 1 = &quot;+(0 &amp;&amp; 1));
 console.log(&quot;1 &amp;&amp; 2 = &quot;+(1 &amp;&amp; 2));
@@ -585,10 +585,10 @@ console.log({} == false) //false
 console.log(Boolean([])) //true
 console.log(Boolean({})) //true
 </code></pre><p>所以在 if 中，[] 和 {} 都表现为 true：</p>
-<h3 id="20、解释下面代码的输出"><a href="#20、解释下面代码的输出" class="headerlink" title="20、解释下面代码的输出"></a>20、解释下面代码的输出</h3><pre><code>console.log(false == &apos;0&apos;)
+<h3 id="20-解释下面代码的输出"><a href="#20-解释下面代码的输出" class="headerlink" title="20.解释下面代码的输出"></a>20.解释下面代码的输出</h3><pre><code>console.log(false == &apos;0&apos;)
 console.log(false === &apos;0&apos;)
 </code></pre><p>请参考前面第14题运算符转换规则的图。</p>
-<h3 id="21、解释下面代码的输出"><a href="#21、解释下面代码的输出" class="headerlink" title="21、解释下面代码的输出"></a>21、解释下面代码的输出</h3><pre><code>var a={},
+<h3 id="21-解释下面代码的输出"><a href="#21-解释下面代码的输出" class="headerlink" title="21.解释下面代码的输出"></a>21.解释下面代码的输出</h3><pre><code>var a={},
     b={key:&apos;b&apos;},
     c={key:&apos;c&apos;};
 
@@ -599,17 +599,17 @@ console.log(a[b]);
 </code></pre><p>输出是 456，参考原文的解释：</p>
 <blockquote>
 <p>The reason for this is as follows: When setting an object property, JavaScript will implicitly stringify the parameter value. In this case, since b and c are both objects, they will both be converted to “[object Object]”. As a result, a[b] anda[c] are both equivalent to a[“[object Object]”] and can be used interchangeably. Therefore, setting or referencing a[c] is precisely the same as setting or referencing a[b].</p>
-<h3 id="22、解释下面代码的输出"><a href="#22、解释下面代码的输出" class="headerlink" title="22、解释下面代码的输出"></a>22、解释下面代码的输出</h3></blockquote>
+<h3 id="22-解释下面代码的输出"><a href="#22-解释下面代码的输出" class="headerlink" title="22.解释下面代码的输出"></a>22.解释下面代码的输出</h3></blockquote>
 <pre><code>console.log((function f(n){return ((n &gt; 1) ? n * f(n-1) : n)})(10));
 </code></pre><p>结果是10的阶乘。这是一个递归调用，为了简化，我初始化 n=5，则调用链和返回链如下：</p>
 <p>递归</p>
-<h3 id="23、解释下面代码的输出"><a href="#23、解释下面代码的输出" class="headerlink" title="23、解释下面代码的输出"></a>23、解释下面代码的输出</h3><pre><code>(function(x) {
+<h3 id="23-解释下面代码的输出"><a href="#23-解释下面代码的输出" class="headerlink" title="23.解释下面代码的输出"></a>23.解释下面代码的输出</h3><pre><code>(function(x) {
     return (function(y) {
         console.log(x);
     })(2)
 })(1);
 </code></pre><p>输出1，闭包能够访问外部作用域的变量或参数。</p>
-<h3 id="24、解释下面代码的输出，并修复存在的问题"><a href="#24、解释下面代码的输出，并修复存在的问题" class="headerlink" title="24、解释下面代码的输出，并修复存在的问题"></a>24、解释下面代码的输出，并修复存在的问题</h3><pre><code>var hero = {
+<h3 id="24-解释下面代码的输出，并修复存在的问题"><a href="#24-解释下面代码的输出，并修复存在的问题" class="headerlink" title="24.解释下面代码的输出，并修复存在的问题"></a>24.解释下面代码的输出，并修复存在的问题</h3><pre><code>var hero = {
     _name: &apos;John Doe&apos;,
     getSecretIdentity: function (){
         return this._name;
@@ -626,7 +626,7 @@ console.log(hero.getSecretIdentity());
 }
 </code></pre><p>stoleSecretIdentity 的上下文是全局环境，所以第一个输出 undefined。若要输出 John Doe，则要通过 call 、apply 和 bind 等方式改变 stoleSecretIdentity 的this 指向(hero)。</p>
 <p>第二个是调用对象的方法，输出 John Doe。</p>
-<h3 id="25、给你一个-DOM-元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。"><a href="#25、给你一个-DOM-元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。" class="headerlink" title="25、给你一个 DOM 元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。"></a>25、给你一个 DOM 元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。</h3><p>函数接受两个参数：</p>
+<h3 id="25-给你一个-DOM-元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。"><a href="#25-给你一个-DOM-元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。" class="headerlink" title="25.给你一个 DOM 元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。"></a>25.给你一个 DOM 元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。</h3><p>函数接受两个参数：</p>
 <p>DOM<br>指定的回调函数<br>原文利用 深度优先搜索(Depth-First-Search) 给了一个实现：</p>
 <pre><code>function Traverse(p_element,p_callback) {
    p_callback(p_element);
@@ -793,7 +793,7 @@ console.log(hero.getSecretIdentity());
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、使用-typeof-bar-“object”-判断-bar-是不是一个对象有神马潜在的弊端？如何避免这种弊端？"><span class="nav-number">1.</span> <span class="nav-text">1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、下面的代码会在-console-输出神马？为什么？"><span class="nav-number">2.</span> <span class="nav-text">2、下面的代码会在 console 输出神马？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、下面的代码会在-console-输出神马？为什么？"><span class="nav-number">3.</span> <span class="nav-text">3、下面的代码会在 console 输出神马？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、将-JavaScript-代码包含在一个函数块中有神马意思呢？为什么要这么做？"><span class="nav-number">4.</span> <span class="nav-text">4、将 JavaScript 代码包含在一个函数块中有神马意思呢？为什么要这么做？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、在严格模式-‘use-strict’-下进行-JavaScript-开发有神马好处？"><span class="nav-number">5.</span> <span class="nav-text">5、在严格模式(‘use strict’)下进行 JavaScript 开发有神马好处？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、下面两个函数的返回值是一样的吗？为什么？"><span class="nav-number">6.</span> <span class="nav-text">6、下面两个函数的返回值是一样的吗？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、神马是-NaN，它的类型是神马？怎么测试一个值是否等于-NaN"><span class="nav-number">7.</span> <span class="nav-text">7、神马是 NaN，它的类型是神马？怎么测试一个值是否等于 NaN?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、解释一下下面代码的输出"><span class="nav-number">8.</span> <span class="nav-text">8、解释一下下面代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、实现函数-isInteger-x-来判断-x-是否是整数"><span class="nav-number">9.</span> <span class="nav-text">9、实现函数 isInteger(x) 来判断 x 是否是整数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、在下面的代码中，数字-1-4-会以什么顺序输出？为什么会这样输出？"><span class="nav-number">10.</span> <span class="nav-text">10、在下面的代码中，数字 1-4 会以什么顺序输出？为什么会这样输出？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、写一个少于-80-字符的函数，判断一个字符串是不是回文字符串"><span class="nav-number">11.</span> <span class="nav-text">11、写一个少于 80 字符的函数，判断一个字符串是不是回文字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12、写一个按照下面方式调用都能正常工作的-sum-方法"><span class="nav-number">12.</span> <span class="nav-text">12、写一个按照下面方式调用都能正常工作的 sum 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13、根据下面的代码片段回答后面的问题"><span class="nav-number">13.</span> <span class="nav-text">13、根据下面的代码片段回答后面的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14、下面的代码会输出什么？为什么？"><span class="nav-number">14.</span> <span class="nav-text">14、下面的代码会输出什么？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15、下面的代码会输出什么？为什么？"><span class="nav-number">15.</span> <span class="nav-text">15、下面的代码会输出什么？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16、如果-list-很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？"><span class="nav-number">16.</span> <span class="nav-text">16、如果 list 很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17、什么是闭包？举例说明"><span class="nav-number">17.</span> <span class="nav-text">17、什么是闭包？举例说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18、下面的代码会输出什么？为啥？"><span class="nav-number">18.</span> <span class="nav-text">18、下面的代码会输出什么？为啥？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19、解释下列代码的输出"><span class="nav-number">19.</span> <span class="nav-text">19、解释下列代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20、解释下面代码的输出"><span class="nav-number">20.</span> <span class="nav-text">20、解释下面代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21、解释下面代码的输出"><span class="nav-number">21.</span> <span class="nav-text">21、解释下面代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22、解释下面代码的输出"><span class="nav-number">22.</span> <span class="nav-text">22、解释下面代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23、解释下面代码的输出"><span class="nav-number">23.</span> <span class="nav-text">23、解释下面代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24、解释下面代码的输出，并修复存在的问题"><span class="nav-number">24.</span> <span class="nav-text">24、解释下面代码的输出，并修复存在的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25、给你一个-DOM-元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。"><span class="nav-number">25.</span> <span class="nav-text">25、给你一个 DOM 元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用-typeof-bar-“object”-判断-bar-是不是一个对象有神马潜在的弊端？如何避免这种弊端？"><span class="nav-number">1.</span> <span class="nav-text">1.使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-下面的代码会在-console-输出神马？为什么？"><span class="nav-number">2.</span> <span class="nav-text">2.下面的代码会在 console 输出神马？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-下面的代码会在-console-输出神马？为什么？"><span class="nav-number">3.</span> <span class="nav-text">3.下面的代码会在 console 输出神马？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-将-JavaScript-代码包含在一个函数块中有神马意思呢？为什么要这么做？"><span class="nav-number">4.</span> <span class="nav-text">4.将 JavaScript 代码包含在一个函数块中有神马意思呢？为什么要这么做？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-在严格模式-‘use-strict’-下进行-JavaScript-开发有神马好处？"><span class="nav-number">5.</span> <span class="nav-text">5.在严格模式(‘use strict’)下进行 JavaScript 开发有神马好处？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-下面两个函数的返回值是一样的吗？为什么？"><span class="nav-number">6.</span> <span class="nav-text">6.下面两个函数的返回值是一样的吗？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-神马是-NaN，它的类型是神马？怎么测试一个值是否等于-NaN"><span class="nav-number">7.</span> <span class="nav-text">7.神马是 NaN，它的类型是神马？怎么测试一个值是否等于 NaN?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-解释一下下面代码的输出"><span class="nav-number">8.</span> <span class="nav-text">8.解释一下下面代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-实现函数-isInteger-x-来判断-x-是否是整数"><span class="nav-number">9.</span> <span class="nav-text">9.实现函数 isInteger(x) 来判断 x 是否是整数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-在下面的代码中，数字-1-4-会以什么顺序输出？为什么会这样输出？"><span class="nav-number">10.</span> <span class="nav-text">10.在下面的代码中，数字 1-4 会以什么顺序输出？为什么会这样输出？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-写一个少于-80-字符的函数，判断一个字符串是不是回文字符串"><span class="nav-number">11.</span> <span class="nav-text">11.写一个少于 80 字符的函数，判断一个字符串是不是回文字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-写一个按照下面方式调用都能正常工作的-sum-方法"><span class="nav-number">12.</span> <span class="nav-text">12.写一个按照下面方式调用都能正常工作的 sum 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-根据下面的代码片段回答后面的问题"><span class="nav-number">13.</span> <span class="nav-text">13.根据下面的代码片段回答后面的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-下面的代码会输出什么？为什么？"><span class="nav-number">14.</span> <span class="nav-text">14.下面的代码会输出什么？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-下面的代码会输出什么？为什么？"><span class="nav-number">15.</span> <span class="nav-text">15.下面的代码会输出什么？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-如果-list-很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？"><span class="nav-number">16.</span> <span class="nav-text">16.如果 list 很大，下面的这段递归代码会造成堆栈溢出。如果在不改变递归模式的前提下修善这段代码？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-什么是闭包？举例说明"><span class="nav-number">17.</span> <span class="nav-text">17.什么是闭包？举例说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-下面的代码会输出什么？为啥？"><span class="nav-number">18.</span> <span class="nav-text">18.下面的代码会输出什么？为啥？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-解释下列代码的输出"><span class="nav-number">19.</span> <span class="nav-text">19.解释下列代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-解释下面代码的输出"><span class="nav-number">20.</span> <span class="nav-text">20.解释下面代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-解释下面代码的输出"><span class="nav-number">21.</span> <span class="nav-text">21.解释下面代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-解释下面代码的输出"><span class="nav-number">22.</span> <span class="nav-text">22.解释下面代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-解释下面代码的输出"><span class="nav-number">23.</span> <span class="nav-text">23.解释下面代码的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-解释下面代码的输出，并修复存在的问题"><span class="nav-number">24.</span> <span class="nav-text">24.解释下面代码的输出，并修复存在的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-给你一个-DOM-元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。"><span class="nav-number">25.</span> <span class="nav-text">25.给你一个 DOM 元素，创建一个能访问该元素所有子元素的函数，并且要将每个子元素传递给指定的回调函数。</span></a></li></ol></div>
             
           </div>
         </section>
