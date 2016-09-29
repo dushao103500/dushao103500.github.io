@@ -85,7 +85,7 @@
 
 
 <meta name="description" content="成员：杜必林，邝光前，周振刚，刘东，刘波
-任务安排主页面 （刘波）主要难度：
+一：任务安排主页面 （刘波）主要难度：
 (1).轮播图（包括拖拽功能）
 (2).商品链接详情页，查看更多链接分类页（通过href传值跳转）
 (3).搜索框
@@ -93,13 +93,13 @@
 (1).分类页面只能一个，数据分类有难度
 (2).链接详情页(通过href传值跳转至详情页)
 登录注册页面（四个页面） （邝光前）(1).页面太多
-(2).登录注">
+(2).登">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动端项目开发任务分配（第五组）">
 <meta property="og:url" content="http://yoursite.com/2016/09/27/第五组移动开发项目开发任务分配/index.html">
 <meta property="og:site_name" content="杜少博客">
 <meta property="og:description" content="成员：杜必林，邝光前，周振刚，刘东，刘波
-任务安排主页面 （刘波）主要难度：
+一：任务安排主页面 （刘波）主要难度：
 (1).轮播图（包括拖拽功能）
 (2).商品链接详情页，查看更多链接分类页（通过href传值跳转）
 (3).搜索框
@@ -107,12 +107,12 @@
 (1).分类页面只能一个，数据分类有难度
 (2).链接详情页(通过href传值跳转至详情页)
 登录注册页面（四个页面） （邝光前）(1).页面太多
-(2).登录注">
-<meta property="og:updated_time" content="2016-09-27T15:15:02.284Z">
+(2).登">
+<meta property="og:updated_time" content="2016-09-29T13:23:17.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端项目开发任务分配（第五组）">
 <meta name="twitter:description" content="成员：杜必林，邝光前，周振刚，刘东，刘波
-任务安排主页面 （刘波）主要难度：
+一：任务安排主页面 （刘波）主要难度：
 (1).轮播图（包括拖拽功能）
 (2).商品链接详情页，查看更多链接分类页（通过href传值跳转）
 (3).搜索框
@@ -120,7 +120,7 @@
 (1).分类页面只能一个，数据分类有难度
 (2).链接详情页(通过href传值跳转至详情页)
 登录注册页面（四个页面） （邝光前）(1).页面太多
-(2).登录注">
+(2).登">
 
 
 
@@ -314,7 +314,7 @@
 
       
         <p><strong>成员：杜必林，邝光前，周振刚，刘东，刘波</strong></p>
-<h2 id="任务安排"><a href="#任务安排" class="headerlink" title="任务安排"></a>任务安排</h2><h3 id="主页面-（刘波）"><a href="#主页面-（刘波）" class="headerlink" title="主页面 （刘波）"></a>主页面 （刘波）</h3><p><strong>主要难度：</strong></p>
+<h2 id="一：任务安排"><a href="#一：任务安排" class="headerlink" title="一：任务安排"></a>一：任务安排</h2><h3 id="主页面-（刘波）"><a href="#主页面-（刘波）" class="headerlink" title="主页面 （刘波）"></a>主页面 （刘波）</h3><p><strong>主要难度：</strong></p>
 <p>(1).轮播图（包括拖拽功能）</p>
 <p>(2).商品链接详情页，查看更多链接分类页（通过href传值跳转）</p>
 <p>(3).搜索框</p>
@@ -332,62 +332,152 @@
 <p>(2).实现动态切换</p>
 <h3 id="代码整合"><a href="#代码整合" class="headerlink" title="代码整合"></a>代码整合</h3><h2 id="二、相关规范"><a href="#二、相关规范" class="headerlink" title="二、相关规范"></a>二、相关规范</h2><h3 id="移动端兼容及布局规范"><a href="#移动端兼容及布局规范" class="headerlink" title="移动端兼容及布局规范"></a>移动端兼容及布局规范</h3><p>采用弹性盒子布局，尽量脱离固定样式布局</p>
 <p>实现各种移动端设备的适配兼容</p>
-<h3 id="页面命名规范"><a href="#页面命名规范" class="headerlink" title="页面命名规范"></a>页面命名规范</h3><p>登录页面：login.html</p>
-<p>注册页面：register.html</p>
-<p>我的页面：mine.html</p>
-<p>个人信息页面：info.html</p>
-<p>主页面：index.html</p>
-<p>分类页面：sort.html</p>
-<p>详情页面：detail.html</p>
-<p>活动页面：activity.html</p>
-<p>茶饮机页面：machine.html</p>
-<p><strong>**</strong>如需要扩展页面，必须提前通知，商讨之后动工</p>
-<h3 id="gulp文件夹命名及层级规范"><a href="#gulp文件夹命名及层级规范" class="headerlink" title="gulp文件夹命名及层级规范"></a>gulp文件夹命名及层级规范</h3><h3 id="js和scss规范"><a href="#js和scss规范" class="headerlink" title="js和scss规范"></a>js和scss规范</h3><p>必须用scss，别用css，公共模块一定要单独提取出来，比如主页面的foot部分</p>
-<p>js尽量封装，用面向对象思想</p>
+<h3 id="页面命名规范"><a href="#页面命名规范" class="headerlink" title="页面命名规范"></a>页面命名规范</h3><pre><code>登录页面：login.html
+
+注册页面：register.html
+
+我的页面：mine.html
+
+个人信息页面：info.html
+
+主页面：index.html
+
+分类页面：sort.html
+
+详情页面：detail.html
+
+活动页面：activity.html
+
+茶饮机页面：machine.html
+</code></pre><p><strong>**</strong>如需要扩展页面，必须提前通知，商讨之后动工</p>
+<h3 id="gulp文件夹命名及层级规范"><a href="#gulp文件夹命名及层级规范" class="headerlink" title="gulp文件夹命名及层级规范"></a>gulp文件夹命名及层级规范</h3><pre><code>工程文件名hecha
+
+1.build文件夹{
+    1_1  images文件夹:存放图片
+    1_2  fonts文件夹：存放字体
+    1_3  prd文件夹：{
+        scripts文件夹{
+            app.index.js
+            app.login.js.......
+        }
+        styles文件夹{
+            app.index.css
+            app.login.css.......
+        }
+    }
+    1_4  ver文件夹{版本管理}
+    1_5  html页面：index.html,login.html等等
+}
+2.images文件夹{
+    （为了方便代码管理，页面对应文件夹）
+    2_1  index-images文件夹{index页面的图片}
+    2_2  login-images文件夹{login页面的图片}
+    2_....（如果一个人写多个页面，可以只创建一个文件夹）
+}
+3.fonts文件夹{
+    iconfont-menu.ttf
+    iconfont-menu.woff
+    （命名的时候一定要语义化）
+}
+4.mock文件夹{
+    a.json
+    b.json
+    c.json
+    ....(json文件到时再议)
+}
+5.node_modules文件夹{
+    存放模块工具
+}
+6.src文件夹{
+    styles文件夹{
+        libs文件夹{提供，切勿乱修改}
+        usage文件夹{
+            common文件夹{存放各页面之间相同的css部分，主要是    footer部分}
+            core文件夹{勿动}
+            element文件夹{勿动}
+            export文件夹{勿动}
+            fragment文件夹{勿动}
+            layout文件夹{勿动}
+            module文件夹{
+                （主要存放每个页面各自的样式）
+                m-index.scss
+                m-login.scss
+                ....
+            }
+            page文件夹{
+                （各页面样式的出口）    
+                app-index.scss
+                app-iogin.scss
+                ....
+            }
+
+        }
+    }
+    scripts文件夹{
+        libs文件夹：{主要存放框架等第三方组件}
+        tpls文件夹：{
+            （主要存放各页面的string文件，公共部分要提取出来，比如说footer.string）
+            index.string
+            login.string
+            ....
+        }
+        utils文件夹{
+            （存放公共js文件，比如购物车显示数量的js）
+            common.util.js
+            ....
+        }
+        views文件夹{
+            （存放各页面单独的js）
+            index.js
+            login.js
+            ....
+        }
+        各js出口文件，比如
+        app-index.js
+        app-login.js
+        ...
+        ...
+    }
+}
+7.gulpfile.js文件
+8.html文件...（以index.html为例）{
+    &lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;en&quot;&gt;
+
+        &lt;head&gt;
+            &lt;meta charset=&quot;UTF-8&quot;&gt;
+            &lt;meta content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; name=&quot;viewport&quot;&gt;
+            &lt;meta content=&quot;yes&quot; name=&quot;apple-mobile-web-app-capable&quot;&gt;
+            &lt;meta content=&quot;black&quot; name=&quot;apple-mobile-web-app-status-bar-style&quot;&gt;
+            &lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot;&gt;
+            &lt;meta content=&quot;email=no&quot; name=&quot;format-detection&quot;&gt;
+            &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+            &lt;title&gt;footballSNS&lt;/title&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;/build/prd/styles/swiper-3.3.1.min.css&quot;&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;/build/prd/styles/app.css&quot;&gt;
+        &lt;/head&gt;
+
+        &lt;body&gt;
+            &lt;script src=&quot;/build/prd/scripts/zepto.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;/build/prd/scripts/swiper-3.3.1.jquery.min.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;/build/prd/scripts/iscroll-probe.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;/build/prd/scripts/template.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;/build/prd/scripts/app.js&quot;&gt;&lt;/script&gt;
+        &lt;/body&gt;
+
+        &lt;/html&gt;
+    }
+9.package.json文件{安装组件的时候记得要本地安装 加-D}
+</code></pre><h3 id="js和scss规范"><a href="#js和scss规范" class="headerlink" title="js和scss规范"></a>js和scss规范</h3><p>必须用scss，别用css，公共模块一定要单独提取出来，比如主页面的footer部分</p>
+<p>js尽量封装，用面向对象思想,做到一个函数，任何地方都能引用</p>
 <p>js各模块关系明确，不能出现循环依赖</p>
 <h3 id="json数据规范（先写静态页面，json数据讨论之后再做决断）"><a href="#json数据规范（先写静态页面，json数据讨论之后再做决断）" class="headerlink" title="json数据规范（先写静态页面，json数据讨论之后再做决断）"></a>json数据规范（先写静态页面，json数据讨论之后再做决断）</h3><p><strong>主要json数据：</strong></p>
 <p>1、商品信息：</p>
-<p>共有九个分类</p>
-<pre><code>[
-  {
-    &quot;sort_code&quot;:01,
-    &quot;product&quot;:
-    [
-      {
-        &quot;code&quot;: 05,
-        &quot;content&quot;: [
-          {
-            &quot;product_id&quot;: &quot;92e14b5f-c869-4f53-9975-11740d8d1075&quot;,
-            &quot;product_name&quot;: &quot;【九曲山】一级正山小种罐装120g（优品）&quot;,
-            &quot;product_img_url&quot;: &quot;http://  img1.hecha.cnMobileImage/20160810/20160810182009363.jpg&quot;,
-            &quot;product_url&quot;: &quot;&quot;,
-            &quot;product_type&quot;: -1,
-            &quot;product_begin_date&quot;: null,
-            &quot;product_end_date&quot;: null,
-            &quot;product_comment&quot;: &quot;4.74&quot;,
-            &quot;product_sale_price&quot;: &quot;93.00&quot;,
-            &quot;product_sale_rule&quot;: &quot;&quot;,
-            &quot;product_sale_count&quot;: 55
-          },
-          .......
-        ]
-      }
-    ]
-  },
-  {
-    &quot;sort_code&quot;:02,
-    &quot;product&quot;:
-    [
-      {
-       .......     
-      }
-    ]
-  },
-  .......    
-]
-</code></pre><p>2、用户信息：</p>
-<p>3、购物车信息：</p>
-<p>4、活动商品信息：</p>
+<p>2.商品分类信息</p>
+<p>3、用户信息：</p>
+<p>4、购物车信息：</p>
+<p>5、活动商品信息：</p>
+<h2 id="三：环境配置"><a href="#三：环境配置" class="headerlink" title="三：环境配置"></a>三：环境配置</h2><p>node版本：v6.2.0<br>Github协作开发</p>
 
       
     </div>
@@ -584,7 +674,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#任务安排"><span class="nav-text">任务安排</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主页面-（刘波）"><span class="nav-text">主页面 （刘波）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类页面（含两页面）-（杜必林）"><span class="nav-text">分类页面（含两页面） （杜必林）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录注册页面（四个页面）-（邝光前）"><span class="nav-text">登录注册页面（四个页面） （邝光前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#购物车页面-详情页联动-（刘东）"><span class="nav-text">购物车页面,详情页联动 （刘东）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#茶饮机页面-活动页面-（周振刚）"><span class="nav-text">茶饮机页面,活动页面 （周振刚）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码整合"><span class="nav-text">代码整合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、相关规范"><span class="nav-text">二、相关规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端兼容及布局规范"><span class="nav-text">移动端兼容及布局规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面命名规范"><span class="nav-text">页面命名规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp文件夹命名及层级规范"><span class="nav-text">gulp文件夹命名及层级规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js和scss规范"><span class="nav-text">js和scss规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#json数据规范（先写静态页面，json数据讨论之后再做决断）"><span class="nav-text">json数据规范（先写静态页面，json数据讨论之后再做决断）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一：任务安排"><span class="nav-text">一：任务安排</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主页面-（刘波）"><span class="nav-text">主页面 （刘波）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类页面（含两页面）-（杜必林）"><span class="nav-text">分类页面（含两页面） （杜必林）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录注册页面（四个页面）-（邝光前）"><span class="nav-text">登录注册页面（四个页面） （邝光前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#购物车页面-详情页联动-（刘东）"><span class="nav-text">购物车页面,详情页联动 （刘东）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#茶饮机页面-活动页面-（周振刚）"><span class="nav-text">茶饮机页面,活动页面 （周振刚）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码整合"><span class="nav-text">代码整合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、相关规范"><span class="nav-text">二、相关规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端兼容及布局规范"><span class="nav-text">移动端兼容及布局规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面命名规范"><span class="nav-text">页面命名规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp文件夹命名及层级规范"><span class="nav-text">gulp文件夹命名及层级规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js和scss规范"><span class="nav-text">js和scss规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#json数据规范（先写静态页面，json数据讨论之后再做决断）"><span class="nav-text">json数据规范（先写静态页面，json数据讨论之后再做决断）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三：环境配置"><span class="nav-text">三：环境配置</span></a></li></ol></div>
             
           </div>
         </section>
