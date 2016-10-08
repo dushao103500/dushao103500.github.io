@@ -1,0 +1,829 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="杜少博客" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="成员：杜必林，邝光前，周振刚，刘东，刘波
+一：任务安排主页面 （刘波）主要难度：
+(1).轮播图（包括拖拽功能）
+(2).商品链接详情页，查看更多链接分类页（通过href传值跳转）
+(3).搜索框
+分类页面（含两页面） （杜必林）主要难度：
+(1).分类页面只能一个，数据分类有难度
+(2).链接详情页(通过href传值跳转至详情页)
+登录注册页面（四个页面） （邝光前）(1).页面太多
+(2).登">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端项目开发任务分配">
+<meta property="og:url" content="http://yoursite.com/2016/09/27/移动开发项目开发任务分配/index.html">
+<meta property="og:site_name" content="杜少博客">
+<meta property="og:description" content="成员：杜必林，邝光前，周振刚，刘东，刘波
+一：任务安排主页面 （刘波）主要难度：
+(1).轮播图（包括拖拽功能）
+(2).商品链接详情页，查看更多链接分类页（通过href传值跳转）
+(3).搜索框
+分类页面（含两页面） （杜必林）主要难度：
+(1).分类页面只能一个，数据分类有难度
+(2).链接详情页(通过href传值跳转至详情页)
+登录注册页面（四个页面） （邝光前）(1).页面太多
+(2).登">
+<meta property="og:updated_time" content="2016-10-08T12:59:44.020Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端项目开发任务分配">
+<meta name="twitter:description" content="成员：杜必林，邝光前，周振刚，刘东，刘波
+一：任务安排主页面 （刘波）主要难度：
+(1).轮播图（包括拖拽功能）
+(2).商品链接详情页，查看更多链接分类页（通过href传值跳转）
+(3).搜索框
+分类页面（含两页面） （杜必林）主要难度：
+(1).分类页面只能一个，数据分类有难度
+(2).链接详情页(通过href传值跳转至详情页)
+登录注册页面（四个页面） （邝光前）(1).页面太多
+(2).登">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/27/移动开发项目开发任务分配/"/>
+
+  <title> 移动端项目开发任务分配 | 杜少博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">杜少博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">好运不会眷顾傻瓜</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                移动端项目开发任务分配
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-27T22:22:45+08:00" content="2016-09-27">
+              2016-09-27
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>成员：杜必林，邝光前，周振刚，刘东，刘波</strong></p>
+<h2 id="一：任务安排"><a href="#一：任务安排" class="headerlink" title="一：任务安排"></a>一：任务安排</h2><h3 id="主页面-（刘波）"><a href="#主页面-（刘波）" class="headerlink" title="主页面 （刘波）"></a>主页面 （刘波）</h3><p><strong>主要难度：</strong></p>
+<p>(1).轮播图（包括拖拽功能）</p>
+<p>(2).商品链接详情页，查看更多链接分类页（通过href传值跳转）</p>
+<p>(3).搜索框</p>
+<h3 id="分类页面（含两页面）-（杜必林）"><a href="#分类页面（含两页面）-（杜必林）" class="headerlink" title="分类页面（含两页面） （杜必林）"></a>分类页面（含两页面） （杜必林）</h3><p><strong>主要难度：</strong></p>
+<p>(1).分类页面只能一个，数据分类有难度</p>
+<p>(2).链接详情页(通过href传值跳转至详情页)</p>
+<h3 id="登录注册页面（四个页面）-（邝光前）"><a href="#登录注册页面（四个页面）-（邝光前）" class="headerlink" title="登录注册页面（四个页面） （邝光前）"></a>登录注册页面（四个页面） （邝光前）</h3><p>(1).页面太多</p>
+<p>(2).登录注册可以用cookie或者localstorage,或者sessionstroage写，数据存在json</p>
+<h3 id="购物车页面-详情页联动-（刘东）"><a href="#购物车页面-详情页联动-（刘东）" class="headerlink" title="购物车页面,详情页联动 （刘东）"></a>购物车页面,详情页联动 （刘东）</h3><p><strong>主要难度</strong></p>
+<p>(1)购物车数据和后台交互，单独一个json放购物车数据，只有登录才能加入购物车</p>
+<p>(2)购物车页面实现增删改查</p>
+<p>(3)详情页面只能一个，动态获取数据，接收href传来的值</p>
+<h3 id="茶饮机页面-活动页面-（周振刚）"><a href="#茶饮机页面-活动页面-（周振刚）" class="headerlink" title="茶饮机页面,活动页面 （周振刚）"></a>茶饮机页面,活动页面 （周振刚）</h3><p><strong>主要难度</strong></p>
+<p>(1).活动页面可以参照分类页面</p>
+<p>(2).实现动态切换</p>
+<h3 id="代码整合"><a href="#代码整合" class="headerlink" title="代码整合"></a>代码整合</h3><h2 id="二、相关规范"><a href="#二、相关规范" class="headerlink" title="二、相关规范"></a>二、相关规范</h2><h3 id="移动端兼容及布局规范"><a href="#移动端兼容及布局规范" class="headerlink" title="移动端兼容及布局规范"></a>移动端兼容及布局规范</h3><p>采用弹性盒子布局，尽量脱离固定样式布局</p>
+<p>实现各种移动端设备的适配兼容</p>
+<h3 id="页面命名规范"><a href="#页面命名规范" class="headerlink" title="页面命名规范"></a>页面命名规范</h3><pre><code>登录页面：login.html
+
+注册页面：register.html
+
+我的页面：my.html
+
+个人信息页面：info.html
+
+主页面：index.html
+
+分类页面：sort.html
+
+详情页面：detail.html
+
+活动页面：activity.html
+
+茶饮机页面：machine.html
+</code></pre><p><strong>**</strong>如需要扩展页面，必须提前通知，商讨之后动工</p>
+<h3 id="gulp文件夹命名及层级规范"><a href="#gulp文件夹命名及层级规范" class="headerlink" title="gulp文件夹命名及层级规范"></a>gulp文件夹命名及层级规范</h3><pre><code>工程文件名hecha
+
+1.build文件夹{
+    1_1  images文件夹:存放图片
+    1_2  fonts文件夹：存放字体
+    1_3  prd文件夹：{
+        scripts文件夹{
+            app.index.js
+            app.login.js.......
+        }
+        styles文件夹{
+            app.index.css
+            app.login.css.......
+        }
+    }
+    1_4  ver文件夹{版本管理}
+    1_5  html页面：index.html,login.html等等
+}
+2.images文件夹{
+    （为了方便代码管理，页面对应文件夹）
+    2_1  index.images文件夹{index页面的图片}
+    2_2  login.images文件夹{login页面的图片}
+    2_....（如果一个人写多个页面，可以只创建一个文件夹）
+}
+3.fonts文件夹{
+    iconfont-menu.ttf
+    iconfont-menu.woff
+    （命名的时候一定要语义化）
+}
+4.mock文件夹{
+    a.json
+    b.json
+    c.json
+    ....(json文件到时再议)
+}
+5.node_modules文件夹{
+    存放模块工具
+}
+6.src文件夹{
+    styles文件夹{
+        libs文件夹{提供，切勿乱修改}
+        usage文件夹{
+            common文件夹{存放各页面之间相同的css部分，主要是    footer部分}
+            core文件夹{勿动}
+            element文件夹{勿动}
+            export文件夹{勿动}
+            fragment文件夹{勿动}
+            layout文件夹{勿动}
+            module文件夹{
+                （主要存放每个页面各自的样式）
+                m.index.scss
+                m.login.scss
+                ....
+            }
+            page文件夹{
+                （各页面样式的出口）    
+                app.index.scss
+                app.iogin.scss
+                ....
+            }
+
+        }
+    }
+    scripts文件夹{
+        libs文件夹：{主要存放框架等第三方组件}
+        tpls文件夹：{
+            （主要存放各页面的string文件，公共部分要提取出来，比如说footer.string）
+            index.string
+            login.string
+            ....
+        }
+        utils文件夹{
+            （存放公共js文件，比如购物车显示数量的js）
+            common.util.js
+            ....
+        }
+        views文件夹{
+            （存放各页面单独的js）
+            index.js
+            login.js
+            ....
+        }
+        各js出口文件，比如
+        app.index.js
+        app.login.js
+        ...
+        ...
+    }
+}
+7.gulpfile.js文件
+8.html文件...（以index.html为例）{
+    &lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;en&quot;&gt;
+
+        &lt;head&gt;
+            &lt;meta charset=&quot;UTF-8&quot;&gt;
+            &lt;meta content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; name=&quot;viewport&quot;&gt;
+            &lt;meta content=&quot;yes&quot; name=&quot;apple-mobile-web-app-capable&quot;&gt;
+            &lt;meta content=&quot;black&quot; name=&quot;apple-mobile-web-app-status-bar-style&quot;&gt;
+            &lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot;&gt;
+            &lt;meta content=&quot;email=no&quot; name=&quot;format-detection&quot;&gt;
+            &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+            &lt;title&gt;footballSNS&lt;/title&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;/build/prd/styles/swiper-3.3.1.min.css&quot;&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;/build/prd/styles/app.css&quot;&gt;
+        &lt;/head&gt;
+
+        &lt;body&gt;
+            &lt;script src=&quot;/build/prd/scripts/zepto.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;/build/prd/scripts/swiper-3.3.1.jquery.min.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;/build/prd/scripts/iscroll-probe.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;/build/prd/scripts/template.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;/build/prd/scripts/app.js&quot;&gt;&lt;/script&gt;
+        &lt;/body&gt;
+
+        &lt;/html&gt;
+    }
+9.package.json文件{安装组件的时候记得要本地安装 加-D}
+</code></pre><h3 id="js和scss规范"><a href="#js和scss规范" class="headerlink" title="js和scss规范"></a>js和scss规范</h3><p>必须用scss，别用css，公共模块一定要单独提取出来，比如主页面的footer部分</p>
+<p>js尽量封装，用面向对象思想,做到一个函数，任何地方都能引用</p>
+<p>js各模块关系明确，不能出现循环依赖</p>
+<h3 id="json数据规范（先写静态页面，json数据讨论之后再做决断）"><a href="#json数据规范（先写静态页面，json数据讨论之后再做决断）" class="headerlink" title="json数据规范（先写静态页面，json数据讨论之后再做决断）"></a>json数据规范（先写静态页面，json数据讨论之后再做决断）</h3><p><strong>主要json数据：</strong></p>
+<p>1、商品信息：</p>
+<p>2.商品分类信息</p>
+<p>3、用户信息：</p>
+<p>4、购物车信息：</p>
+<p>5、活动商品信息：</p>
+<h2 id="三：环境配置"><a href="#三：环境配置" class="headerlink" title="三：环境配置"></a>三：环境配置</h2><p>node版本：v6.2.0<br>Github协作开发</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/09/11/判断js中的数据类型的几种方法/" rel="next" title="判断js中的数据类型的几种方法">
+                <i class="fa fa-chevron-left"></i> 判断js中的数据类型的几种方法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oe51jhwvd.bkt.clouddn.com/nver.jpg"
+               alt="TakoZhang" />
+          <p class="site-author-name" itemprop="name">TakoZhang</p>
+          <p class="site-description motion-element" itemprop="description">我随影而来，随影而去</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/dushao103500" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/dushaoxiaoxiao" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://htmlk.github.io/" title="小k博客" target="_blank">小k博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一：任务安排"><span class="nav-text">一：任务安排</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主页面-（刘波）"><span class="nav-text">主页面 （刘波）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类页面（含两页面）-（杜必林）"><span class="nav-text">分类页面（含两页面） （杜必林）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录注册页面（四个页面）-（邝光前）"><span class="nav-text">登录注册页面（四个页面） （邝光前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#购物车页面-详情页联动-（刘东）"><span class="nav-text">购物车页面,详情页联动 （刘东）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#茶饮机页面-活动页面-（周振刚）"><span class="nav-text">茶饮机页面,活动页面 （周振刚）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码整合"><span class="nav-text">代码整合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、相关规范"><span class="nav-text">二、相关规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端兼容及布局规范"><span class="nav-text">移动端兼容及布局规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面命名规范"><span class="nav-text">页面命名规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp文件夹命名及层级规范"><span class="nav-text">gulp文件夹命名及层级规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js和scss规范"><span class="nav-text">js和scss规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#json数据规范（先写静态页面，json数据讨论之后再做决断）"><span class="nav-text">json数据规范（先写静态页面，json数据讨论之后再做决断）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三：环境配置"><span class="nav-text">三：环境配置</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TakoZhang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

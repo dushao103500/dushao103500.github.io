@@ -84,34 +84,22 @@
 
 
 
-<meta name="description" content="国内的设计师大都喜欢用px，而国外的网站大都喜欢用em和rem，那么三者有什么区别，又各自有什么优劣呢？
-
-px ：像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。(引自CSS2.0手册)
-px 特点：
-1、 IE无法调整那些使用px作为单位的字体大小；
-2、 国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；
-3、 Firefox能够调整px和em，r">
+<meta name="description" content="1、置换和非置换元素1.1、 一个 内容 不受CSS视觉格式化模型控制，CSS渲染模型并不考虑对此内容的渲染，且元素本身一般拥有固有尺寸（宽度，高度，宽高比）的元素，被称之为置换元素。 
+1.2、 替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。 
+1.3、 例如浏览器会根据img标签的src属性的值来读取图片信息并显示出来，而如果查看(X)HTML代码，则看不到图片的实际内容；">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css中单位px、pt、em和rem的区别">
-<meta property="og:url" content="http://yoursite.com/2013/08/03/css中单位px、pt、em和rem的区别/index.html">
+<meta property="og:title" content="置换和非置换元素">
+<meta property="og:url" content="http://yoursite.com/2014/07/03/置换和非置换元素/index.html">
 <meta property="og:site_name" content="杜少博客">
-<meta property="og:description" content="国内的设计师大都喜欢用px，而国外的网站大都喜欢用em和rem，那么三者有什么区别，又各自有什么优劣呢？
-
-px ：像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。(引自CSS2.0手册)
-px 特点：
-1、 IE无法调整那些使用px作为单位的字体大小；
-2、 国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；
-3、 Firefox能够调整px和em，r">
-<meta property="og:updated_time" content="2016-10-08T06:48:48.115Z">
+<meta property="og:description" content="1、置换和非置换元素1.1、 一个 内容 不受CSS视觉格式化模型控制，CSS渲染模型并不考虑对此内容的渲染，且元素本身一般拥有固有尺寸（宽度，高度，宽高比）的元素，被称之为置换元素。 
+1.2、 替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。 
+1.3、 例如浏览器会根据img标签的src属性的值来读取图片信息并显示出来，而如果查看(X)HTML代码，则看不到图片的实际内容；">
+<meta property="og:updated_time" content="2016-10-08T12:57:07.686Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css中单位px、pt、em和rem的区别">
-<meta name="twitter:description" content="国内的设计师大都喜欢用px，而国外的网站大都喜欢用em和rem，那么三者有什么区别，又各自有什么优劣呢？
-
-px ：像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。(引自CSS2.0手册)
-px 特点：
-1、 IE无法调整那些使用px作为单位的字体大小；
-2、 国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；
-3、 Firefox能够调整px和em，r">
+<meta name="twitter:title" content="置换和非置换元素">
+<meta name="twitter:description" content="1、置换和非置换元素1.1、 一个 内容 不受CSS视觉格式化模型控制，CSS渲染模型并不考虑对此内容的渲染，且元素本身一般拥有固有尺寸（宽度，高度，宽高比）的元素，被称之为置换元素。 
+1.2、 替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。 
+1.3、 例如浏览器会根据img标签的src属性的值来读取图片信息并显示出来，而如果查看(X)HTML代码，则看不到图片的实际内容；">
 
 
 
@@ -132,9 +120,9 @@ px 特点：
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2013/08/03/css中单位px、pt、em和rem的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2014/07/03/置换和非置换元素/"/>
 
-  <title> css中单位px、pt、em和rem的区别 | 杜少博客 </title>
+  <title> 置换和非置换元素 | 杜少博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +252,7 @@ px 特点：
             
             
               
-                css中单位px、pt、em和rem的区别
+                置换和非置换元素
               
             
           </h1>
@@ -276,8 +264,8 @@ px 特点：
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2013-08-03T22:02:24+08:00" content="2013-08-03">
-              2013-08-03
+            <time itemprop="dateCreated" datetime="2014-07-03T21:42:26+08:00" content="2014-07-03">
+              2014-07-03
             </time>
           </span>
 
@@ -323,26 +311,50 @@ px 特点：
       
 
       
-        <p>国内的设计师大都喜欢用px，而国外的网站大都喜欢用em和rem，那么三者有什么区别，又各自有什么优劣呢？</p>
-<hr>
-<p><strong>px</strong> ：像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。(引自CSS2.0手册)</p>
-<p>px 特点：</p>
-<p>1、 IE无法调整那些使用px作为单位的字体大小；</p>
-<p>2、 国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；</p>
-<p>3、 Firefox能够调整px和em，rem，但是96%以上的中国网民使用IE浏览器(或内核)。</p>
-<hr>
-<p><strong>em</strong> ：是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。(引自CSS2.0手册)</p>
-<p>em 特点：</p>
-<p>1、 em的值并不是固定的；</p>
-<p>2、 em会继承父级元素的字体大小。</p>
-<p>任意浏览器的默认字体高都是16px。所有未经调整的浏览器都符合: 1em=16px。那么12px=0.75em,10px=0.625em。为了简化font-size的换算，需要在css中的body选择器中声明Font-size=62.5%，这就使em值变为 16px*62.5%=10px, 这样12px=1.2em, 10px=1em, 也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了。</p>
-<hr>
-<p><strong>rem</strong> ：是CSS3新增的一个相对单位（root em，根em），这个单位引起了广泛关注。</p>
-<p>这个单位与em有什么区别呢？</p>
-<p>区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，除了IE8及更早版本外，所有浏览器均已支持rem。对于不支持它的浏览器，应对方法也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用rem设定的字体大小。</p>
-<hr>
-<p><strong>pt</strong> ：印刷业上常使用的单位，磅的意思，一般用于页面打印排版。</p>
-
+        <h3 id="1、置换和非置换元素"><a href="#1、置换和非置换元素" class="headerlink" title="1、置换和非置换元素"></a>1、置换和非置换元素</h3><p>1.1、 一个 内容 不受CSS视觉格式化模型控制，CSS渲染模型并不考虑对此内容的渲染，且元素本身一般拥有固有尺寸（宽度，高度，宽高比）的元素，被称之为置换元素。 </p>
+<p>1.2、 替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。 </p>
+<p>1.3、 例如浏览器会根据img标签的src属性的值来读取图片信息并显示出来，而如果查看(X)HTML代码，则看不到图片的实际内容；又例如根据input标签的type属性来决定是显示输入框，还是单选按钮等。 </p>
+<p>1.4、 HTML中的img、input、textarea、select、object都是替换元素。这些元素往往没有实际的内容，即是一个空元素。</p>
+<h3 id="2、非置换元素-不可替换元素"><a href="#2、非置换元素-不可替换元素" class="headerlink" title="2、非置换元素/不可替换元素"></a>2、非置换元素/不可替换元素</h3><p>2.1、 HTML 的大多数元素是不可替换元素，即其内容直接表现给用户端（例如浏览器），如：</p>
+<pre><code>&lt;!-- span是非置换元素 因此 hello word 被展示出来 而不是被替换成其他内容 --&gt;
+&lt;span&gt;hello word&lt;/span&gt;
+</code></pre><h3 id="3、行内级置换的宽度定义"><a href="#3、行内级置换的宽度定义" class="headerlink" title="3、行内级置换的宽度定义"></a>3、行内级置换的宽度定义</h3><ul>
+<li>若宽高的计算值都为 auto 且元素有固有宽度，则 width 的使用值为该固有宽度 </li>
+</ul>
+<blockquote>
+<p>典型的例子是：拥有默认宽高的 input 当宽度的计算值为auto时，则宽度使用值为其默认的固有宽度</p>
+</blockquote>
+<ul>
+<li>若宽度的计算值为 auto 且元素有固有宽度，则 width 的使用值为该固有宽度 </li>
+</ul>
+<blockquote>
+<p>例子同上</p>
+</blockquote>
+<ul>
+<li><p>若宽度的计算值为 auto 且高度有 非auto 的计算值，并且元素有固有宽高比，则 width 的使用值为 高度使用值 * 固有宽高比<br>-</p>
+<blockquote>
+<p>典型的例子：img 当只定义了其高度值时，其宽度将会根据固有宽高比进行等比设置，这也是为什么img是行内元素，但可以设置宽高的原因</p>
+</blockquote>
+</li>
+<li><p>除此之外，当 width 的计算值为 auto 时，则宽度的使用值为 300px </p>
+</li>
+</ul>
+<blockquote>
+<p>典型的例子：比如iframe, canvas</p>
+</blockquote>
+<h3 id="4、行内级置换的高度定义"><a href="#4、行内级置换的高度定义" class="headerlink" title="4、行内级置换的高度定义"></a>4、行内级置换的高度定义</h3><ul>
+<li>若宽高的计算值都为 auto 且元素有固有高度，则 height 的使用值为该固有高度；</li>
+<li>若高度的计算值为 auto 且元素有固有高度，则 height 的使用值为该固有高度；</li>
+<li>若高度的计算值为 auto 且宽度有 非auto 的计算值，并且元素有固有宽高比，则 height 的使用值为：宽度使用值 / 固有宽高比；</li>
+<li>若高度的计算值为 auto 且上述条件完全不符，则 height 的使用值 不能大于150px，且宽度不能大于长方形高度的2倍</li>
+</ul>
+<h3 id="5、行内级非置换元素的宽度定义"><a href="#5、行内级非置换元素的宽度定义" class="headerlink" title="5、行内级非置换元素的宽度定义"></a>5、行内级非置换元素的宽度定义</h3><p>宽度设置是无效的，如：</p>
+<pre><code>&lt;!-- 设置宽度无效 ，span的宽度默认为其内容的宽度 --&gt;
+&lt;span&gt;hello word&lt;/span&gt; 
+</code></pre><h3 id="6、行内级非置换元素的高度定义"><a href="#6、行内级非置换元素的高度定义" class="headerlink" title="6、行内级非置换元素的高度定义"></a>6、行内级非置换元素的高度定义</h3><p>高度设置无效，如：</p>
+<pre><code>&lt;!-- 设置高度无效 ，span的高度默认为其内容的高度 --&gt;
+&lt;span&gt;hello word&lt;/span&gt; 
+</code></pre>
       
     </div>
 
@@ -367,16 +379,16 @@ px 特点：
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2013/06/03/让div水平垂直居中的几种方法/" rel="next" title="让div水平垂直居中的几种方法">
-                <i class="fa fa-chevron-left"></i> 让div水平垂直居中的几种方法
+              <a href="/2014/04/09/Gulp入门教程/" rel="next" title="Gulp入门教程">
+                <i class="fa fa-chevron-left"></i> Gulp入门教程
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/04/09/Gulp入门教程/" rel="prev" title="Gulp入门教程">
-                Gulp入门教程 <i class="fa fa-chevron-right"></i>
+              <a href="/2014/09/11/判断js中的数据类型的几种方法/" rel="prev" title="判断js中的数据类型的几种方法">
+                判断js中的数据类型的几种方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -556,7 +568,7 @@ px 特点：
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、置换和非置换元素"><span class="nav-text">1、置换和非置换元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、非置换元素-不可替换元素"><span class="nav-text">2、非置换元素/不可替换元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、行内级置换的宽度定义"><span class="nav-text">3、行内级置换的宽度定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、行内级置换的高度定义"><span class="nav-text">4、行内级置换的高度定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、行内级非置换元素的宽度定义"><span class="nav-text">5、行内级非置换元素的宽度定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、行内级非置换元素的高度定义"><span class="nav-text">6、行内级非置换元素的高度定义</span></a></li></ol></div>
             
           </div>
         </section>

@@ -84,34 +84,34 @@
 
 
 
-<meta name="description" content="国内的设计师大都喜欢用px，而国外的网站大都喜欢用em和rem，那么三者有什么区别，又各自有什么优劣呢？
-
-px ：像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。(引自CSS2.0手册)
-px 特点：
-1、 IE无法调整那些使用px作为单位的字体大小；
-2、 国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；
-3、 Firefox能够调整px和em，r">
+<meta name="description" content="判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。
+先举几个例子：
+var a = &amp;quot;iamstring.&amp;quot;;
+var b = 222;
+var c= [1,2,3];
+var d = new Date();
+var e =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css中单位px、pt、em和rem的区别">
-<meta property="og:url" content="http://yoursite.com/2013/08/03/css中单位px、pt、em和rem的区别/index.html">
+<meta property="og:title" content="判断js中的数据类型的几种方法">
+<meta property="og:url" content="http://yoursite.com/2014/09/11/判断js中的数据类型的几种方法/index.html">
 <meta property="og:site_name" content="杜少博客">
-<meta property="og:description" content="国内的设计师大都喜欢用px，而国外的网站大都喜欢用em和rem，那么三者有什么区别，又各自有什么优劣呢？
-
-px ：像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。(引自CSS2.0手册)
-px 特点：
-1、 IE无法调整那些使用px作为单位的字体大小；
-2、 国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；
-3、 Firefox能够调整px和em，r">
-<meta property="og:updated_time" content="2016-10-08T06:48:48.115Z">
+<meta property="og:description" content="判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。
+先举几个例子：
+var a = &amp;quot;iamstring.&amp;quot;;
+var b = 222;
+var c= [1,2,3];
+var d = new Date();
+var e =">
+<meta property="og:updated_time" content="2016-10-08T13:22:21.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css中单位px、pt、em和rem的区别">
-<meta name="twitter:description" content="国内的设计师大都喜欢用px，而国外的网站大都喜欢用em和rem，那么三者有什么区别，又各自有什么优劣呢？
-
-px ：像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。(引自CSS2.0手册)
-px 特点：
-1、 IE无法调整那些使用px作为单位的字体大小；
-2、 国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；
-3、 Firefox能够调整px和em，r">
+<meta name="twitter:title" content="判断js中的数据类型的几种方法">
+<meta name="twitter:description" content="判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。
+先举几个例子：
+var a = &amp;quot;iamstring.&amp;quot;;
+var b = 222;
+var c= [1,2,3];
+var d = new Date();
+var e =">
 
 
 
@@ -132,9 +132,9 @@ px 特点：
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2013/08/03/css中单位px、pt、em和rem的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2014/09/11/判断js中的数据类型的几种方法/"/>
 
-  <title> css中单位px、pt、em和rem的区别 | 杜少博客 </title>
+  <title> 判断js中的数据类型的几种方法 | 杜少博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +264,7 @@ px 特点：
             
             
               
-                css中单位px、pt、em和rem的区别
+                判断js中的数据类型的几种方法
               
             
           </h1>
@@ -276,8 +276,8 @@ px 特点：
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2013-08-03T22:02:24+08:00" content="2013-08-03">
-              2013-08-03
+            <time itemprop="dateCreated" datetime="2014-09-11T10:11:05+08:00" content="2014-09-11">
+              2014-09-11
             </time>
           </span>
 
@@ -290,8 +290,8 @@ px 特点：
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Html/" itemprop="url" rel="index">
-                    <span itemprop="name">Html</span>
+                  <a href="/categories/Javascript编程知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript编程知识</span>
                   </a>
                 </span>
 
@@ -323,25 +323,73 @@ px 特点：
       
 
       
-        <p>国内的设计师大都喜欢用px，而国外的网站大都喜欢用em和rem，那么三者有什么区别，又各自有什么优劣呢？</p>
-<hr>
-<p><strong>px</strong> ：像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。(引自CSS2.0手册)</p>
-<p>px 特点：</p>
-<p>1、 IE无法调整那些使用px作为单位的字体大小；</p>
-<p>2、 国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；</p>
-<p>3、 Firefox能够调整px和em，rem，但是96%以上的中国网民使用IE浏览器(或内核)。</p>
-<hr>
-<p><strong>em</strong> ：是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。(引自CSS2.0手册)</p>
-<p>em 特点：</p>
-<p>1、 em的值并不是固定的；</p>
-<p>2、 em会继承父级元素的字体大小。</p>
-<p>任意浏览器的默认字体高都是16px。所有未经调整的浏览器都符合: 1em=16px。那么12px=0.75em,10px=0.625em。为了简化font-size的换算，需要在css中的body选择器中声明Font-size=62.5%，这就使em值变为 16px*62.5%=10px, 这样12px=1.2em, 10px=1em, 也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了。</p>
-<hr>
-<p><strong>rem</strong> ：是CSS3新增的一个相对单位（root em，根em），这个单位引起了广泛关注。</p>
-<p>这个单位与em有什么区别呢？</p>
-<p>区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，除了IE8及更早版本外，所有浏览器均已支持rem。对于不支持它的浏览器，应对方法也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用rem设定的字体大小。</p>
-<hr>
-<p><strong>pt</strong> ：印刷业上常使用的单位，磅的意思，一般用于页面打印排版。</p>
+        <p>判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。</p>
+<p><strong>先举几个例子：</strong></p>
+<pre><code>var a = &quot;iamstring.&quot;;
+var b = 222;
+var c= [1,2,3];
+var d = new Date();
+var e = function(){alert(111);};
+var f = function(){this.name=&quot;22&quot;;};
+</code></pre><h3 id="1、最常见的判断方法：typeof"><a href="#1、最常见的判断方法：typeof" class="headerlink" title="1、最常见的判断方法：typeof"></a>1、最常见的判断方法：typeof</h3><pre><code>alert(typeof a)   ------------&gt; string
+alert(typeof b)   ------------&gt; number
+alert(typeof c)   ------------&gt; object
+alert(typeof d)   ------------&gt; object
+alert(typeof e)   ------------&gt; function
+alert(typeof f)   ------------&gt; function
+其中typeof返回的类型都是字符串形式，需注意，例如：
+alert(typeof a == &quot;string&quot;) -------------&gt; true
+alert(typeof a == String) ---------------&gt; false
+另外typeof 可以判断function的类型；在判断除Object类型的对象时比较方便。
+</code></pre><h3 id="2、判断已知对象类型的方法：-instanceof"><a href="#2、判断已知对象类型的方法：-instanceof" class="headerlink" title="2、判断已知对象类型的方法： instanceof"></a>2、判断已知对象类型的方法： instanceof</h3><pre><code>alert(c instanceof Array) ---------------&gt; true
+alert(d instanceof Date) 
+alert(f instanceof Function) ------------&gt; true
+alert(f instanceof function) ------------&gt; false
+注意：instanceof 后面一定要是对象类型，并且大小写不能错，该方法适合一些条件选择或分支。
+</code></pre><h3 id="3、根据对象的constructor判断：-constructor"><a href="#3、根据对象的constructor判断：-constructor" class="headerlink" title="3、根据对象的constructor判断： constructor"></a>3、根据对象的constructor判断： constructor</h3><pre><code>alert(c.constructor === Array) ----------&gt; true
+alert(d.constructor === Date) -----------&gt; true
+alert(e.constructor === Function) -------&gt; true
+注意： constructor 在类继承时会出错
+eg：
+      function A(){};
+      function B(){};
+      A.prototype = new B(); //A继承自B
+      var aObj = new A();
+      alert(aobj.constructor === B) -----------&gt; true;
+      alert(aobj.constructor === A) -----------&gt; false;
+而instanceof方法不会出现该问题，对象直接继承和间接继承的都会报true：
+      alert(aobj instanceof B) ----------------&gt; true;
+      alert(aobj instanceof B) ----------------&gt; true;
+言归正传，解决construtor的问题通常是让对象的constructor手动指向自己：
+      aobj.constructor = A; //将自己的类赋值给对象的constructor属性
+      alert(aobj.constructor === A) -----------&gt; true;
+      alert(aobj.constructor === B) -----------&gt; false; //基类不会报true了;
+</code></pre><h3 id="4、通用但很繁琐的方法：-prototype"><a href="#4、通用但很繁琐的方法：-prototype" class="headerlink" title="4、通用但很繁琐的方法： prototype"></a>4、通用但很繁琐的方法： prototype</h3><pre><code>alert(Object.prototype.toString.call(a) === ‘[object String]’) -------&gt; true;
+alert(Object.prototype.toString.call(b) === ‘[object Number]’) -------&gt; true;
+alert(Object.prototype.toString.call(c) === ‘[object Array]’) -------&gt; true;
+alert(Object.prototype.toString.call(d) === ‘[object Date]’) -------&gt; true;
+alert(Object.prototype.toString.call(e) === ‘[object Function]’) -------&gt; true;
+alert(Object.prototype.toString.call(f) === ‘[object Function]’) -------&gt; true;
+大小写不能写错，比较麻烦，但胜在通用。
+</code></pre><h3 id="5、无敌万能的方法：jquery-type"><a href="#5、无敌万能的方法：jquery-type" class="headerlink" title="5、无敌万能的方法：jquery.type()"></a>5、无敌万能的方法：jquery.type()</h3><pre><code>如果对象是undefined或null，则返回相应的“undefined”或“null”。
+jQuery.type( undefined ) === &quot;undefined&quot;
+jQuery.type() === &quot;undefined&quot;
+jQuery.type( window.notDefined ) === &quot;undefined&quot;
+jQuery.type( null ) === &quot;null&quot;
+如果对象有一个内部的[[Class]]和一个浏览器的内置对象的 [[Class]] 相同，我们返回相应的 [[Class]] 名字。 (有关此技术的更多细节。 )
+jQuery.type( true ) === &quot;boolean&quot;
+jQuery.type( 3 ) === &quot;number&quot;
+jQuery.type( &quot;test&quot; ) === &quot;string&quot;
+jQuery.type( function(){} ) === &quot;function&quot;
+jQuery.type( [] ) === &quot;array&quot;
+jQuery.type( new Date() ) === &quot;date&quot;
+jQuery.type( new Error() ) === &quot;error&quot; // as of jQuery 1.9
+jQuery.type( /test/ ) === &quot;regexp&quot;
+其他一切都将返回它的类型“object”。
+</code></pre><p>通常情况下用typeof 判断就可以了，遇到预知Object类型的情况可以选用instanceof或constructor方法,实在没辙就使用$.type()方法。</p>
+<blockquote>
+<p>参考链接：<a href="http://blog.sina.com.cn/s/blog_51048da70101grz6.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_51048da70101grz6.html</a></p>
+</blockquote>
 
       
     </div>
@@ -367,16 +415,16 @@ px 特点：
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2013/06/03/让div水平垂直居中的几种方法/" rel="next" title="让div水平垂直居中的几种方法">
-                <i class="fa fa-chevron-left"></i> 让div水平垂直居中的几种方法
+              <a href="/2014/07/03/置换和非置换元素/" rel="next" title="置换和非置换元素">
+                <i class="fa fa-chevron-left"></i> 置换和非置换元素
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/04/09/Gulp入门教程/" rel="prev" title="Gulp入门教程">
-                Gulp入门教程 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/27/移动开发项目开发任务分配/" rel="prev" title="移动端项目开发任务分配">
+                移动端项目开发任务分配 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -556,7 +604,7 @@ px 特点：
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、最常见的判断方法：typeof"><span class="nav-text">1、最常见的判断方法：typeof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、判断已知对象类型的方法：-instanceof"><span class="nav-text">2、判断已知对象类型的方法： instanceof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、根据对象的constructor判断：-constructor"><span class="nav-text">3、根据对象的constructor判断： constructor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、通用但很繁琐的方法：-prototype"><span class="nav-text">4、通用但很繁琐的方法： prototype</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、无敌万能的方法：jquery-type"><span class="nav-text">5、无敌万能的方法：jquery.type()</span></a></li></ol></div>
             
           </div>
         </section>
