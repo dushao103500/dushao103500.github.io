@@ -1,0 +1,1039 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="杜少博客" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="引子
+有句话怎么说来着：
+
+雷锋推倒雷峰塔，Java implements JavaScript.
+
+当年，想凭借抱Java大腿火一把而不惜把自己名字给改了的JavaScript（原名LiveScript），如今早已光芒万丈。node JS的出现更是让JavaScript可以前后端通吃。虽然Java依然制霸企业级软件开发领域（C/C + +的大神们不要打我。。。），但在Web的江湖，JavaScr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS的十大经典算法排序">
+<meta property="og:url" content="http://yoursite.com/2016/01/11/JS的十大经典算法排序/index.html">
+<meta property="og:site_name" content="杜少博客">
+<meta property="og:description" content="引子
+有句话怎么说来着：
+
+雷锋推倒雷峰塔，Java implements JavaScript.
+
+当年，想凭借抱Java大腿火一把而不惜把自己名字给改了的JavaScript（原名LiveScript），如今早已光芒万丈。node JS的出现更是让JavaScript可以前后端通吃。虽然Java依然制霸企业级软件开发领域（C/C + +的大神们不要打我。。。），但在Web的江湖，JavaScr">
+<meta property="og:image" content="http://oe51jhwvd.bkt.clouddn.com/1.png">
+<meta property="og:image" content="http://oe51jhwvd.bkt.clouddn.com/2.gif">
+<meta property="og:image" content="http://oe51jhwvd.bkt.clouddn.com/3.gif">
+<meta property="og:image" content="http://oe51jhwvd.bkt.clouddn.com/4.gif">
+<meta property="og:image" content="http://oe51jhwvd.bkt.clouddn.com/5.gif">
+<meta property="og:image" content="http://oe51jhwvd.bkt.clouddn.com/6.gif">
+<meta property="og:image" content="http://oe51jhwvd.bkt.clouddn.com/7.gif">
+<meta property="og:image" content="http://oe51jhwvd.bkt.clouddn.com/8.gif">
+<meta property="og:image" content="http://oe51jhwvd.bkt.clouddn.com/9.gif">
+<meta property="og:updated_time" content="2016-10-27T09:46:31.173Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS的十大经典算法排序">
+<meta name="twitter:description" content="引子
+有句话怎么说来着：
+
+雷锋推倒雷峰塔，Java implements JavaScript.
+
+当年，想凭借抱Java大腿火一把而不惜把自己名字给改了的JavaScript（原名LiveScript），如今早已光芒万丈。node JS的出现更是让JavaScript可以前后端通吃。虽然Java依然制霸企业级软件开发领域（C/C + +的大神们不要打我。。。），但在Web的江湖，JavaScr">
+<meta name="twitter:image" content="http://oe51jhwvd.bkt.clouddn.com/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/01/11/JS的十大经典算法排序/"/>
+
+  <title> JS的十大经典算法排序 | 杜少博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">杜少博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">好运不会眷顾傻瓜</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS的十大经典算法排序
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-11T10:04:33+08:00" content="2016-01-11">
+              2016-01-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Javascript编程知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript编程知识</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><hr>
+<p>有句话怎么说来着：</p>
+<blockquote>
+<p>雷锋推倒雷峰塔，Java implements JavaScript.</p>
+</blockquote>
+<p>当年，想凭借抱Java大腿火一把而不惜把自己名字给改了的JavaScript（原名LiveScript），如今早已光芒万丈。node JS的出现更是让JavaScript可以前后端通吃。虽然Java依然制霸企业级软件开发领域（C/C + +的大神们不要打我。。。），但在Web的江湖，JavaScript可谓风头无两，坐上了头把交椅。</p>
+<p>然而，在传统的计算机算法和数据结构领域，大多数专业教材和书籍的默认语言都是Java或者C/C+ +。这给最近想恶补算法和数据结构知识的我造成了一定困扰，因为我想寻找一本以JavaScript为默认语言的算法书籍。当我了解到O’REILLY家的动物丛书系列里有一本叫做《数据结构与算法JavaScript描述》时，便兴奋的花了两天时间把这本书从头到尾读了一遍。它是一本很好的针对前端开发者们的入门算法书籍，可是，它有一个很大的缺陷，就是里面有很多明显的小错误，明显到就连我这种半路出家的程序猿都能一眼看出来。还有一个问题是，很多重要的算法和数据结构知识并没有在这本书里被提到。这些问题对于作为一个晚期强迫症患者的我来说简直不能忍。于是乎，一言不合我就决定自己找资料总结算法。那么，我就从算法领域里最基础的知识点——排序算法总结起好了。</p>
+<p>我相信以下的代码里一定会有某些bug或错误或语法不规范等问题是我自己无法发现的，所以敬请各位大神能够指出错误，因为只有在不断改错的道路上我才能取得长久的进步。</p>
+<h2 id="十大经典算法排序总结对比"><a href="#十大经典算法排序总结对比" class="headerlink" title="十大经典算法排序总结对比"></a>十大经典算法排序总结对比</h2><hr>
+<p>一张图概括：</p>
+<p><img src="http://oe51jhwvd.bkt.clouddn.com/1.png" alt=""></p>
+<h5 id="名词解释："><a href="#名词解释：" class="headerlink" title="名词解释："></a>名词解释：</h5><p><strong>n</strong>: 数据规模<br><strong>k</strong>:“桶”的个数<br><strong>In-place</strong>: 占用常数内存，不占用额外内存<br><strong>Out-place</strong>: 占用额外内存<br><strong>稳定性</strong>：排序后2个相等键值的顺序和排序之前它们的顺序相同</p>
+<h2 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h2><hr>
+<h5 id="冒泡排序须知："><a href="#冒泡排序须知：" class="headerlink" title="冒泡排序须知："></a>冒泡排序须知：</h5><p>作为最简单的排序算法之一，冒泡排序给我的感觉就像Abandon在单词书里出现的感觉一样，每次都在第一页第一位，所以最熟悉。。。冒泡排序还有一种优化算法，就是立一个flag，当在一趟序列遍历中元素没有发生交换，则证明该序列已经有序。但这种改进对于提升性能来说并没有什么太大作用。。。</p>
+<h5 id="什么时候最快（Best-Cases）："><a href="#什么时候最快（Best-Cases）：" class="headerlink" title="什么时候最快（Best Cases）："></a>什么时候最快（Best Cases）：</h5><p>当输入的数据已经是正序时（都已经是正序了，我还要你冒泡排序有何用啊。。。。）</p>
+<h5 id="什么时候最慢（Worst-Cases）："><a href="#什么时候最慢（Worst-Cases）：" class="headerlink" title="什么时候最慢（Worst Cases）："></a>什么时候最慢（Worst Cases）：</h5><p>当输入的数据是反序时（写一个for循环反序输出数据不就行了，干嘛要用你冒泡排序呢，我是闲的吗。。。）</p>
+<h5 id="冒泡排序动图演示："><a href="#冒泡排序动图演示：" class="headerlink" title="冒泡排序动图演示："></a>冒泡排序动图演示：</h5><p><img src="http://oe51jhwvd.bkt.clouddn.com/2.gif" alt=""></p>
+<h5 id="冒泡排序JavaScript代码实现："><a href="#冒泡排序JavaScript代码实现：" class="headerlink" title="冒泡排序JavaScript代码实现："></a>冒泡排序JavaScript代码实现：</h5><pre><code>function bubbleSort(arr) {
+    var len = arr.length;
+    for (var i = 0; i &lt; len; i++) {
+        for (var j = 0; j &lt; len - 1 - i; j++) {
+            if (arr[j] &amp;gt; arr[j+1]) {        //相邻元素两两对比
+                var temp = arr[j+1];        //元素交换
+                arr[j+1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
+}
+</code></pre><h2 id="选择排序（Selection-Sort）"><a href="#选择排序（Selection-Sort）" class="headerlink" title="选择排序（Selection Sort）"></a>选择排序（Selection Sort）</h2><hr>
+<h5 id="选择排序须知："><a href="#选择排序须知：" class="headerlink" title="选择排序须知："></a>选择排序须知：</h5><p>在时间复杂度上表现最稳定的排序算法之一，因为无论什么数据进去都是O(n²)的时间复杂度。。。所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。</p>
+<h5 id="选择排序动图演示："><a href="#选择排序动图演示：" class="headerlink" title="选择排序动图演示："></a>选择排序动图演示：</h5><p><img src="http://oe51jhwvd.bkt.clouddn.com/3.gif" alt=""></p>
+<h5 id="选择排序JavaScript代码实现："><a href="#选择排序JavaScript代码实现：" class="headerlink" title="选择排序JavaScript代码实现："></a>选择排序JavaScript代码实现：</h5><pre><code>function selectionSort(arr) {
+    var len = arr.length;
+    var minIndex, temp;
+    for (var i = 0; i &lt; len - 1; i++) {
+        minIndex = i;
+        for (var j = i + 1; j &lt; len; j++) {
+            if (arr[j] &lt; arr[minIndex]) {     //寻找最小的数
+                minIndex = j;                 //将最小数的索引保存
+            }
+        }
+        temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+    return arr;
+}
+</code></pre><h2 id="插入排序（Insertion-Sort）"><a href="#插入排序（Insertion-Sort）" class="headerlink" title="插入排序（Insertion Sort）"></a>插入排序（Insertion Sort）</h2><hr>
+<h5 id="插入排序须知："><a href="#插入排序须知：" class="headerlink" title="插入排序须知："></a>插入排序须知：</h5><p>插入排序的代码实现虽然没有冒泡排序和选择排序那么简单粗暴，但它的原理应该是最容易理解的了，因为只要打过扑克牌的人都应该能够秒懂。当然，如果你说你打扑克牌摸牌的时候从来不按牌的大小整理牌，那估计这辈子你对插入排序的算法都不会产生任何兴趣了。。。<br>插入排序和冒泡排序一样，也有一种优化算法，叫做<strong>拆半插入</strong>。对于这种算法，得了懒癌的我就套用教科书上的一句经典的话吧：感兴趣的同学可以在课后自行研究。。。</p>
+<h5 id="插入排序动图演示："><a href="#插入排序动图演示：" class="headerlink" title="插入排序动图演示："></a>插入排序动图演示：</h5><p><img src="http://oe51jhwvd.bkt.clouddn.com/4.gif" alt=""></p>
+<h5 id="插入排序JavaScript代码实现："><a href="#插入排序JavaScript代码实现：" class="headerlink" title="插入排序JavaScript代码实现："></a>插入排序JavaScript代码实现：</h5><pre><code>function insertionSort(arr) {
+    var len = arr.length;
+    var preIndex, current;
+    for (var i = 1; i &lt; len; i++) {
+        preIndex = i - 1;
+        current = arr[i];
+        while(preIndex &amp;gt;= 0 &amp;amp;&amp;amp; arr[preIndex] &amp;gt; current) {
+            arr[preIndex+1] = arr[preIndex];
+            preIndex--;
+        }
+        arr[preIndex+1] = current;
+    }
+    return arr;
+}
+</code></pre><h2 id="希尔排序（Shell-Sort）"><a href="#希尔排序（Shell-Sort）" class="headerlink" title="希尔排序（Shell Sort）"></a>希尔排序（Shell Sort）</h2><hr>
+<h5 id="希尔排序须知："><a href="#希尔排序须知：" class="headerlink" title="希尔排序须知："></a>希尔排序须知：</h5><p>希尔排序是插入排序的一种更高效率的实现。它与插入排序的不同之处在于，它会优先比较距离较远的元素。希尔排序的核心在于间隔序列的设定。既可以提前设定好间隔序列，也可以动态的定义间隔序列。动态定义间隔序列的算法是《算法（第4版》的合著者Robert Sedgewick提出的。在这里，我就使用了这种方法。</p>
+<h5 id="希尔排序JavaScript代码实现："><a href="#希尔排序JavaScript代码实现：" class="headerlink" title="希尔排序JavaScript代码实现："></a>希尔排序JavaScript代码实现：</h5><pre><code>function shellSort(arr) {
+    var len = arr.length,
+        temp,
+        gap = 1;
+    while(gap &lt; len/3) {          //动态定义间隔序列
+        gap =gap*3+1;
+    }
+    for (gap; gap &amp;gt; 0; gap = Math.floor(gap/3)) {
+        for (var i = gap; i &lt; len; i++) {
+            temp = arr[i];
+            for (var j = i-gap; j &amp;gt;= 0 &amp;amp;&amp;amp; arr[j] &amp;gt; temp; j-=gap) {
+                arr[j+gap] = arr[j];
+            }
+            arr[j+gap] = temp;
+        }
+    }
+    return arr;
+}
+</code></pre><h2 id="归并排序（Merge-Sort）"><a href="#归并排序（Merge-Sort）" class="headerlink" title="归并排序（Merge Sort）"></a>归并排序（Merge Sort）</h2><hr>
+<h5 id="归并排序须知："><a href="#归并排序须知：" class="headerlink" title="归并排序须知："></a>归并排序须知：</h5><p>作为一种典型的分而治之思想的算法应用，归并排序的实现由两种方法：</p>
+<ol>
+<li>自上而下的递归（所有递归的方法都可以用迭代重写，所以就有了第2种方法）</li>
+<li>自下而上的迭代</li>
+</ol>
+<p>在《数据结构与算法JavaScript描述》中，作者给出了自下而上的迭代方法。但是对于递归法，作者却认为：</p>
+<blockquote>
+<p>However, it is not possible to do so in JavaScript, as the recursion goes too deep<br>    for the language to handle.<br>    然而,在 JavaScript 中这种方式不太可行,因为这个算法的递归深度对它来讲太深了。</p>
+</blockquote>
+<p>说实话，我不太理解这句话。意思是JavaScript编译器内存太小，递归太深容易造成内存溢出吗？还望有大神能够指教。<br><strong>更新</strong>：<br>在《JavaScript语言精粹》的第四章里提到了递归问题。对我之前的疑问进行了解答：</p>
+<blockquote>
+<p>Some languages offer the tail recursion optimization. This means that if a function returns the result of invoking itself recursively, then the invocation is replaced with a loop, which can significantly speed things up. Unfortunately, JavaScript does not currently provide tail recursion optimization. Functions that recurse very deeply can fail by exhausting the return stack.<br>    一些语言提供了尾递归优化。这意味着如果一个函数返回自身递归调用的结果，那么调用的过程会被替换为一个循环，它可以显著提高速度。遗憾的是，JavaScript当前并没有提供尾递归优化。深度递归的函数可能会因为堆栈溢出而运行失败。</p>
+</blockquote>
+<p>简而言之，就是JavaScript没有对递归进行优化。运用递归函数不仅没有运行速度上的优势，还可能造成程序运行失败。因此不建议使用递归。</p>
+<p>和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是O(n log n）的时间复杂度。代价是需要额外的内存空间。</p>
+<h5 id="归并排序动图演示："><a href="#归并排序动图演示：" class="headerlink" title="归并排序动图演示："></a>归并排序动图演示：</h5><p><img src="http://oe51jhwvd.bkt.clouddn.com/5.gif" alt=""></p>
+<h5 id="归并排序JavaScript代码实现："><a href="#归并排序JavaScript代码实现：" class="headerlink" title="归并排序JavaScript代码实现："></a>归并排序JavaScript代码实现：</h5><pre><code>function mergeSort(arr) {  //采用自上而下的递归方法
+    var len = arr.length;
+    if(len &lt; 2) {
+        return arr;
+    }
+    var middle = Math.floor(len / 2),
+        left = arr.slice(0, middle),
+        right = arr.slice(middle);
+    return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right)
+{
+    var result = [];
+
+    while (left.length &amp;amp;&amp;amp; right.length) {
+        if (left[0] &lt;= right[0]) {
+            result.push(left.shift());
+        } else {
+            result.push(right.shift());
+        }
+    }
+
+    while (left.length)
+        result.push(left.shift());
+
+    while (right.length)
+        result.push(right.shift());
+
+    return result;
+}
+</code></pre><h2 id="快速排序（Quick-Sort）"><a href="#快速排序（Quick-Sort）" class="headerlink" title="快速排序（Quick Sort）"></a>快速排序（Quick Sort）</h2><hr>
+<h5 id="快速排序须知："><a href="#快速排序须知：" class="headerlink" title="快速排序须知："></a>快速排序须知：</h5><p>又是一种分而治之思想在排序算法上的典型应用。本质上来看，快速排序应该算是在冒泡排序基础上的递归分治法。<br>快速排序的名字起的是简单粗暴，因为一听到这个名字你就知道它存在的意义，就是快，而且效率高! 它是处理大数据最快的排序算法之一了。虽然Worst Case的时间复杂度达到了O(n²)，但是人家就是优秀，在大多数情况下都比平均时间复杂度为O(n log n) 的排序算法表现要更好，可是这是为什么呢，我也不知道。。。好在我的强迫症又犯了，查了N多资料终于在《算法艺术与信息学竞赛》上找到了满意的答案：</p>
+<blockquote>
+<p>快速排序的最坏运行情况是O(n²)，比如说顺序数列的快排。但它的平摊期望时间是O(n log n) ，且O(n log n)记号中隐含的常数因子很小，比复杂度稳定等于O(n log n)的归并排序要小很多。所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。</p>
+</blockquote>
+<p><strong>更新</strong>：<br>《算法 第四版》里对于快速排序的优缺点进行了更加明确的解释：</p>
+<blockquote>
+<p>快速排序的内循环比大多数排序算法都要短小，这意味着它无论是在理论上还是在实际中都要更快。它的主要缺点是非常脆弱，在实现时要非常小心才能避免低劣的性能。</p>
+</blockquote>
+<h5 id="快速排序动图演示："><a href="#快速排序动图演示：" class="headerlink" title="快速排序动图演示："></a>快速排序动图演示：</h5><p><img src="http://oe51jhwvd.bkt.clouddn.com/6.gif" alt=""></p>
+<h5 id="快速排序JavaScript代码实现："><a href="#快速排序JavaScript代码实现：" class="headerlink" title="快速排序JavaScript代码实现："></a>快速排序JavaScript代码实现：</h5><pre><code>function quickSort(arr, left, right) {
+    var len = arr.length,
+        partitionIndex,
+        left = typeof left != &apos;number&apos; ? 0 : left,
+        right = typeof right != &apos;number&apos; ? len - 1 : right;
+
+    if (left &lt; right) {
+        partitionIndex = partition(arr, left, right);
+        quickSort(arr, left, partitionIndex-1);
+        quickSort(arr, partitionIndex+1, right);
+    }
+    return arr;
+}
+
+function partition(arr, left ,right) {     //分区操作
+    var pivot = left,                      //设定基准值（pivot）
+        index = pivot + 1;
+    for (var i = index; i &lt;= right; i++) {
+        if (arr[i] &lt; arr[pivot]) {
+            swap(arr, i, index);
+            index++;
+        }        
+    }
+    swap(arr, pivot, index - 1);
+    return index-1;
+}
+
+function swap(arr, i, j) {
+    var temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+</code></pre><h2 id="堆排序（Heap-Sort）"><a href="#堆排序（Heap-Sort）" class="headerlink" title="堆排序（Heap Sort）"></a>堆排序（Heap Sort）</h2><hr>
+<h5 id="堆排序须知："><a href="#堆排序须知：" class="headerlink" title="堆排序须知："></a>堆排序须知：</h5><p>堆排序可以说是一种利用堆的概念来排序的选择排序。分为两种方法：</p>
+<ol>
+<li>大顶堆：每个节点的值都大于或等于其子节点的值，在堆排序算法中用于升序排列</li>
+<li>小顶堆：每个节点的值都小于或等于其子节点的值，在堆排序算法中用于降序排列</li>
+</ol>
+<h5 id="堆排序动图演示："><a href="#堆排序动图演示：" class="headerlink" title="堆排序动图演示："></a>堆排序动图演示：</h5><p><img src="http://oe51jhwvd.bkt.clouddn.com/7.gif" alt=""></p>
+<h5 id="堆排序JavaScript代码实现："><a href="#堆排序JavaScript代码实现：" class="headerlink" title="堆排序JavaScript代码实现："></a>堆排序JavaScript代码实现：</h5><pre><code>var len;    //因为声明的多个函数都需要数据长度，所以把len设置成为全局变量
+
+function buildMaxHeap(arr) {   //建立大顶堆
+    len = arr.length;
+    for (var i = Math.floor(len/2); i &amp;gt;= 0; i--) {
+        heapify(arr, i);
+    }
+}
+
+function heapify(arr, i) {     //堆调整
+    var left = 2 * i + 1,
+        right = 2 * i + 2,
+        largest = i;
+
+    if (left &lt; len &amp;amp;&amp;amp; arr[left] &amp;gt; arr[largest]) {
+        largest = left;
+    }
+
+    if (right &lt; len &amp;amp;&amp;amp; arr[right] &amp;gt; arr[largest]) {
+        largest = right;
+    }
+
+    if (largest != i) {
+        swap(arr, i, largest);
+        heapify(arr, largest);
+    }
+}
+
+function swap(arr, i, j) {
+    var temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
+function heapSort(arr) {
+    buildMaxHeap(arr);
+
+    for (var i = arr.length-1; i &amp;gt; 0; i--) {
+        swap(arr, 0, i);
+        len--;
+        heapify(arr, 0);
+    }
+    return arr;
+}
+</code></pre><h2 id="计数排序（Counting-Sort）"><a href="#计数排序（Counting-Sort）" class="headerlink" title="计数排序（Counting Sort）"></a>计数排序（Counting Sort）</h2><hr>
+<h5 id="计数排序须知："><a href="#计数排序须知：" class="headerlink" title="计数排序须知："></a>计数排序须知：</h5><p>计数排序的核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。<br>作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。</p>
+<h5 id="计数排序动图演示："><a href="#计数排序动图演示：" class="headerlink" title="计数排序动图演示："></a>计数排序动图演示：</h5><p><img src="http://oe51jhwvd.bkt.clouddn.com/8.gif" alt=""></p>
+<h5 id="计数排序JavaScript代码实现："><a href="#计数排序JavaScript代码实现：" class="headerlink" title="计数排序JavaScript代码实现："></a>计数排序JavaScript代码实现：</h5><pre><code>function countingSort(arr, maxValue) {
+    var bucket = new Array(maxValue+1),
+        sortedIndex = 0;
+        arrLen = arr.length,
+        bucketLen = maxValue + 1;
+
+    for (var i = 0; i &lt; arrLen; i++) {
+        if (!bucket[arr[i]]) {
+            bucket[arr[i]] = 0;
+        }
+        bucket[arr[i]]++;
+    }
+
+    for (var j = 0; j &lt; bucketLen; j++) {
+        while(bucket[j] &amp;gt; 0) {
+            arr[sortedIndex++] = j;
+            bucket[j]--;
+        }
+    }
+
+    return arr;
+}
+</code></pre><h2 id="桶排序（Bucket-Sort）"><a href="#桶排序（Bucket-Sort）" class="headerlink" title="桶排序（Bucket Sort）"></a>桶排序（Bucket Sort）</h2><hr>
+<h5 id="桶排序须知："><a href="#桶排序须知：" class="headerlink" title="桶排序须知："></a>桶排序须知：</h5><p>桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。<br>为了使桶排序更加高效，我们需要做到这两点：</p>
+<ol>
+<li>在额外空间充足的情况下，尽量增大桶的数量</li>
+<li>使用的映射函数能够将输入的N个数据均匀的分配到K个桶中</li>
+</ol>
+<p>同时，对于桶中元素的排序，选择何种比较排序算法对于性能的影响至关重要。</p>
+<h5 id="什么时候最快（Best-Cases）：-1"><a href="#什么时候最快（Best-Cases）：-1" class="headerlink" title="什么时候最快（Best Cases）："></a>什么时候最快（Best Cases）：</h5><p>当输入的数据可以均匀的分配到每一个桶中</p>
+<h5 id="什么时候最慢（Worst-Cases）：-1"><a href="#什么时候最慢（Worst-Cases）：-1" class="headerlink" title="什么时候最慢（Worst Cases）："></a>什么时候最慢（Worst Cases）：</h5><p>当输入的数据被分配到了同一个桶中</p>
+<h5 id="桶排序JavaScript代码实现："><a href="#桶排序JavaScript代码实现：" class="headerlink" title="桶排序JavaScript代码实现："></a>桶排序JavaScript代码实现：</h5><pre><code>function bucketSort(arr, bucketSize) {
+    if (arr.length === 0) {
+      return arr;
+    }
+
+    var i;
+    var minValue = arr[0];
+    var maxValue = arr[0];
+    for (i = 1; i &lt; arr.length; i++) {
+      if (arr[i] &lt; minValue) {
+          minValue = arr[i];                //输入数据的最小值
+      } else if (arr[i] &amp;gt; maxValue) {
+          maxValue = arr[i];                //输入数据的最大值
+      }
+    }
+
+    //桶的初始化
+    var DEFAULT_BUCKET_SIZE = 5;            //设置桶的默认数量为5
+    bucketSize = bucketSize || DEFAULT_BUCKET_SIZE;
+    var bucketCount = Math.floor((maxValue - minValue) / bucketSize) + 1;   
+    var buckets = new Array(bucketCount);
+    for (i = 0; i &lt; buckets.length; i++) {
+        buckets[i] = [];
+    }
+
+    //利用映射函数将数据分配到各个桶中
+    for (i = 0; i &lt; arr.length; i++) {
+        buckets[Math.floor((arr[i] - minValue) / bucketSize)].push(arr[i]);
+    }
+
+    arr.length = 0;
+    for (i = 0; i &lt; buckets.length; i++) {
+        insertionSort(buckets[i]);                      //对每个桶进行排序，这里使用了插入排序
+        for (var j = 0; j &lt; buckets[i].length; j++) {
+            arr.push(buckets[i][j]);                      
+        }
+    }
+
+    return arr;
+}
+</code></pre><h2 id="基数排序（Radix-Sort）"><a href="#基数排序（Radix-Sort）" class="headerlink" title="基数排序（Radix Sort）"></a>基数排序（Radix Sort）</h2><hr>
+<h5 id="基数排序须知："><a href="#基数排序须知：" class="headerlink" title="基数排序须知："></a>基数排序须知：</h5><p>基数排序有两种方法：</p>
+<ol>
+<li>MSD 从高位开始进行排序</li>
+<li>LSD  从低位开始进行排序</li>
+</ol>
+<h5 id="基数排序-vs-计数排序-vs-桶排序"><a href="#基数排序-vs-计数排序-vs-桶排序" class="headerlink" title="基数排序 vs 计数排序 vs 桶排序"></a>基数排序 vs 计数排序 vs 桶排序</h5><p>这三种排序算法都利用了桶的概念，但对桶的使用方法上有明显差异：<br>基数排序：根据键值的每位数字来分配桶<br>计数排序：每个桶只存储单一键值<br>桶排序：每个桶存储一定范围的数值</p>
+<h5 id="LSD基数排序动图演示："><a href="#LSD基数排序动图演示：" class="headerlink" title="LSD基数排序动图演示："></a>LSD基数排序动图演示：</h5><p><img src="http://oe51jhwvd.bkt.clouddn.com/9.gif" alt=""></p>
+<h5 id="基数排序JavaScript代码实现："><a href="#基数排序JavaScript代码实现：" class="headerlink" title="基数排序JavaScript代码实现："></a>基数排序JavaScript代码实现：</h5><pre><code>//LSD Radix Sort
+var counter = [];
+function radixSort(arr, maxDigit) {
+    var mod = 10;
+    var dev = 1;
+    for (var i = 0; i &lt; maxDigit; i++, dev *= 10, mod *= 10) {
+        for(var j = 0; j &lt; arr.length; j++) {
+            var bucket = parseInt((arr[j] % mod) / dev);
+            if(counter[bucket]==null) {
+                counter[bucket] = [];
+            }
+            counter[bucket].push(arr[j]);
+        }
+        var pos = 0;
+        for(var j = 0; j &lt; counter.length; j++) {
+            var value = null;
+            if(counter[j]!=null) {
+                while ((value = counter[j].shift()) != null) {
+                      arr[pos++] = value;
+                }
+          }
+        }
+    }
+    return arr;
+}
+</code></pre><h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><hr>
+<p>排序算法实在是博大精深，还有hin多hin多我没有总结到或者我自己还没弄明白的算法，仅仅是总结这十种排序算法都把我写哭了。。。<br>因此，以后如果我掌握了更多的排序姿势，我一定还会回来的！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/08/最全的网站资源汇总/" rel="next" title="最全的网络资源汇总">
+                <i class="fa fa-chevron-left"></i> 最全的网络资源汇总
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/27/移动开发项目开发任务分配/" rel="prev" title="移动端项目开发任务分配">
+                移动端项目开发任务分配 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oe51jhwvd.bkt.clouddn.com/nver.jpg"
+               alt="TakoZhang" />
+          <p class="site-author-name" itemprop="name">TakoZhang</p>
+          <p class="site-description motion-element" itemprop="description">我随影而来，随影而去</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/dushao103500" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/dushaoxiaoxiao" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/d37fba7cef1d" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.cnblogs.com/dushao/" target="_blank" title="博客园">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  博客园
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://htmlk.github.io/" title="小k博客" target="_blank">小k博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引子"><span class="nav-text">引子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十大经典算法排序总结对比"><span class="nav-text">十大经典算法排序总结对比</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#名词解释："><span class="nav-text">名词解释：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序（Bubble-Sort）"><span class="nav-text">冒泡排序（Bubble Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#冒泡排序须知："><span class="nav-text">冒泡排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最快（Best-Cases）："><span class="nav-text">什么时候最快（Best Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最慢（Worst-Cases）："><span class="nav-text">什么时候最慢（Worst Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#冒泡排序动图演示："><span class="nav-text">冒泡排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#冒泡排序JavaScript代码实现："><span class="nav-text">冒泡排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序（Selection-Sort）"><span class="nav-text">选择排序（Selection Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#选择排序须知："><span class="nav-text">选择排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#选择排序动图演示："><span class="nav-text">选择排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#选择排序JavaScript代码实现："><span class="nav-text">选择排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序（Insertion-Sort）"><span class="nav-text">插入排序（Insertion Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#插入排序须知："><span class="nav-text">插入排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插入排序动图演示："><span class="nav-text">插入排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插入排序JavaScript代码实现："><span class="nav-text">插入排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#希尔排序（Shell-Sort）"><span class="nav-text">希尔排序（Shell Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#希尔排序须知："><span class="nav-text">希尔排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#希尔排序JavaScript代码实现："><span class="nav-text">希尔排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序（Merge-Sort）"><span class="nav-text">归并排序（Merge Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#归并排序须知："><span class="nav-text">归并排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并排序动图演示："><span class="nav-text">归并排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并排序JavaScript代码实现："><span class="nav-text">归并排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序（Quick-Sort）"><span class="nav-text">快速排序（Quick Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#快速排序须知："><span class="nav-text">快速排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#快速排序动图演示："><span class="nav-text">快速排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#快速排序JavaScript代码实现："><span class="nav-text">快速排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序（Heap-Sort）"><span class="nav-text">堆排序（Heap Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#堆排序须知："><span class="nav-text">堆排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆排序动图演示："><span class="nav-text">堆排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆排序JavaScript代码实现："><span class="nav-text">堆排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计数排序（Counting-Sort）"><span class="nav-text">计数排序（Counting Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计数排序须知："><span class="nav-text">计数排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#计数排序动图演示："><span class="nav-text">计数排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#计数排序JavaScript代码实现："><span class="nav-text">计数排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#桶排序（Bucket-Sort）"><span class="nav-text">桶排序（Bucket Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#桶排序须知："><span class="nav-text">桶排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最快（Best-Cases）：-1"><span class="nav-text">什么时候最快（Best Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最慢（Worst-Cases）：-1"><span class="nav-text">什么时候最慢（Worst Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#桶排序JavaScript代码实现："><span class="nav-text">桶排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基数排序（Radix-Sort）"><span class="nav-text">基数排序（Radix Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基数排序须知："><span class="nav-text">基数排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基数排序-vs-计数排序-vs-桶排序"><span class="nav-text">基数排序 vs 计数排序 vs 桶排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#LSD基数排序动图演示："><span class="nav-text">LSD基数排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基数排序JavaScript代码实现："><span class="nav-text">基数排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-text">写在最后</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TakoZhang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
