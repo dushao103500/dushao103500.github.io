@@ -165,7 +165,7 @@
 	
 	
 
-    <body id="scheme-Paradox">
+    <body id="scheme-undefined">
 
 		
         <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
@@ -179,23 +179,8 @@
                 <div id="top"></div>
 				
 				
-                <!-- Hamburger Button -->
-                <button class="MD-burger-icon sidebar-toggle">
-                    <span class="MD-burger-layer"></span>
-                </button>
-				
 				
                 
-	<!-- Back Button -->
-	<div class="material-back" id="backhome-div" tabindex="0">
-		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
-			<i class="material-icons" role="presentation">arrow_back</i>
-			<span class="mdl-button__ripple-container">
-				<span class="mdl-ripple"></span>
-			</span>
-		</a>
-	</div>			
-
 
 <!-- Layouts -->
 
@@ -206,170 +191,13 @@
 
                 <!-- Post Header(Thumbnail & Title) -->
                 
-	<!-- Paradox Post Header -->
-	
-		
-			<!-- Random Thumbnail -->
-			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-				<script>
-    
-    var randomNum;
-    randomNum = Math.floor(Math.random() * 5 + 1);
-    
-    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
-    
-</script>
-
-		
-	
-        <p class="article-headline-p">
-            判断js中的数据类型的几种方法
-        </p>
-    </div>
-
 	
 
 				
-				
-					<!-- Paradox Post Info -->
-					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-    
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>TakoZhang</strong>
-        <span>Sep 11, 2014</span>
-    </div>
-    
-    <div class="section-spacer"></div>
-	
-    <!-- Favorite -->
-<!--
-    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-        <i class="material-icons" role="presentation">favorite</i>
-        <span class="visuallyhidden">favorites</span>
-    </button>
--->
-    
-    <!-- Tags (bookmark) -->
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        
-    </ul>
-    
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-    
-    
-    
-    
-    <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=判断js中的数据类型的几种方法&url=http://yoursite.com//2014/09/11/判断js中的数据类型的几种方法/index.html&via=TakoZhang" target="_blank">
-        <li class="mdl-menu__item">
-            Share to Twitter
-        </li>
-    </a>
-    
-    <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2014/09/11/判断js中的数据类型的几种方法/index.html" target="_blank">
-        <li class="mdl-menu__item">
-            Share to Google+
-        </li>
-    </a>
-    
-    <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=判断js中的数据类型的几种方法&url=http://yoursite.com//2014/09/11/判断js中的数据类型的几种方法/index.html&pic=&searchPic=false&style=simple" target="_blank">
-        <li class="mdl-menu__item">
-            Share to Weibo
-        </li>
-    </a>
-</ul>
-</div>
 				
 
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-	
-		<p>判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。</p>
-<p><strong>先举几个例子：</strong></p>
-<pre><code>var a = &quot;iamstring.&quot;;
-var b = 222;
-var c= [1,2,3];
-var d = new Date();
-var e = function(){alert(111);};
-var f = function(){this.name=&quot;22&quot;;};
-</code></pre><h3 id="1、最常见的判断方法：typeof"><a href="#1、最常见的判断方法：typeof" class="headerlink" title="1、最常见的判断方法：typeof"></a>1、最常见的判断方法：typeof</h3><pre><code>alert(typeof a)   ------------&gt; string
-alert(typeof b)   ------------&gt; number
-alert(typeof c)   ------------&gt; object
-alert(typeof d)   ------------&gt; object
-alert(typeof e)   ------------&gt; function
-alert(typeof f)   ------------&gt; function
-其中typeof返回的类型都是字符串形式，需注意，例如：
-alert(typeof a == &quot;string&quot;) -------------&gt; true
-alert(typeof a == String) ---------------&gt; false
-另外typeof 可以判断function的类型；在判断除Object类型的对象时比较方便。
-</code></pre><h3 id="2、判断已知对象类型的方法：-instanceof"><a href="#2、判断已知对象类型的方法：-instanceof" class="headerlink" title="2、判断已知对象类型的方法： instanceof"></a>2、判断已知对象类型的方法： instanceof</h3><pre><code>alert(c instanceof Array) ---------------&gt; true
-alert(d instanceof Date) 
-alert(f instanceof Function) ------------&gt; true
-alert(f instanceof function) ------------&gt; false
-注意：instanceof 后面一定要是对象类型，并且大小写不能错，该方法适合一些条件选择或分支。
-</code></pre><h3 id="3、根据对象的constructor判断：-constructor"><a href="#3、根据对象的constructor判断：-constructor" class="headerlink" title="3、根据对象的constructor判断： constructor"></a>3、根据对象的constructor判断： constructor</h3><pre><code>alert(c.constructor === Array) ----------&gt; true
-alert(d.constructor === Date) -----------&gt; true
-alert(e.constructor === Function) -------&gt; true
-注意： constructor 在类继承时会出错
-eg：
-      function A(){};
-      function B(){};
-      A.prototype = new B(); //A继承自B
-      var aObj = new A();
-      alert(aobj.constructor === B) -----------&gt; true;
-      alert(aobj.constructor === A) -----------&gt; false;
-而instanceof方法不会出现该问题，对象直接继承和间接继承的都会报true：
-      alert(aobj instanceof B) ----------------&gt; true;
-      alert(aobj instanceof B) ----------------&gt; true;
-言归正传，解决construtor的问题通常是让对象的constructor手动指向自己：
-      aobj.constructor = A; //将自己的类赋值给对象的constructor属性
-      alert(aobj.constructor === A) -----------&gt; true;
-      alert(aobj.constructor === B) -----------&gt; false; //基类不会报true了;
-</code></pre><h3 id="4、通用但很繁琐的方法：-prototype"><a href="#4、通用但很繁琐的方法：-prototype" class="headerlink" title="4、通用但很繁琐的方法： prototype"></a>4、通用但很繁琐的方法： prototype</h3><pre><code>alert(Object.prototype.toString.call(a) === ‘[object String]’) -------&gt; true;
-alert(Object.prototype.toString.call(b) === ‘[object Number]’) -------&gt; true;
-alert(Object.prototype.toString.call(c) === ‘[object Array]’) -------&gt; true;
-alert(Object.prototype.toString.call(d) === ‘[object Date]’) -------&gt; true;
-alert(Object.prototype.toString.call(e) === ‘[object Function]’) -------&gt; true;
-alert(Object.prototype.toString.call(f) === ‘[object Function]’) -------&gt; true;
-大小写不能写错，比较麻烦，但胜在通用。
-</code></pre><h3 id="5、无敌万能的方法：jquery-type"><a href="#5、无敌万能的方法：jquery-type" class="headerlink" title="5、无敌万能的方法：jquery.type()"></a>5、无敌万能的方法：jquery.type()</h3><pre><code>如果对象是undefined或null，则返回相应的“undefined”或“null”。
-jQuery.type( undefined ) === &quot;undefined&quot;
-jQuery.type() === &quot;undefined&quot;
-jQuery.type( window.notDefined ) === &quot;undefined&quot;
-jQuery.type( null ) === &quot;null&quot;
-如果对象有一个内部的[[Class]]和一个浏览器的内置对象的 [[Class]] 相同，我们返回相应的 [[Class]] 名字。 (有关此技术的更多细节。 )
-jQuery.type( true ) === &quot;boolean&quot;
-jQuery.type( 3 ) === &quot;number&quot;
-jQuery.type( &quot;test&quot; ) === &quot;string&quot;
-jQuery.type( function(){} ) === &quot;function&quot;
-jQuery.type( [] ) === &quot;array&quot;
-jQuery.type( new Date() ) === &quot;date&quot;
-jQuery.type( new Error() ) === &quot;error&quot; // as of jQuery 1.9
-jQuery.type( /test/ ) === &quot;regexp&quot;
-其他一切都将返回它的类型“object”。
-</code></pre><p>通常情况下用typeof 判断就可以了，遇到预知Object类型的情况可以选用instanceof或constructor方法,实在没辙就使用$.type()方法。</p>
-<blockquote>
-<p>参考链接：<a href="http://blog.sina.com.cn/s/blog_51048da70101grz6.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_51048da70101grz6.html</a></p>
-</blockquote>
-
 	
 	
 	
@@ -419,232 +247,12 @@ jQuery.type( /test/ ) === &quot;regexp&quot;
 
 				
 				
-					<!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay "></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
-	<div id="sidebar-main">
-	    <!-- Sidebar Header -->
-		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-    <i class="material-icons">clear_all</i>
-    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="TakoZhang's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        youremail@email.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-		<!-- Sidebar Navigation  -->
-		<ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-			
-                <li>
-                    <a href="#" target="_blank" title="Email Me">
-						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    <li id="sidebar-first-li">
-        <a href="/" target="_self">
-            <i class="material-icons sidebar-material-icons">home</i>
-             Home
-        </a>
-    </li>
-
-    <!-- I'm Feeling Lucky -->
-<!--
-    <li class="dropdown">
-        <a href="" target="_self">
-            <i class="material-icons sidebar-material-icons">explore</i>
-             sidebar.imlucky
-        </a>
-    </li>
--->
-
-	
-    <!-- Archives  -->
-    <li class="dropdown">
-        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-            <i class="material-icons sidebar-material-icons">inbox</i>
-             Archives
-            <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-            <li>
-            <a class="sidebar_archives-link" href="/archives/2016/10/">October 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">September 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">April 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">January 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/01/">January 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/09/">September 2014<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/07/">July 2014<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/04/">April 2014<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/08/">August 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/06/">June 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/02/">February 2013<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/11/">November 2012<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/06/">June 2012<span class="sidebar_archives-count">1</span></a>
-        </ul>
-    </li>
-
-    <!-- Divider -->
-    <li class="divider"></li>
-
-
-    <!-- Pages  -->
-	
-
-    <!-- Article Numebr  -->
-    <li>
-        <a href="#">
-             Article Number
-             <span class="sidebar-badge">18</span>
-        </a>
-    </li>
-</ul>
-
-		<!-- Sidebar Divider -->
-		<div class="sidebar-divider"></div>
-
-		<!-- Sidebar Footer -->
-		<!-- 
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持。 :) 
--->
-
-<!-- Theme Material -->
-<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		Theme - Material
-		<span class="sidebar-badge badge-circle">i</span>
-	</div>
-</a>
-
-<!-- Help & Support -->
-<!--
-<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		sidebar.help
-		<span class="mdl-button__ripple-container">
-			<span class="mdl-ripple"></span>
-		</span>
-	</div>
-</a>
--->
-
-<!-- Feedback -->
-<!--
-<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.feedback
-                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>
--->
-
-<!-- Abount Theme -->
-<!--
-<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.about_theme
-        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>-->
-
-	</div>
-    
-    <!-- Sidebar Sponsor -->
-    
-
-
-</aside>
-
 				
-				
-				
-					<!-- Footer Top Button -->
-					<div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 				
 				
 				<!--Footer-->
 <footer class="mdl-mini-footer" id="bottom">
 	
-	
-		<!-- Paradox Footer Left Section -->
-		<div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-    <a href="https://twitter.com/twitter" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
-        <span class="visuallyhidden">Twitter</span>
-    </button></a>
-    
-    
-    <!-- Facebook -->
-    
-    <a href="https://www.facebook.com/facebook" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
-        <span class="visuallyhidden">Facebook</span>
-    </button></a>
-    
-    
-    <!-- Google + -->
-    
-    <a href="https://www.google.com/" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
-        <span class="visuallyhidden">Google Plus</span>
-    </button></a>
-    
-    
-    <!-- Weibo -->
-    
-    
-    
-    <!-- Instagram -->
-    
-    
-    
-    <!-- Tumblr -->
-    
-    
-    
-    <!-- Github -->
-    
-    
-</div>
-
-
-		<!--Copyright-->
-		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;杜少博客</div>
-
-		<!-- Paradox Footer Right Section -->
-
-		<!-- 
-		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-		It will not impact the appearance and can give developers a lot of support :)
-
-		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-		它不会影响美观并可以给开发者很大的支持。 :) 
-		-->
-
-		<div class="mdl-mini-footer--right-section">
-			<div>
-				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-			</div>
-		</div>
 	
     
 </footer>
