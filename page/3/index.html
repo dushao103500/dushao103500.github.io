@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -63,21 +63,21 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="杜少博客" />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -96,24 +96,35 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"always"},
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://yoursite.com/page/3/"/>
+
+
+
+
 
   <title> 杜少博客 </title>
 </head>
@@ -180,16 +191,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -200,12 +201,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            关于
+            标签
           </a>
         </li>
       
@@ -216,6 +217,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -230,13 +233,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/09/17/区分JS中的undefined,null,,0和false/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="TakoZhang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="杜少博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="杜少博客" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -258,24 +274,30 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-09-17T15:10:15+08:00" content="2014-09-17">
-              2014-09-17
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-09-17T15:10:15+08:00">
+                2014-09-17
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Javascript编程知识/" itemprop="url" rel="index">
                     <span itemprop="name">Javascript编程知识</span>
                   </a>
@@ -283,7 +305,6 @@
 
                 
                 
-
               
             </span>
           
@@ -298,6 +319,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -311,17 +335,43 @@
       
         
           
-          今天有同事问我一个Js 问题，if (0 == ‘’) 是true  很不理解，单独做了一下测试，记录于此。
-alert(0 == &apos;&apos;); //true
+            <p>今天有同事问我一个Js 问题，if (0 == ‘’) 是true  很不理解，单独做了一下测试，记录于此。</p>
+<pre><code>alert(0 == &apos;&apos;); //true
 alert(0 == false); //true
 alert(false == &apos;&apos;); //true
-          ...
+alert(null == undefined); //true
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2014/09/17/区分JS中的undefined,null,,0和false/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+alert(!0); //true
+alert(!false); //true
+alert(!undefined); //true
+alert(!null); //true
+alert(!&apos;&apos;); //true
+
+alert(0 == undefined); //false
+alert(0 == null); //false
+alert(false == null); //false
+alert(false == undefined);//false
+alert(&apos;&apos; == null); //false
+alert(&apos;&apos; == undefined); //false
+</code></pre><p>在程序语言中定义的各种各样的数据类型中，我们都会为其定义一个”空值”或”假值”，比如对象类型的空值null，.NET Framework中数据库字段的空值DBNull，boolean类型的假值false等等。在JavaScript中也有很多种的”空值”和”假值”，那么它们都有什么共同点和不同点呢？</p>
+<p>其实标题里面我已经列出了JavaScript中所有的”空值”和”假值”，除了boolean值本身就是true和false这两种情况外，其它数据类型的”空值”主要是undefined和defined这两大类。这些空值的类型分别是：</p>
+<pre><code>typeof(undefined) == &apos;undefined&apos;
+typeof(null) == &apos;object&apos;
+typeof(&quot;&quot;) == &apos;string&apos;
+typeof(0) == &apos;number&apos;
+typeof(false) == &apos;boolean&apos;
+</code></pre><p>这五个值的共同点是，在if语句中做判断，都会执行false分支。当然从广义上来看，是说明这些数值都是其对应数据类型上的无效值或空值。还有这五个值作!运算，结果全为：true。</p>
+<p>这几个值中也有不同，其中undefined和null比较特殊，虽然null的类型是object，但是null不具有任何对象的特性，就是说我们并不能执行null.toString()、null.constructor等对象实例的默认调用。所以从这个意义上来说，null和undefined有最大的相似性。看看null == undefined的结果(true)也就更加能说明这点。不过相似归相似，还是有区别的，就是和数字运算时，10 + null结果为：10；10 + undefined结果为：NaN。</p>
+<p>另外””、0和false虽然在if语句表现为”假值”，可它们都是有意义数据，只是被作为了”空值”或”假值”，因为：””.toString()，(0).toString()和false.toString()都是合法的可执行表达式。</p>
+<p>其实这5个值在上面所说的这些差异里，并不太会给程流程控制带来太大的问题，那么要区分它们什么呢？需要注意区分的是这些值在转换为String时的差异是比较大的，它们到String的转换关系是：</p>
+<pre><code>String(undefined) -&gt; &quot;undefined&quot;
+String(null) -&gt; &quot;null&quot;
+String(&quot;&quot;) -&gt; &quot;&quot;
+String(0) -&gt; &quot;0&quot;
+String(false) -&gt; &quot;false&quot;
+</code></pre><p>这个转换关系在做字符串累加时需要特别的注意，否这会出些意想不到的问题。</p>
+
+          
         
       
     </div>
@@ -333,6 +383,7 @@ alert(false == &apos;&apos;); //true
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -351,13 +402,26 @@ alert(false == &apos;&apos;); //true
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/09/11/判断js中的数据类型的几种方法/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="TakoZhang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="杜少博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="杜少博客" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -379,24 +443,30 @@ alert(false == &apos;&apos;); //true
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-09-11T10:11:05+08:00" content="2014-09-11">
-              2014-09-11
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-09-11T10:11:05+08:00">
+                2014-09-11
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Javascript编程知识/" itemprop="url" rel="index">
                     <span itemprop="name">Javascript编程知识</span>
                   </a>
@@ -404,7 +474,6 @@ alert(false == &apos;&apos;); //true
 
                 
                 
-
               
             </span>
           
@@ -419,6 +488,9 @@ alert(false == &apos;&apos;); //true
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -432,17 +504,75 @@ alert(false == &apos;&apos;); //true
       
         
           
-          判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。
-先举几个例子：
-var a = &quot;iamstring.&quot;;
-var b =
-          ...
+            <p>判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。</p>
+<p><strong>先举几个例子：</strong></p>
+<pre><code>var a = &quot;iamstring.&quot;;
+var b = 222;
+var c= [1,2,3];
+var d = new Date();
+var e = function(){alert(111);};
+var f = function(){this.name=&quot;22&quot;;};
+</code></pre><h3 id="1、最常见的判断方法：typeof"><a href="#1、最常见的判断方法：typeof" class="headerlink" title="1、最常见的判断方法：typeof"></a>1、最常见的判断方法：typeof</h3><pre><code>alert(typeof a)   ------------&gt; string
+alert(typeof b)   ------------&gt; number
+alert(typeof c)   ------------&gt; object
+alert(typeof d)   ------------&gt; object
+alert(typeof e)   ------------&gt; function
+alert(typeof f)   ------------&gt; function
+其中typeof返回的类型都是字符串形式，需注意，例如：
+alert(typeof a == &quot;string&quot;) -------------&gt; true
+alert(typeof a == String) ---------------&gt; false
+另外typeof 可以判断function的类型；在判断除Object类型的对象时比较方便。
+</code></pre><h3 id="2、判断已知对象类型的方法：-instanceof"><a href="#2、判断已知对象类型的方法：-instanceof" class="headerlink" title="2、判断已知对象类型的方法： instanceof"></a>2、判断已知对象类型的方法： instanceof</h3><pre><code>alert(c instanceof Array) ---------------&gt; true
+alert(d instanceof Date) 
+alert(f instanceof Function) ------------&gt; true
+alert(f instanceof function) ------------&gt; false
+注意：instanceof 后面一定要是对象类型，并且大小写不能错，该方法适合一些条件选择或分支。
+</code></pre><h3 id="3、根据对象的constructor判断：-constructor"><a href="#3、根据对象的constructor判断：-constructor" class="headerlink" title="3、根据对象的constructor判断： constructor"></a>3、根据对象的constructor判断： constructor</h3><pre><code>alert(c.constructor === Array) ----------&gt; true
+alert(d.constructor === Date) -----------&gt; true
+alert(e.constructor === Function) -------&gt; true
+注意： constructor 在类继承时会出错
+eg：
+      function A(){};
+      function B(){};
+      A.prototype = new B(); //A继承自B
+      var aObj = new A();
+      alert(aobj.constructor === B) -----------&gt; true;
+      alert(aobj.constructor === A) -----------&gt; false;
+而instanceof方法不会出现该问题，对象直接继承和间接继承的都会报true：
+      alert(aobj instanceof B) ----------------&gt; true;
+      alert(aobj instanceof B) ----------------&gt; true;
+言归正传，解决construtor的问题通常是让对象的constructor手动指向自己：
+      aobj.constructor = A; //将自己的类赋值给对象的constructor属性
+      alert(aobj.constructor === A) -----------&gt; true;
+      alert(aobj.constructor === B) -----------&gt; false; //基类不会报true了;
+</code></pre><h3 id="4、通用但很繁琐的方法：-prototype"><a href="#4、通用但很繁琐的方法：-prototype" class="headerlink" title="4、通用但很繁琐的方法： prototype"></a>4、通用但很繁琐的方法： prototype</h3><pre><code>alert(Object.prototype.toString.call(a) === ‘[object String]’) -------&gt; true;
+alert(Object.prototype.toString.call(b) === ‘[object Number]’) -------&gt; true;
+alert(Object.prototype.toString.call(c) === ‘[object Array]’) -------&gt; true;
+alert(Object.prototype.toString.call(d) === ‘[object Date]’) -------&gt; true;
+alert(Object.prototype.toString.call(e) === ‘[object Function]’) -------&gt; true;
+alert(Object.prototype.toString.call(f) === ‘[object Function]’) -------&gt; true;
+大小写不能写错，比较麻烦，但胜在通用。
+</code></pre><h3 id="5、无敌万能的方法：jquery-type"><a href="#5、无敌万能的方法：jquery-type" class="headerlink" title="5、无敌万能的方法：jquery.type()"></a>5、无敌万能的方法：jquery.type()</h3><pre><code>如果对象是undefined或null，则返回相应的“undefined”或“null”。
+jQuery.type( undefined ) === &quot;undefined&quot;
+jQuery.type() === &quot;undefined&quot;
+jQuery.type( window.notDefined ) === &quot;undefined&quot;
+jQuery.type( null ) === &quot;null&quot;
+如果对象有一个内部的[[Class]]和一个浏览器的内置对象的 [[Class]] 相同，我们返回相应的 [[Class]] 名字。 (有关此技术的更多细节。 )
+jQuery.type( true ) === &quot;boolean&quot;
+jQuery.type( 3 ) === &quot;number&quot;
+jQuery.type( &quot;test&quot; ) === &quot;string&quot;
+jQuery.type( function(){} ) === &quot;function&quot;
+jQuery.type( [] ) === &quot;array&quot;
+jQuery.type( new Date() ) === &quot;date&quot;
+jQuery.type( new Error() ) === &quot;error&quot; // as of jQuery 1.9
+jQuery.type( /test/ ) === &quot;regexp&quot;
+其他一切都将返回它的类型“object”。
+</code></pre><p>通常情况下用typeof 判断就可以了，遇到预知Object类型的情况可以选用instanceof或constructor方法,实在没辙就使用$.type()方法。</p>
+<blockquote>
+<p>参考链接：<a href="http://blog.sina.com.cn/s/blog_51048da70101grz6.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_51048da70101grz6.html</a></p>
+</blockquote>
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2014/09/11/判断js中的数据类型的几种方法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
         
       
     </div>
@@ -454,6 +584,7 @@ var b =
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -472,13 +603,26 @@ var b =
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/07/03/置换和非置换元素/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="TakoZhang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="杜少博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="杜少博客" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -500,24 +644,30 @@ var b =
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-07-03T21:42:26+08:00" content="2014-07-03">
-              2014-07-03
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-07-03T21:42:26+08:00">
+                2014-07-03
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/HTML/" itemprop="url" rel="index">
                     <span itemprop="name">HTML</span>
                   </a>
@@ -525,7 +675,6 @@ var b =
 
                 
                 
-
               
             </span>
           
@@ -540,6 +689,9 @@ var b =
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -553,16 +705,51 @@ var b =
       
         
           
-          1、置换和非置换元素1.1、 一个 内容 不受CSS视觉格式化模型控制，CSS渲染模型并不考虑对此内容的渲染，且元素本身一般拥有固有尺寸（宽度，高度，宽高比）的元素，被称之为置换元素。 
-1.2、 替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。 
-1.3、 例如浏览器会根据img
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2014/07/03/置换和非置换元素/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <h3 id="1、置换和非置换元素"><a href="#1、置换和非置换元素" class="headerlink" title="1、置换和非置换元素"></a>1、置换和非置换元素</h3><p>1.1、 一个 内容 不受CSS视觉格式化模型控制，CSS渲染模型并不考虑对此内容的渲染，且元素本身一般拥有固有尺寸（宽度，高度，宽高比）的元素，被称之为置换元素。 </p>
+<p>1.2、 替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。 </p>
+<p>1.3、 例如浏览器会根据img标签的src属性的值来读取图片信息并显示出来，而如果查看(X)HTML代码，则看不到图片的实际内容；又例如根据input标签的type属性来决定是显示输入框，还是单选按钮等。 </p>
+<p>1.4、 HTML中的img、input、textarea、select、object都是替换元素。这些元素往往没有实际的内容，即是一个空元素。</p>
+<h3 id="2、非置换元素-不可替换元素"><a href="#2、非置换元素-不可替换元素" class="headerlink" title="2、非置换元素/不可替换元素"></a>2、非置换元素/不可替换元素</h3><p>2.1、 HTML 的大多数元素是不可替换元素，即其内容直接表现给用户端（例如浏览器），如：</p>
+<pre><code>&lt;!-- span是非置换元素 因此 hello word 被展示出来 而不是被替换成其他内容 --&gt;
+&lt;span&gt;hello word&lt;/span&gt;
+</code></pre><h3 id="3、行内级置换的宽度定义"><a href="#3、行内级置换的宽度定义" class="headerlink" title="3、行内级置换的宽度定义"></a>3、行内级置换的宽度定义</h3><ul>
+<li>若宽高的计算值都为 auto 且元素有固有宽度，则 width 的使用值为该固有宽度 </li>
+</ul>
+<blockquote>
+<p>典型的例子是：拥有默认宽高的 input 当宽度的计算值为auto时，则宽度使用值为其默认的固有宽度</p>
+</blockquote>
+<ul>
+<li>若宽度的计算值为 auto 且元素有固有宽度，则 width 的使用值为该固有宽度 </li>
+</ul>
+<blockquote>
+<p>例子同上</p>
+</blockquote>
+<ul>
+<li><p>若宽度的计算值为 auto 且高度有 非auto 的计算值，并且元素有固有宽高比，则 width 的使用值为 高度使用值 * 固有宽高比<br>-</p>
+<blockquote>
+<p>典型的例子：img 当只定义了其高度值时，其宽度将会根据固有宽高比进行等比设置，这也是为什么img是行内元素，但可以设置宽高的原因</p>
+</blockquote>
+</li>
+<li><p>除此之外，当 width 的计算值为 auto 时，则宽度的使用值为 300px </p>
+</li>
+</ul>
+<blockquote>
+<p>典型的例子：比如iframe, canvas</p>
+</blockquote>
+<h3 id="4、行内级置换的高度定义"><a href="#4、行内级置换的高度定义" class="headerlink" title="4、行内级置换的高度定义"></a>4、行内级置换的高度定义</h3><ul>
+<li>若宽高的计算值都为 auto 且元素有固有高度，则 height 的使用值为该固有高度；</li>
+<li>若高度的计算值为 auto 且元素有固有高度，则 height 的使用值为该固有高度；</li>
+<li>若高度的计算值为 auto 且宽度有 非auto 的计算值，并且元素有固有宽高比，则 height 的使用值为：宽度使用值 / 固有宽高比；</li>
+<li>若高度的计算值为 auto 且上述条件完全不符，则 height 的使用值 不能大于150px，且宽度不能大于长方形高度的2倍</li>
+</ul>
+<h3 id="5、行内级非置换元素的宽度定义"><a href="#5、行内级非置换元素的宽度定义" class="headerlink" title="5、行内级非置换元素的宽度定义"></a>5、行内级非置换元素的宽度定义</h3><p>宽度设置是无效的，如：</p>
+<pre><code>&lt;!-- 设置宽度无效 ，span的宽度默认为其内容的宽度 --&gt;
+&lt;span&gt;hello word&lt;/span&gt; 
+</code></pre><h3 id="6、行内级非置换元素的高度定义"><a href="#6、行内级非置换元素的高度定义" class="headerlink" title="6、行内级非置换元素的高度定义"></a>6、行内级非置换元素的高度定义</h3><p>高度设置无效，如：</p>
+<pre><code>&lt;!-- 设置高度无效 ，span的高度默认为其内容的高度 --&gt;
+&lt;span&gt;hello word&lt;/span&gt; 
+</code></pre>
+          
         
       
     </div>
@@ -574,6 +761,7 @@ var b =
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -592,13 +780,26 @@ var b =
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/04/09/Gulp入门教程/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="TakoZhang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="杜少博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="杜少博客" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -620,24 +821,30 @@ var b =
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-04-09T20:21:02+08:00" content="2014-04-09">
-              2014-04-09
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-09T20:21:02+08:00">
+                2014-04-09
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Node-js/" itemprop="url" rel="index">
                     <span itemprop="name">Node.js</span>
                   </a>
@@ -645,7 +852,6 @@ var b =
 
                 
                 
-
               
             </span>
           
@@ -660,6 +866,9 @@ var b =
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -673,15 +882,225 @@ var b =
       
         
           
-          最近流行前端构建工具，苦于之前使用Grunt，代码很难阅读，现在出了Gulp，真是摆脱了痛苦。发现了一篇很好的Gulp英文教程，整理翻译给大家看看。
-为什么使用GulpGulp基于Node.js的前端构建工具，通过Gulp的插件可以实现前端代码的编译（sass、less）、压缩、测试；图片的压缩；浏
-          ...
+            <p>最近流行前端构建工具，苦于之前使用Grunt，代码很难阅读，现在出了Gulp，真是摆脱了痛苦。发现了一篇很好的Gulp英文教程，整理翻译给大家看看。</p>
+<h3 id="为什么使用Gulp"><a href="#为什么使用Gulp" class="headerlink" title="为什么使用Gulp"></a>为什么使用Gulp</h3><p>Gulp基于Node.js的前端构建工具，通过Gulp的插件可以实现前端代码的编译（sass、less）、压缩、测试；图片的压缩；浏览器自动刷新，还有许多强大的插件可以在这里查找。比起Grunt不仅配置简单而且更容易阅读和维护，我们可以做一个对比：</p>
+<h4 id="Grunt"><a href="#Grunt" class="headerlink" title="Grunt:"></a>Grunt:</h4><pre><code>sass: {
+  dist: {
+    options: {
+      style: &apos;expanded&apos;
+    },
+    files: {
+      &apos;dist/assets/css/main.css&apos;: &apos;src/styles/main.scss&apos;,
+    }
+  }
+},
+autoprefixer: {
+  dist: {
+    options: {
+      browsers: [
+        &apos;last 2 version&apos;, &apos;safari 5&apos;, &apos;ie 8&apos;, &apos;ie 9&apos;, &apos;opera 12.1&apos;, &apos;ios 6&apos;, &apos;android 4&apos;
+      ]
+    },
+    src: &apos;dist/assets/css/main.css&apos;,
+    dest: &apos;dist/assets/css/main.css&apos;
+  }
+},
+grunt.registerTask(&apos;styles&apos;, [&apos;sass&apos;, &apos;autoprefixer&apos;]);
+</code></pre><p>在Grunt里面，每个插件使用的方式相对独立，正如上面的代码通过sass插件将main.sass文件编译成main.css文件，接着autoprefixer插件再对编译好的main.css文件进行修改，最后覆盖main.css。那么覆盖文件就是多余的了，有没办法做到sass和autoprefixer一并处理完再生成main.css？我们来看看Gulp是如何做到的：</p>
+<h4 id="Gulp："><a href="#Gulp：" class="headerlink" title="Gulp："></a>Gulp：</h4><pre><code>gulp.task(&apos;sass&apos;, function() {
+  return gulp.src(&apos;src/styles/main.scss&apos;)
+    .pipe(sass({ style: &apos;compressed&apos; }))
+    .pipe(autoprefixer(&apos;last 2 version&apos;, &apos;safari 5&apos;, &apos;ie 8&apos;, &apos;ie 9&apos;, &apos;opera 12.1&apos;, &apos;ios 6&apos;, &apos;android 4&apos;))
+    .pipe(gulp.dest(&apos;dist/assets/css&apos;))
+});
+</code></pre><p>使用Gulp我们只需要放一个路径，通过管道方式使用插件，最后生成文件，是不是有种jQuery的感觉。这种方式不仅提高效率而且一眼就看清了输入文件和输出文件，再也不用看gruntfile看得眼花缭乱了。</p>
+<p>再打个比喻，Grunt的插件就像独立的工厂，这个工厂生成出来的产品打包封装好后再送到另一个工厂去加工，使用了Gulp后实现了工厂的合并，所有东西都在一个工厂里完成了。现在是否对Gulp感兴趣了，那就开始使用Gulp吧！</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>首先我们要全局安装一遍：</p>
+<pre><code>$ npm install gulp -g
+</code></pre><p>接着我们要进去到项目的根目录再安装一遍（确保你根目录存在package.json文件）：</p>
+<pre><code>$ npm install gulp --save-dev
+</code></pre><p>—save-dev这个属性会将条目保存到你package.json的devDependencies里面</p>
+<h3 id="安装Gulp插件"><a href="#安装Gulp插件" class="headerlink" title="安装Gulp插件"></a>安装Gulp插件</h3><p>我们将要使用Gulp插件来完成我们以下任务：</p>
+<ul>
+<li>sass的编译（<a href="https://github.com/sindresorhus/gulp-ruby-sass" target="_blank" rel="external">gulp-ruby-sass</a>）</li>
+<li>自动添加css前缀（<a href="https://github.com/Metrime/gulp-autoprefixer" target="_blank" rel="external">gulp-autoprefixer</a>）</li>
+<li>压缩css（<a href="https://github.com/jonathanepollack/gulp-minify-css" target="_blank" rel="external">gulp-minify-css</a>）</li>
+<li>js代码校验（<a href="https://github.com/spalger/gulp-jshint" target="_blank" rel="external">gulp-jshint</a>）</li>
+<li>合并js文件（<a href="https://github.com/contra/gulp-concat" target="_blank" rel="external">gulp-concat</a>）</li>
+<li>压缩js代码（<a href="https://github.com/terinjokes/gulp-uglify" target="_blank" rel="external">gulp-uglify</a>）</li>
+<li>压缩图片（<a href="https://github.com/sindresorhus/gulp-imagemin" target="_blank" rel="external">gulp-imagemin</a>）</li>
+<li>自动刷新页面（<a href="https://github.com/vohof/gulp-livereload" target="_blank" rel="external">gulp-livereload</a>）</li>
+<li>图片缓存，只有图片替换了才压缩（<a href="https://github.com/jgable/gulp-cache" target="_blank" rel="external">gulp-cache</a>）</li>
+<li>更改提醒（<a href="https://github.com/mikaelbr/gulp-notify" target="_blank" rel="external">gulp-notify</a>）</li>
+<li>清除文件（<a href="https://www.npmjs.com/package/del" target="_blank" rel="external">del</a>）</li>
+</ul>
+<p>安装这些插件需要运行如下命令：</p>
+<pre><code>$ npm install gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev
+</code></pre><p>上面是一些常用的插件，如果想要找更多的插件点击这里</p>
+<h3 id="加载插件"><a href="#加载插件" class="headerlink" title="加载插件"></a>加载插件</h3><p>接着我们要创建一个gulpfile.js在根目录下，然后在里面加载插件：</p>
+<pre><code>var gulp = require(&apos;gulp&apos;),
+    sass = require(&apos;gulp-ruby-sass&apos;),
+    autoprefixer = require(&apos;gulp-autoprefixer&apos;),
+    minifycss = require(&apos;gulp-minify-css&apos;),
+    jshint = require(&apos;gulp-jshint&apos;),
+    uglify = require(&apos;gulp-uglify&apos;),
+    imagemin = require(&apos;gulp-imagemin&apos;),
+    rename = require(&apos;gulp-rename&apos;),
+    concat = require(&apos;gulp-concat&apos;),
+    notify = require(&apos;gulp-notify&apos;),
+    cache = require(&apos;gulp-cache&apos;),
+    livereload = require(&apos;gulp-livereload&apos;),
+    del = require(&apos;del&apos;);
+</code></pre><p>Gulp的插件和Grunt有些许不一样，Grunt插件是为了更好的完成一项任务。就像Grunt的imagemin插件就利用了缓存来避免重复压缩，而Gulp要利用gulp-cache来完成，当然啦，不仅限定于缓存图片。</p>
+<h3 id="建立任务"><a href="#建立任务" class="headerlink" title="建立任务"></a>建立任务</h3><h4 id="编译sass、自动添加css前缀和压缩"><a href="#编译sass、自动添加css前缀和压缩" class="headerlink" title="编译sass、自动添加css前缀和压缩"></a>编译sass、自动添加css前缀和压缩</h4><p>首先我们编译sass，添加前缀，保存到我们指定的目录下面，还没结束，我们还要压缩，给文件添加.min后缀再输出压缩文件到指定目录，最后提醒任务完成了：</p>
+<pre><code>gulp.task(&apos;styles&apos;, function() {
+  return gulp.src(&apos;src/styles/main.scss&apos;)
+    .pipe(sass({ style: &apos;expanded&apos; }))
+    .pipe(autoprefixer(&apos;last 2 version&apos;, &apos;safari 5&apos;, &apos;ie 8&apos;, &apos;ie 9&apos;, &apos;opera 12.1&apos;, &apos;ios 6&apos;, &apos;android 4&apos;))
+    .pipe(gulp.dest(&apos;dist/assets/css&apos;))
+    .pipe(rename({suffix: &apos;.min&apos;}))
+    .pipe(minifycss())
+    .pipe(gulp.dest(&apos;dist/assets/css&apos;))
+    .pipe(notify({ message: &apos;Styles task complete&apos; }));
+});
+</code></pre><p>让我解释一下：</p>
+<pre><code>gulp.task(&apos;styles&apos;, function () {...});
+</code></pre><p>gulp.task这个API用来创建任务，在命令行下可以输入$ gulp styles来执行上面的任务。</p>
+<pre><code>return gulp.src(&apos;src/styles/main.scss&apos;)
+</code></pre><p>gulp.src这个API设置需要处理的文件的路径，可以是多个文件以数组的形式[main.scss, vender.scss]，也可以是正则表达式/<em>*/</em>.scss。</p>
+<pre><code>.pipe(sass({ style: &apos;expanded&apos; }))
+</code></pre><p>我们使用.pipe()这个API将需要处理的文件导向sass插件，那些插件的用法可以在github上找到，为了方便大家查找我已经在上面列出来了。</p>
+<pre><code>.pipe(gulp.dest(&apos;dist/assets/css&apos;));
+</code></pre><p>gulp.dest()API设置生成文件的路径，一个任务可以有多个生成路径，一个可以输出未压缩的版本，另一个可以输出压缩后的版本。</p>
+<p>为了更好的了解Gulp API，强烈建议看一下<a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">Gulp API文档</a>，其实Gulp API就这么几个，没什么好可怕的。</p>
+<h4 id="js代码校验、合并和压缩"><a href="#js代码校验、合并和压缩" class="headerlink" title="js代码校验、合并和压缩"></a>js代码校验、合并和压缩</h4><p>希望大家已经知道如何去创建一个任务了，接下来我们完成scripts的校验、合并和压缩的任务吧：</p>
+<pre><code>gulp.task(&apos;scripts&apos;, function() {
+  return gulp.src(&apos;src/scripts/**/*.js&apos;)
+    .pipe(jshint(&apos;.jshintrc&apos;))
+    .pipe(jshint.reporter(&apos;default&apos;))
+    .pipe(concat(&apos;main.js&apos;))
+    .pipe(gulp.dest(&apos;dist/assets/js&apos;))
+    .pipe(rename({suffix: &apos;.min&apos;}))
+    .pipe(uglify())
+    .pipe(gulp.dest(&apos;dist/assets/js&apos;))
+    .pipe(notify({ message: &apos;Scripts task complete&apos; }));
+});
+</code></pre><p>需要提醒的是我们要设置JSHint的reporter方式，上面使用的是default默认的，了解更多点击这里。</p>
+<h3 id="压缩图片"><a href="#压缩图片" class="headerlink" title="压缩图片"></a>压缩图片</h3><pre><code>gulp.task(&apos;images&apos;, function() {
+  return gulp.src(&apos;src/images/**/*&apos;)
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest(&apos;dist/assets/img&apos;))
+    .pipe(notify({ message: &apos;Images task complete&apos; }));
+});
+</code></pre><p>这个任务使用imagemin插件把所有在src/images/目录以及其子目录下的所有图片（文件）进行压缩，我们可以进一步优化，利用缓存保存已经压缩过的图片，使用之前装过的gulp-cache插件，不过要修改一下上面的代码：</p>
+<p>将这行代码:</p>
+<pre><code>.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+</code></pre><p>修改成:</p>
+<pre><code>.pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+</code></pre><p>现在，只有新建或者修改过的图片才会被压缩了。</p>
+<h4 id="清除文件"><a href="#清除文件" class="headerlink" title="清除文件"></a>清除文件</h4><p>在任务执行前，最好先清除之前生成的文件：</p>
+<pre><code>gulp.task(&apos;clean&apos;, function(cb) {
+    del([&apos;dist/assets/css&apos;, &apos;dist/assets/js&apos;, &apos;dist/assets/img&apos;], cb)
+});
+</code></pre><p>在这里没有必要使用Gulp插件了，可以使用NPM提供的插件。我们用一个回调函数（cb）确保在退出前完成任务。</p>
+<h4 id="设置默认任务（default）"><a href="#设置默认任务（default）" class="headerlink" title="设置默认任务（default）"></a>设置默认任务（default）</h4><p>我们在命令行下输入$ gulp执行的就是默认任务，现在我们为默认任务指定执行上面写好的三个任务：</p>
+<pre><code>gulp.task(&apos;default&apos;, [&apos;clean&apos;], function() {
+    gulp.start(&apos;styles&apos;, &apos;scripts&apos;, &apos;images&apos;);
+});
+</code></pre><p>在这个例子里面，clean任务执行完成了才会去运行其他的任务，在gulp.start()里的任务执行的顺序是不确定的，所以将要在它们之前执行的任务写在数组里面。</p>
+<h4 id="监听文件"><a href="#监听文件" class="headerlink" title="监听文件"></a>监听文件</h4><p>为了监听文件的是否修改以便执行相应的任务，我们需要创建一个新的任务，然后利用gulp.watchAPI实现：</p>
+<pre><code>gulp.task(&apos;watch&apos;, function() {
+  // Watch .scss files
+  gulp.watch(&apos;src/styles/**/*.scss&apos;, [&apos;styles&apos;]);
+  // Watch .js files
+  gulp.watch(&apos;src/scripts/**/*.js&apos;, [&apos;scripts&apos;]);
+  // Watch image files
+  gulp.watch(&apos;src/images/**/*&apos;, [&apos;images&apos;]);
+});
+</code></pre><p>我们将不同类型的文件分开处理，执行对应的数组里的任务。现在我们可以在命令行输入$ gulp watch执行监听任务，当.sass、.js和图片修改时将执行对应的任务。</p>
+<h4 id="自动刷新页面"><a href="#自动刷新页面" class="headerlink" title="自动刷新页面"></a>自动刷新页面</h4><p>Gulp也可以实现当文件修改时自动刷新页面，我们要修改watch任务，配置LiveReload：</p>
+<pre><code>gulp.task(&apos;watch&apos;, function() {
+  // Create LiveReload server
+  livereload.listen();
+  // Watch any files in dist/, reload on change
+  gulp.watch([&apos;dist/**&apos;]).on(&apos;change&apos;, livereload.changed);
+});
+</code></pre><p>要使这个能够工作，还需要在浏览器上安装LiveReload插件，除此之外还能这样做</p>
+<h4 id="所有"><a href="#所有" class="headerlink" title="所有"></a>所有</h4><pre><code>/*!
+ * gulp
+ * $ npm install gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev
+ */
+// Load plugins
+var gulp = require(&apos;gulp&apos;),
+    sass = require(&apos;gulp-ruby-sass&apos;),
+    autoprefixer = require(&apos;gulp-autoprefixer&apos;),
+    minifycss = require(&apos;gulp-minify-css&apos;),
+    jshint = require(&apos;gulp-jshint&apos;),
+    uglify = require(&apos;gulp-uglify&apos;),
+    imagemin = require(&apos;gulp-imagemin&apos;),
+    rename = require(&apos;gulp-rename&apos;),
+    concat = require(&apos;gulp-concat&apos;),
+    notify = require(&apos;gulp-notify&apos;),
+    cache = require(&apos;gulp-cache&apos;),
+    livereload = require(&apos;gulp-livereload&apos;),
+    del = require(&apos;del&apos;);
+// Styles
+gulp.task(&apos;styles&apos;, function() {
+  return gulp.src(&apos;src/styles/main.scss&apos;)
+    .pipe(sass({ style: &apos;expanded&apos;, }))
+    .pipe(autoprefixer(&apos;last 2 version&apos;, &apos;safari 5&apos;, &apos;ie 8&apos;, &apos;ie 9&apos;, &apos;opera 12.1&apos;, &apos;ios 6&apos;, &apos;android 4&apos;))
+    .pipe(gulp.dest(&apos;dist/styles&apos;))
+    .pipe(rename({ suffix: &apos;.min&apos; }))
+    .pipe(minifycss())
+    .pipe(gulp.dest(&apos;dist/styles&apos;))
+    .pipe(notify({ message: &apos;Styles task complete&apos; }));
+});
+// Scripts
+gulp.task(&apos;scripts&apos;, function() {
+  return gulp.src(&apos;src/scripts/**/*.js&apos;)
+    .pipe(jshint(&apos;.jshintrc&apos;))
+    .pipe(jshint.reporter(&apos;default&apos;))
+    .pipe(concat(&apos;main.js&apos;))
+    .pipe(gulp.dest(&apos;dist/scripts&apos;))
+    .pipe(rename({ suffix: &apos;.min&apos; }))
+    .pipe(uglify())
+    .pipe(gulp.dest(&apos;dist/scripts&apos;))
+    .pipe(notify({ message: &apos;Scripts task complete&apos; }));
+});
+// Images
+gulp.task(&apos;images&apos;, function() {
+  return gulp.src(&apos;src/images/**/*&apos;)
+    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(gulp.dest(&apos;dist/images&apos;))
+    .pipe(notify({ message: &apos;Images task complete&apos; }));
+});
+// Clean
+gulp.task(&apos;clean&apos;, function(cb) {
+    del([&apos;dist/assets/css&apos;, &apos;dist/assets/js&apos;, &apos;dist/assets/img&apos;], cb)
+});
+// Default task
+gulp.task(&apos;default&apos;, [&apos;clean&apos;], function() {
+    gulp.start(&apos;styles&apos;, &apos;scripts&apos;, &apos;images&apos;);
+});
+// Watch
+gulp.task(&apos;watch&apos;, function() {
+  // Watch .scss files
+  gulp.watch(&apos;src/styles/**/*.scss&apos;, [&apos;styles&apos;]);
+  // Watch .js files
+  gulp.watch(&apos;src/scripts/**/*.js&apos;, [&apos;scripts&apos;]);
+  // Watch image files
+  gulp.watch(&apos;src/images/**/*&apos;, [&apos;images&apos;]);
+  // Create LiveReload server
+  livereload.listen();
+  // Watch any files in dist/, reload on change
+  gulp.watch([&apos;dist/**&apos;]).on(&apos;change&apos;, livereload.changed);
+});
+</code></pre><p>在gist上有源码，并且附上Grunt的实现作为对比。</p>
+<blockquote>
+<p>参考链接：<a href="http://markgoodyear.com/2014/01/getting-started-with-gulp/" target="_blank" rel="external">http://markgoodyear.com/2014/01/getting-started-with-gulp/</a><br><a href="http://markpop.github.io/2014/09/17/Gulp%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" target="_blank" rel="external">http://markpop.github.io/2014/09/17/Gulp%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</a></p>
+</blockquote>
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2014/04/09/Gulp入门教程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
         
       
     </div>
@@ -693,6 +1112,7 @@ var b =
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -742,10 +1162,10 @@ var b =
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://oe51jhwvd.bkt.clouddn.com/nver.jpg"
+               src="/images/avatar.gif"
                alt="TakoZhang" />
           <p class="site-author-name" itemprop="name">TakoZhang</p>
           <p class="site-description motion-element" itemprop="description">我随影而来，随影而去</p>
@@ -760,10 +1180,10 @@ var b =
 
           
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              
                 <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
-              </a>
+              
             </div>
           
 
@@ -775,44 +1195,6 @@ var b =
 
         <div class="links-of-author motion-element">
           
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/dushao103500" target="_blank" title="Github">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  Github
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/dushaoxiaoxiao" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.jianshu.com/users/d37fba7cef1d" target="_blank" title="简书">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  简书
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.cnblogs.com/dushao/" target="_blank" title="博客园">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  博客园
-                </a>
-              </span>
-            
-          
         </div>
 
         
@@ -820,20 +1202,9 @@ var b =
 
         
         
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              友情链接
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://htmlk.github.io/" title="小k博客" target="_blank">小k博客</a>
-                </li>
-              
-            </ul>
-          </div>
+
         
+
 
       </section>
 
@@ -851,13 +1222,14 @@ var b =
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2012 - 
+  &copy; 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">TakoZhang</span>
 </div>
+
 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
@@ -866,9 +1238,10 @@ var b =
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Muse
   </a>
 </div>
+
 
         
 
@@ -902,49 +1275,42 @@ var b =
 
 
   
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
+  
 
   
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 
@@ -957,6 +1323,11 @@ var b =
 
 
 
+	
+
+
+
+
   
   
 
@@ -965,6 +1336,9 @@ var b =
   
 
   
+
+  
+
 
 </body>
 </html>
