@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -63,21 +63,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="杜少博客" />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
 
 
 
@@ -100,8 +100,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -112,8 +112,8 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      hits: "",
+      labels: ""
     }
   };
 </script>
@@ -191,6 +191,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -201,12 +211,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            标签
+            关于
           </a>
         </li>
       
@@ -244,7 +254,7 @@
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="TakoZhang">
     <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
+    <meta itemprop="image" content="http://oe51jhwvd.bkt.clouddn.com/nver.jpg">
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -275,38 +285,12 @@
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-07T19:09:13+08:00">
-                2016-10-07
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/微信小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">微信小程序</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -335,133 +319,15 @@
       
         
           
-            <p>距离微信小程序内测版发布已经有十几天的时间了，网上对微信小程序的讨论也异常火爆，从发布到现在微信小程序一直占领着各种技术论坛的头条，当然各种平台也对微信小程序有新闻报道，毕竟腾讯在国内影响力还是很大的。我们都知道微信小程序第一天发布内测版，并没有公开官方开发文档和开发工具，但是这阻止不了技术人的好奇心。</p>
-<p>因为自己对小程序也是很有兴趣的，感觉是很有意思的一个东西，所以立马做了一下小demo，水平有限，所以做的过程也就是一个学习的过程，一个提高的过程。<br>这篇文章主要写我在写demo的过程中遇到的一些问题。如果阅读此文的你有一定帮助，很是欣慰。</p>
-<h3 id="一：项目结构"><a href="#一：项目结构" class="headerlink" title="一：项目结构"></a>一：项目结构</h3><p><strong>微信小程序项目结构主要有四个文件类型,如下</strong></p>
-<p><strong>WXML</strong> （WeiXin Markup Language）是框架设计的一套标签语言，结合基础组件、事件系统，可以构建出页面的结构。内部主要是微信自己定义的一套组件。</p>
-<p><strong>WXSS</strong>  (WeiXin Style Sheets)是一套样式语言，用于描述 WXML 的组件样式，</p>
-<p><strong>js</strong>  逻辑处理，网络请求</p>
-<p><strong>json</strong>  小程序设置，如页面注册，页面标题及tabBar。</p>
-<p>注意：为了方便开发者减少配置项，规定描述页面的这四个文件必须具有相同的路径与文件名。</p>
-<p>在根目录下用app来命名的这四中类型的文件，就是程序入口文件。</p>
-<p><strong>app.json</strong></p>
-<p>必须要有这个文件，如果没有这个文件，项目无法运行，因为微信框架把这个作为配置文件入口，整个小程序的全局配置。包括页面注册，网络设置，以及小程序的window背景色，配置导航条样式，配置默认标题。</p>
-<p><strong>app.js</strong><br>必须要有这个文件，没有也是会报错！但是这个文件创建一下就行 什么都不需要写<br>以后我们可以在这个文件中监听并处理小程序的生命周期函数、声明全局变量。</p>
-<p><strong>app.wxss</strong><br>全局配置的样式文件，项目非必须。</p>
-<p>知道小程序基本文件结构，就可以开始研究官方demo了，研究过程中如果有不明白的地方可以去官方文档寻求答案，如果找不到答案或者有疑问，可再此博客留言，相互交流。下面介绍下出现概率较高的几个问题。</p>
-<h3 id="二：常见问题"><a href="#二：常见问题" class="headerlink" title="二：常见问题"></a>二：常见问题</h3><h4 id="rpx（responsive-pixel）"><a href="#rpx（responsive-pixel）" class="headerlink" title="rpx（responsive pixel）"></a>rpx（responsive pixel）</h4><p>微信小程序新定义了一个尺寸单位，可以适配不同分辨率的屏幕，它规定屏幕宽为750rpx，如在 iPhone6 上，屏幕宽度为375px，共有750个物理像素，则750rpx = 375px = 750物理像素，1rpx = 0.5px = 1物理像素。</p>
-<p>这个项目我用的都是rpx尺寸单位，期间遇到一个很奇葩的问题。在相邻的两条信息直接都会有一个分割线，我将线的高度都设置成1rpx,但是不有个别分割线是不显示的，如下图</p>
-<p>看到没在第一条和第二条直接并没有现实这条线，但是其他的都展示了，分割线的属性是一样的，而且在不同的手机上（分辨率不同）不显示的分割线也是不同的，有的分辨率好几条分割线都不显示，不知道这是模拟器的bug还是rpx的bug。最后分割线的高度尺寸单位使用了px,解决了这个问题。</p>
-<h4 id="40013错误"><a href="#40013错误" class="headerlink" title="40013错误"></a>40013错误</h4><p>在微信小程序刚出来的时候如果输入AppID提示这个信息就表示没有破解，但是现在官方软件更新可以选择无AppID开发，如下图，我们之间选择无AppID，即可解决此错误。建议安装官方开发工具。可去此处找下载链接。</p>
-<h4 id="4058错误"><a href="#4058错误" class="headerlink" title="4058错误"></a>4058错误</h4><p>微信小程序创建项目时选择无AppID，创建项目时会生成app.json，app.josn是程序启动最重要的文件，程序的页面注册，窗口设置，tab设置及网络请求时间设置都是在此文件下的。如果你创建的项目目录下没有app.json文件就会报下面的错误。</p>
-<p>我们看到上面的错误信息中有个数字-4058，这应该是初入微信小程序遇到最多的错误了，这种一般都是文件缺失，后面有个path，可以对着该路径看看是否存在这个文件。造成这种错误的原因一般都是创建项目选择的目录不正确，或者在app.json注册了一个不存在的页面。<br>当然还有一种情况就是在app.json文件的pages注册的页面是没有创建的，或者你删除了某个页面，但是没有取消注册也会是-4058错误。</p>
-<h4 id="Page注册错误"><a href="#Page注册错误" class="headerlink" title="Page注册错误"></a>Page注册错误</h4><p>这个错误可能很容易理解，页面注册错误。页面是通过Page对象来渲染的，每个页面对应的js文件必须要创建page，最简单的方式就是在js文件下写入Page({})，在page中有管理页面渲染的生命周期，以及数据处理，事件都在这完成。这个错误引起的原因一般都是刚创建页面，js文件还有有处理或者忘了处理。所以要养成创建页面的同时在js文件先创建Page的习惯.</p>
-<h4 id="Page-route错误"><a href="#Page-route错误" class="headerlink" title="Page route错误"></a>Page route错误</h4><p>字面意思就是页面路由错误，在微信中有两种路由方式一种是在wxml文件使用<navigator>组件，一种是调 wx.navigateTo。</navigator></p>
-<p>如下代码：<br>    wxml文件：<br>    <navigator url="search/search"><br>    <view class="serach_view_show" bindtap="bindtap"> 搜索</view><br>    </navigator><br>    js文件事件处理函数：<br>      bindtap:function(event){<br>    wx.navigateTo({<br>      url: “search/search”<br>    })<br>      }<br>如果你这样写的话，恭喜你，你就会看到上面提示的错误，这是因为重复调用路由引起的，处理方法就是删除一个路由，删除<navigator>组件或者删除wx.navigateTo。除了上面说的可能导致路由错误外，还有一种情况，类似于下面的代码</navigator></p>
-<pre><code>&lt;navigator url=&quot;search/search&quot;&gt;
-&lt;navigator url=&quot;search/search&quot;&gt;
-&lt;view class=&quot;serach_view_show&quot; bindtap=&quot;bindtap&quot;&gt; 搜索&lt;/view&gt;
-&lt;/navigator&gt;
-&lt;/navigator&gt;
-</code></pre><p>这种也是不允许的，也就是说<navigator>组件内部不能再嵌套<navigator>组件。它只能是单层存在的。</navigator></navigator></p>
-<h4 id="Do-not-have-handler-in-current-page"><a href="#Do-not-have-handler-in-current-page" class="headerlink" title="Do not have * handler in current page."></a>Do not have * handler in current page.</h4><p>大概意思就是当前页面没有此处理，让确定是否已经定义，还指出了错误出现的可能位置pages/message/message,其实这种问题出现一般就是我们在wxml定义了一些处理事件，但是在js文件中没有实现这个时事件的处理方法，就会出现这个错误。那么我们按提示在js文件加上事件处理，如下代码，加上后就不会再有此错误提示。</p>
-<pre><code>bindtap:function(event){
-  wx.navigateTo({
-    url: &quot;search/search&quot;
-  })
-},
-</code></pre><h4 id="tabBar设置不显示"><a href="#tabBar设置不显示" class="headerlink" title="tabBar设置不显示"></a>tabBar设置不显示</h4><p>对于tabBar不显示，原因有很多，查找这个错误直接去app.json这个文件，最常见的也是刚学习微信小程序最容易犯的错误无外乎下面几种<br>注册页面即将页面写到app.json的pages字段中，如</p>
-<pre><code>&quot;pages&quot;:[
-   &quot;pages/message/message&quot;,
-   &quot;pages/contact/contact&quot;,
-   &quot;pages/dynamic/dynamic&quot;,
-    &quot;pages/dynamic/music/music&quot;,
-   &quot;pages/index/index&quot;,
-   &quot;pages/logs/logs&quot;
- ]
-</code></pre><p>tabBar写法错误导致的不显示，将其中的大写字母B写成小写，导致tabBar不显示。<br>tabBar的list中没有写pagePath字段，或者pagePath中的页面没有注册<br>tabBar的list的pagePath指定的页面没有写在注册页面第一个。微信小程序的逻辑是”pages”中的第一个页面是首页，也就是程序启动后第一个显示的页面，如果tabBar的list的pagePath指定的页面都不是pages的第一个，当然也就不会电视tabBar了。<br>tabBar的数量低于两项或者高于五项，微信官方中明确规定tabBar的至少两项最多五项。超过或者少于都不会显示tabBar。</p>
-<h4 id="navigationBarTitle显示问题"><a href="#navigationBarTitle显示问题" class="headerlink" title="navigationBarTitle显示问题"></a>navigationBarTitle显示问题</h4><p>通过这个动态图你应该发现问题了，当点击音乐进入音乐界面时，title先显示了WeChatForQQ然后显示的音乐，这个体验肯定是难以接受的，原因是音乐界面的title是在js文件中page的生命周期方法中设置的。<br>若你不了解生命周期，可以点击查看<br>    Page({<br>      data:{<br>        // text:”这是一个页面”<br>      },<br>      onLoad:function(options){<br>        // 页面初始化 options为页面跳转所带来的参数</p>
-<pre><code>  },
-  onReady:function(){
-    // 页面渲染完成
-    //NavigationBarTitle如果此处和json文件都设置，最后展示此处的标题栏
-wx.setNavigationBarTitle({
-  title: &apos;音乐&apos;
-})
-  },
-  onShow:function(){
-    // 页面显示
-  },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
-  }
-})
-</code></pre><p>通过注释你应该明白了，设置标题写在了onReady方法中，也就是页面已经渲染完成了，在onReady之前显示的title就是json文件（覆盖关系，如果在子页面json文件设置title会覆盖app.json全局设置）中的title。可能你会说将wx.setNavigationBarTitle写在onLoad函数中，不过如果这样设置是不对的，因为onLoad执行过后才渲染页面，在渲染页面时title会从json文件中读取，导致onLoad设置的title会只在页面渲染之前展示，之后就显示json文件的tile，所以现在你应该明白ttle设置最优的地方就是给子文件写一个json文件，在文件中写入，如果想改变颜色直接在文件中添加就可以，该文件所写的属性值会覆盖app.json中设置的值。<br>    {<br>        “navigationBarTitleText”: “音乐”<br>    }</p>
-<h4 id="wx-navigateTo无法打开页面"><a href="#wx-navigateTo无法打开页面" class="headerlink" title="wx.navigateTo无法打开页面"></a>wx.navigateTo无法打开页面</h4><p>一个应用同时只能打开5个页面，当已经打开了5个页面之后，wx.navigateTo不能正常打开新页面。请避免多层级的交互方式，或者使用wx.redirectTo</p>
-<p>本地资源无法通过 css 获取</p>
-<p>background-image：可以使用网络图片，或者 base64，或者使用<image>标签</image></p>
-<h4 id="页面间数据传递"><a href="#页面间数据传递" class="headerlink" title="页面间数据传递"></a>页面间数据传递</h4><p>微信小程序路由（页面跳转）是通过API wx.navigateTo或者wxml中<navigator>组件实现的，不管哪种实现都会有一个重要的参数就是url，它指定了要跳转的页面，并且页面之间数据传递也是通过url来实现的，这个数据传递有点类似于我们使用的get网络请求，把参数都拼接在要跳转界面地址的后面并以“？”连接。然后将要传入的数据以键和值的形式追加在”?”后面，多个参数直接用”&amp;”符合。如我们点击消息聊天记录，将列表上的数据传到下一个页面，可以这样写。</navigator></p>
-<pre><code>&lt;navigator url=&quot;/pages/dynamic/dynamic?title={{item.title}}&amp;message={{item.message}}&quot;&gt;
-         &lt;view class=&quot;item&quot; &gt;
-            &lt;view class=&quot;item-left&quot;&gt;
-                 &lt;image src=&quot;{{item.url}}&quot; class=&quot;image&quot;/&gt;
-            &lt;/view&gt;
-            &lt;view class=&quot;item-middle&quot;&gt;
-                 &lt;view&gt;
-                      &lt;text class=&quot;title&quot;&gt;{{item.title}}&lt;/text&gt;
-                 &lt;/view&gt;
-                 &lt;view&gt;
-                     &lt;text class=&quot;message&quot;&gt;{{item.message}}&lt;/text&gt;
-                 &lt;/view&gt;
-           &lt;/view&gt;
-           &lt;view class=&quot;item_right&quot;&gt;
-               &lt;view&gt;&lt;text class=&quot;time&quot;&gt;{{item.time}}&lt;/text&gt;&lt;/view&gt;
-               &lt;view class=&quot;mark&quot; wx:if=&quot;{{item.count>0}}&quot;&gt;&lt;text class=&quot;text&quot;&gt;{{item.count}}&lt;/text&gt;&lt;/view&gt;
-           &lt;/view&gt;
-        &lt;/view&gt;
-        &lt;view  class=&quot;line&quot;&gt;&lt;/view&gt;
-      &lt;/navigator&gt;
-</code></pre><p>而数据接收是在js文件的page里接收的，page生命周期有一个onLoad函数，它就是做一些初始化数据的工作，onLoad函数有一个参数options，我们就可以通过key将数据获取，如下</p>
-<pre><code>/**  作者：dushao
- *   新浪微博：http://weibo.com/dushaoxiaoxiao
- *   博客  :    http://www.takozhang.cn
- * */
- * 
-Page({
-  data:{
-    // text:&quot;这是一个页面&quot;
-    isHiddenToast:true
-  }
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
-    console.log(options.title)
-     console.log(options.message)
-
-  },
-  onReady:function(){
-    // 页面渲染完成
-  },
-  onShow:function(){
-    // 页面显示
-  },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
-  },
-  bindtap:function(event){
-wx.navigateTo({
-  url: &quot;/pages/message/search/search&quot;
-})
-  },
-})
-</code></pre><p>这样就实现了页面间数据传递功能。<br>好了，今天就写到这了后期若遇到微信小程序其它一些问题，我会追加到此文，若你在开发过程中遇到比较坑的问题已经解决方案，可在我的微博或者邮箱留言。谢谢支持。</p>
-
-          
+          距离微信小程序内测版发布已经有十几天的时间了，网上对微信小程序的讨论也异常火爆，从发布到现在微信小程序一直占领着各种技术论坛的头条，当然各种平台也对微信小程序有新闻报道，毕竟腾讯在国内影响力还是很大的。我们都知道微信小程序第一天发布内测版，并没有公开官方开发文档和开发工具，但是这阻止不了技术人的好奇
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/07/微信小程序开发常见问题分析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -503,7 +369,7 @@ wx.navigateTo({
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="TakoZhang">
     <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
+    <meta itemprop="image" content="http://oe51jhwvd.bkt.clouddn.com/nver.jpg">
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -533,14 +399,6 @@ wx.navigateTo({
 
         <div class="post-meta">
           <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-27T22:22:45+08:00">
-                2016-09-27
-              </time>
             
 
             
@@ -576,176 +434,22 @@ wx.navigateTo({
       
         
           
-            <p><strong>成员：杜必林，邝光前，徐志文，欧阳学海，陈松，罗石发</strong></p>
-<h2 id="一：任务安排"><a href="#一：任务安排" class="headerlink" title="一：任务安排"></a>一：任务安排</h2><h3 id="主页面-（徐志文）"><a href="#主页面-（徐志文）" class="headerlink" title="主页面 （徐志文）"></a>主页面 （徐志文）</h3><p><strong>主要难度：</strong></p>
-<p>(1).轮播图（包括拖拽功能）</p>
-<p>(2).商品链接详情页，查看更多链接分类页（通过href传值跳转）</p>
-<p>(3).搜索框</p>
-<h3 id="分类页面（含两页面）-（杜必林）"><a href="#分类页面（含两页面）-（杜必林）" class="headerlink" title="分类页面（含两页面） （杜必林）"></a>分类页面（含两页面） （杜必林）</h3><p><strong>主要难度：</strong></p>
-<p>(1).分类页面只能一个，数据分类有难度</p>
-<p>(2).链接详情页(通过href传值跳转至详情页)</p>
-<h3 id="登录注册页面（四个页面）-（邝光前）"><a href="#登录注册页面（四个页面）-（邝光前）" class="headerlink" title="登录注册页面（四个页面） （邝光前）"></a>登录注册页面（四个页面） （邝光前）</h3><p>(1).页面太多</p>
-<p>(2).登录注册可以用cookie或者localstorage,或者sessionstroage写，数据存在json</p>
-<h3 id="购物车页面-详情页联动-（欧阳学海）"><a href="#购物车页面-详情页联动-（欧阳学海）" class="headerlink" title="购物车页面,详情页联动 （欧阳学海）"></a>购物车页面,详情页联动 （欧阳学海）</h3><p><strong>主要难度</strong></p>
-<p>(1)购物车数据和后台交互，单独一个json放购物车数据，只有登录才能加入购物车</p>
-<p>(2)购物车页面实现增删改查</p>
-<p>(3)详情页面只能一个，动态获取数据，接收href传来的值</p>
-<h3 id="茶饮机页面-活动页面-（罗石发）"><a href="#茶饮机页面-活动页面-（罗石发）" class="headerlink" title="茶饮机页面,活动页面 （罗石发）"></a>茶饮机页面,活动页面 （罗石发）</h3><p><strong>主要难度</strong></p>
-<p>(1).活动页面可以参照分类页面</p>
-<p>(2).实现动态切换</p>
-<h3 id="个人信息页面-活动页面-（陈松）"><a href="#个人信息页面-活动页面-（陈松）" class="headerlink" title="个人信息页面,活动页面 （陈松）"></a>个人信息页面,活动页面 （陈松）</h3><p><strong>主要难度</strong></p>
-<p>(1).显示个人信息</p>
-<p>(2).与登录注册实时同步</p>
-<h3 id="代码整合"><a href="#代码整合" class="headerlink" title="代码整合"></a>代码整合</h3><h2 id="二、相关规范"><a href="#二、相关规范" class="headerlink" title="二、相关规范"></a>二、相关规范</h2><h3 id="移动端兼容及布局规范"><a href="#移动端兼容及布局规范" class="headerlink" title="移动端兼容及布局规范"></a>移动端兼容及布局规范</h3><p>采用弹性盒子布局，尽量脱离固定样式布局</p>
-<p>实现各种移动端设备的适配兼容</p>
-<h3 id="页面命名规范"><a href="#页面命名规范" class="headerlink" title="页面命名规范"></a>页面命名规范</h3><pre><code>登录页面：login.html
-
-注册页面：register.html
-
-我的页面：my.html
-
-个人信息页面：info.html
-
-主页面：index.html
-
-分类页面：sort.html
-
-详情页面：detail.html
-
-活动页面：activity.html
-
-茶饮机页面：machine.html
-</code></pre><p><strong>**</strong>如需要扩展页面，必须提前通知，商讨之后动工</p>
-<h3 id="gulp文件夹命名及层级规范"><a href="#gulp文件夹命名及层级规范" class="headerlink" title="gulp文件夹命名及层级规范"></a>gulp文件夹命名及层级规范</h3><pre><code>工程文件名hecha
-
-1.build文件夹{
-    1_1  images文件夹:存放图片
-    1_2  fonts文件夹：存放字体
-    1_3  prd文件夹：{
-        scripts文件夹{
-            app.index.js
-            app.login.js.......
-        }
-        styles文件夹{
-            app.index.css
-            app.login.css.......
-        }
-    }
-    1_4  ver文件夹{版本管理}
-    1_5  html页面：index.html,login.html等等
-}
-2.images文件夹{
-    （为了方便代码管理，页面对应文件夹）
-    2_1  index.images文件夹{index页面的图片}
-    2_2  login.images文件夹{login页面的图片}
-    2_....（如果一个人写多个页面，可以只创建一个文件夹）
-}
-3.fonts文件夹{
-    iconfont-menu.ttf
-    iconfont-menu.woff
-    （命名的时候一定要语义化）
-}
-4.mock文件夹{
-    a.json
-    b.json
-    c.json
-    ....(json文件到时再议)
-}
-5.node_modules文件夹{
-    存放模块工具
-}
-6.src文件夹{
-    styles文件夹{
-        libs文件夹{提供，切勿乱修改}
-        usage文件夹{
-            common文件夹{存放各页面之间相同的css部分，主要是    footer部分}
-            core文件夹{勿动}
-            element文件夹{勿动}
-            export文件夹{勿动}
-            fragment文件夹{勿动}
-            layout文件夹{勿动}
-            module文件夹{
-                （主要存放每个页面各自的样式）
-                m.index.scss
-                m.login.scss
-                ....
-            }
-            page文件夹{
-                （各页面样式的出口）    
-                app.index.scss
-                app.iogin.scss
-                ....
-            }
-
-        }
-    }
-    scripts文件夹{
-        libs文件夹：{主要存放框架等第三方组件}
-        tpls文件夹：{
-            （主要存放各页面的string文件，公共部分要提取出来，比如说footer.string）
-            index.string
-            login.string
-            ....
-        }
-        utils文件夹{
-            （存放公共js文件，比如购物车显示数量的js）
-            common.util.js
-            ....
-        }
-        views文件夹{
-            （存放各页面单独的js）
-            index.js
-            login.js
-            ....
-        }
-        各js出口文件，比如
-        app.index.js
-        app.login.js
-        ...
-        ...
-    }
-}
-7.gulpfile.js文件
-8.html文件...（以index.html为例）{
-    &lt;!DOCTYPE html&gt;
-        &lt;html lang=&quot;en&quot;&gt;
-
-        &lt;head&gt;
-            &lt;meta charset=&quot;UTF-8&quot;&gt;
-            &lt;meta content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; name=&quot;viewport&quot;&gt;
-            &lt;meta content=&quot;yes&quot; name=&quot;apple-mobile-web-app-capable&quot;&gt;
-            &lt;meta content=&quot;black&quot; name=&quot;apple-mobile-web-app-status-bar-style&quot;&gt;
-            &lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot;&gt;
-            &lt;meta content=&quot;email=no&quot; name=&quot;format-detection&quot;&gt;
-            &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-            &lt;title&gt;footballSNS&lt;/title&gt;
-            &lt;link rel=&quot;stylesheet&quot; href=&quot;/build/prd/styles/swiper-3.3.1.min.css&quot;&gt;
-            &lt;link rel=&quot;stylesheet&quot; href=&quot;/build/prd/styles/app.css&quot;&gt;
-        &lt;/head&gt;
-
-        &lt;body&gt;
-            &lt;script src=&quot;/build/prd/scripts/zepto.js&quot;&gt;&lt;/script&gt;
-            &lt;script src=&quot;/build/prd/scripts/swiper-3.3.1.jquery.min.js&quot;&gt;&lt;/script&gt;
-            &lt;script src=&quot;/build/prd/scripts/iscroll-probe.js&quot;&gt;&lt;/script&gt;
-            &lt;script src=&quot;/build/prd/scripts/template.js&quot;&gt;&lt;/script&gt;
-            &lt;script src=&quot;/build/prd/scripts/app.js&quot;&gt;&lt;/script&gt;
-        &lt;/body&gt;
-
-        &lt;/html&gt;
-    }
-9.package.json文件{安装组件的时候记得要本地安装 加-D}
-</code></pre><h3 id="js和scss规范"><a href="#js和scss规范" class="headerlink" title="js和scss规范"></a>js和scss规范</h3><p>必须用scss，别用css，公共模块一定要单独提取出来，比如主页面的footer部分</p>
-<p>js尽量封装，用面向对象思想,做到一个函数，任何地方都能引用</p>
-<p>js各模块关系明确，不能出现循环依赖</p>
-<h3 id="json数据规范（先写静态页面，json数据讨论之后再做决断）"><a href="#json数据规范（先写静态页面，json数据讨论之后再做决断）" class="headerlink" title="json数据规范（先写静态页面，json数据讨论之后再做决断）"></a>json数据规范（先写静态页面，json数据讨论之后再做决断）</h3><p><strong>主要json数据：</strong></p>
-<p>1、商品信息：</p>
-<p>2.商品分类信息</p>
-<p>3、用户信息：</p>
-<p>4、购物车信息：</p>
-<p>5、活动商品信息：</p>
-<h2 id="三：环境配置"><a href="#三：环境配置" class="headerlink" title="三：环境配置"></a>三：环境配置</h2><p>node版本：v6.2.0<br>Github协作开发</p>
-
-          
+          成员：杜必林，邝光前，徐志文，欧阳学海，陈松，罗石发
+一：任务安排主页面 （徐志文）主要难度：
+(1).轮播图（包括拖拽功能）
+(2).商品链接详情页，查看更多链接分类页（通过href传值跳转）
+(3).搜索框
+分类页面（含两页面） （杜必林）主要难度：
+(1).分类页面只能一个，数据分类有难度
+(
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/27/移动开发项目开发任务分配/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -787,7 +491,7 @@ wx.navigateTo({
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="TakoZhang">
     <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
+    <meta itemprop="image" content="http://oe51jhwvd.bkt.clouddn.com/nver.jpg">
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -818,38 +522,12 @@ wx.navigateTo({
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-04-22T20:21:02+08:00">
-                2016-04-22
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -878,384 +556,19 @@ wx.navigateTo({
       
         
           
-            <h2 id="项目起源"><a href="#项目起源" class="headerlink" title="项目起源"></a>项目起源</h2><p>还记得@jayli 的这幅前端知识结构图么。</p>
-<p><img src="https://raw.github.com/JacksonTian/fks/master/figures/fks.jpg" alt="前端知识结构"></p>
-<p>图片的形式具有诸多的不便。缺失源图的我们，无法为此图贡献些什么，随着时间的迁移，或许有些技术点会发生改变，所以有了这个GitHub项目。我们可以通过协作的方式来共同维护这个项目。Git的历史记录也可以见证前端行业的一些变迁。</p>
-<p><a href="http://html5ify.com/fks/fks_chart/" target="_blank" rel="external">可视化效果</a></p>
-<h2 id="前端开发知识结构"><a href="#前端开发知识结构" class="headerlink" title="前端开发知识结构"></a>前端开发知识结构</h2><ul>
-<li><p>前端工程师</p>
-<ul>
-<li>浏览器<ul>
-<li>IE6/<a href="http://www.microsoft.com/en-us/download/internet-explorer-7-details.aspx" target="_blank" rel="external">7</a>/<a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie-8" target="_blank" rel="external">8</a>/<a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie-9/worldwide-languages" target="_blank" rel="external">9</a>/<a href="http://windows.microsoft.com/en-US/internet-explorer/ie-10-worldwide-languages" target="_blank" rel="external">10</a>/<a href="http://windows.microsoft.com/en-US/internet-explorer/ie-11-worldwide-languages" target="_blank" rel="external">11</a> (Trident)</li>
-<li><a href="http://www.mozilla.org/en-US/" target="_blank" rel="external">Firefox</a> (Gecko)</li>
-<li><a href="http://www.google.com/chrome" target="_blank" rel="external">Chrome</a>/<a href="http://www.chromium.org/" target="_blank" rel="external">Chromium</a> (Blink)</li>
-<li><a href="http://www.apple.com/safari/" target="_blank" rel="external">Safari</a> (WebKit)</li>
-<li><a href="http://www.opera.com/" target="_blank" rel="external">Opera</a> (Blink)</li>
-</ul>
-</li>
-<li>编程语言<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/JavaScript" target="_blank" rel="external">JavaScript</a>/<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a></li>
-<li><a href="http://coffeescript.org/" target="_blank" rel="external">CoffeeScript</a></li>
-<li><a href="http://www.typescriptlang.org/" target="_blank" rel="external">TypeScript</a></li>
-</ul>
-</li>
-<li>切页面<ul>
-<li><a href="http://www.w3.org/html/" target="_blank" rel="external">HTML</a>/<a href="http://www.w3.org/TR/html5/" target="_blank" rel="external">HTML5</a></li>
-<li><a href="http://www.w3.org/Style/CSS/" target="_blank" rel="external">CSS/CSS3</a></li>
-<li><a href="http://sass-lang.com/" target="_blank" rel="external">Sass</a>/<a href="http://lesscss.org/" target="_blank" rel="external">LESS</a>/<a href="http://learnboost.github.io/stylus/" target="_blank" rel="external">Stylus</a>/<a href="https://github.com/postcss/postcss" target="_blank" rel="external">postCSS</a></li>
-<li><a href="http://www.photoshop.com/products/photoshop" target="_blank" rel="external">PhotoShop</a>/<a href="http://www.getpaint.net/" target="_blank" rel="external">Paint.net</a>/<a href="http://www.adobe.com/cn/products/fireworks.html" target="_blank" rel="external">Fireworks</a>/<a href="http://www.gimp.org/" target="_blank" rel="external">GIMP</a>/<a href="http://bohemiancoding.com/sketch/" target="_blank" rel="external">Sketch</a></li>
-</ul>
-</li>
-<li>开发工具<ul>
-<li>编辑器和IDE<ul>
-<li><a href="http://www.vim.org/" target="_blank" rel="external">VIM</a>/<a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text2</a></li>
-<li><a href="http://notepad-plus-plus.org/" target="_blank" rel="external">Notepad++</a>/<a href="http://www.editplus.com/" target="_blank" rel="external">EditPlus</a></li>
-<li><a href="http://www.jetbrains.com/webstorm/" target="_blank" rel="external">WebStorm</a></li>
-<li><a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a>  <a href="http://emacswiki.org" target="_blank" rel="external">EmacsWiki</a></li>
-<li><a href="http://brackets.io" target="_blank" rel="external">Brackets</a></li>
-<li><a href="https://atom.io/" target="_blank" rel="external">Atom</a></li>
-<li><a href="http://limetext.org/" target="_blank" rel="external">Lime Text</a></li>
-<li><a href="http://lighttable.com/" target="_blank" rel="external">Light Table</a></li>
-<li><a href="https://www.codebox.io/" target="_blank" rel="external">Codebox</a></li>
-<li><a href="http://macromates.com/" target="_blank" rel="external">TextMate</a></li>
-<li><a href="http://neovim.org/" target="_blank" rel="external">Neovim</a></li>
-<li><a href="http://www.activestate.com/komodo-edit" target="_blank" rel="external">Komodo IDE / Edit</a></li>
-<li><a href="http://www.eclipse.org/" target="_blank" rel="external">Eclipse</a></li>
-<li><a href="http://www.visualstudio.com/" target="_blank" rel="external">Visual Studio</a>/<a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a></li>
-<li><a href="https://netbeans.org/" target="_blank" rel="external">NetBeans</a></li>
-<li><a href="http://c9.io/" target="_blank" rel="external">Cloud9 IDE</a></li>
-<li><a href="http://www.dcloud.io/" target="_blank" rel="external">HBuilder</a></li>
-<li><a href="http://nuclide.io/" target="_blank" rel="external">Nuclide</a></li>
-<li><a href="https://code.visualstudio.com/" target="_blank" rel="external">VS code</a></li>
-</ul>
-</li>
-<li>调试工具<ul>
-<li><a href="http://getfirebug.com/" target="_blank" rel="external">Firebug</a>/<a href="https://addons.mozilla.org/en-US/firefox/addon/firecookie/" target="_blank" rel="external">Firecookie</a></li>
-<li><a href="http://developer.yahoo.com/yslow/" target="_blank" rel="external">YSlow</a></li>
-<li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=18359" target="_blank" rel="external">IEDeveloperToolbar</a>/<a href="http://www.my-debugbar.com/wiki/IETester/HomePage" target="_blank" rel="external">IETester</a></li>
-<li><a href="http://www.telerik.com/fiddler" target="_blank" rel="external">Fiddler</a></li>
-<li><a href="https://developer.chrome.com/devtools" target="_blank" rel="external">Chrome Dev Tools</a></li>
-<li><a href="http://www.opera.com/dragonfly/" target="_blank" rel="external">Dragonfly</a></li>
-<li><a href="http://www.debugbar.com/" target="_blank" rel="external">DebugBar</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Venkman" target="_blank" rel="external">Venkman</a></li>
-<li><a href="https://www.charlesproxy.com/" target="_blank" rel="external">Charles</a></li>
-</ul>
-</li>
-<li>版本管理<ul>
-<li><a href="http://git-scm.com/" target="_blank" rel="external">Git</a>/<a href="http://subversion.apache.org/" target="_blank" rel="external">SVN</a>/<a href="http://mercurial.selenic.com/" target="_blank" rel="external">Mercurial</a></li>
-<li><a href="https://github.com/" target="_blank" rel="external">Github</a>/<a href="https://about.gitlab.com/" target="_blank" rel="external">GitLab</a>/<a href="https://bitbucket.org/" target="_blank" rel="external">Bitbucket</a>/<a href="https://gitorious.org/" target="_blank" rel="external">Gitorious</a>/<a href="http://savannah.gnu.org/" target="_blank" rel="external">GNU Savannah</a>/<a href="https://launchpad.net/" target="_blank" rel="external">Launchpad</a>/<a href="http://sourceforge.net/" target="_blank" rel="external">SourceForge</a>/<a href="http://www.collab.net/products/teamforge" target="_blank" rel="external">TeamForge</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>代码质量<ul>
-<li>Coding style<ul>
-<li><a href="http://www.jslint.com/" target="_blank" rel="external">JSLint</a>/<a href="http://www.jshint.com/" target="_blank" rel="external">JSHint</a>/<a href="https://github.com/mdevils/node-jscs" target="_blank" rel="external">jscs</a>/<a href="https://github.com/eslint/eslint" target="_blank" rel="external">ESLint</a></li>
-<li><a href="http://csslint.net/" target="_blank" rel="external">CSSLint</a></li>
-<li><a href="http://validator.w3.org/" target="_blank" rel="external">Markup Validation Service</a></li>
-<li><a href="https://validator.whatwg.org/" target="_blank" rel="external">HTML Validators</a></li>
-</ul>
-</li>
-<li>单元测试<ul>
-<li><a href="http://qunitjs.com/" target="_blank" rel="external">QUnit</a>/<a href="http://jasmine.github.io/" target="_blank" rel="external">Jasmine</a></li>
-<li><a href="http://mochajs.org/" target="_blank" rel="external">Mocha</a>/<a href="https://github.com/visionmedia/should.js/" target="_blank" rel="external">Should</a>/<a href="http://chaijs.com/" target="_blank" rel="external">Chai</a>/<a href="https://github.com/LearnBoost/expect.js/" target="_blank" rel="external">Expect</a></li>
-<li><a href="http://unitjs.com/" target="_blank" rel="external">Unit JS</a></li>
-</ul>
-</li>
-<li>自动化测试<ul>
-<li><a href="http://docs.seleniumhq.org/docs/03_webdriver.jsp" target="_blank" rel="external">WebDriver</a>/<a href="https://github.com/angular/protractor" target="_blank" rel="external">Protractor</a>/<a href="https://github.com/karma-runner/karma" target="_blank" rel="external">Karma Runner</a>/<a href="http://sahi.co.in/" target="_blank" rel="external">Sahi</a></li>
-<li><a href="http://phantomjs.org/" target="_blank" rel="external">phantomjs</a></li>
-<li><a href="https://saucelabs.com/" target="_blank" rel="external">SourceLabs</a>/<a href="http://www.browserstack.com/" target="_blank" rel="external">BrowserStack</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>前端库/框架<ul>
-<li><a href="http://jquery.com/" target="_blank" rel="external">jQuery</a>/<a href="http://underscorejs.org/" target="_blank" rel="external">Underscore</a>/<a href="http://mootools.net/" target="_blank" rel="external">Mootools</a>/<a href="http://www.prototypejs.org/" target="_blank" rel="external">Prototype.js</a></li>
-<li><a href="http://yuilibrary.com/projects/yui3/" target="_blank" rel="external">YUI3</a>/<a href="http://dojotoolkit.org/" target="_blank" rel="external">Dojo</a>/<a href="http://www.sencha.com/products/extjs" target="_blank" rel="external">ExtJS</a>/<a href="http://docs.kissyui.com/" target="_blank" rel="external">KISSY</a></li>
-<li><a href="http://backbonejs.org/" target="_blank" rel="external">Backbone</a>/<a href="http://knockoutjs.com/" target="_blank" rel="external">KnockoutJS</a>/<a href="http://emberjs.com/" target="_blank" rel="external">Emberjs</a></li>
-<li><a href="http://angularjs.org/" target="_blank" rel="external">AngularJS</a><ul>
-<li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk" target="_blank" rel="external">Batarang</a></li>
-</ul>
-</li>
-<li><a href="http://getbootstrap.com/" target="_blank" rel="external">Bootstrap</a></li>
-<li><a href="http://www.semantic-ui.com/" target="_blank" rel="external">Semantic UI</a></li>
-<li><a href="http://juiceui.com/" target="_blank" rel="external">Juice UI</a></li>
-<li><a href="http://webatomsjs.neurospeech.com/" target="_blank" rel="external">Web Atoms</a></li>
-<li><a href="http://docs.polymerchina.org/" target="_blank" rel="external">Polymer</a></li>
-<li><a href="http://dhtmlx.com/" target="_blank" rel="external">Dhtmlx</a></li>
-<li><a href="http://qooxdoo.org/" target="_blank" rel="external">qooxdoo</a></li>
-<li><a href="http://facebook.github.io/react/" target="_blank" rel="external">React</a></li>
-<li><a href="http://mozbrick.github.io/" target="_blank" rel="external">Brick</a></li>
-<li><a href="http://cn.vuejs.org/" target="_blank" rel="external">vue.js</a></li>
-</ul>
-</li>
-<li>前端标准/规范<ul>
-<li>HTTP/1.1: RFCs 7230-7235</li>
-<li><a href="https://http2.github.io/" target="_blank" rel="external">HTTP/2</a></li>
-<li><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank" rel="external">ECMAScript3/5</a></li>
-<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html" target="_blank" rel="external">ECMAScript6</a></li>
-<li><a href="http://www.w3.org/TR/" target="_blank" rel="external">W3C: DOM/BOM/XHTML/XML/JSON/JSONP/…</a></li>
-<li><a href="http://wiki.commonjs.org/wiki/Modules/1.0" target="_blank" rel="external">CommonJS Modules</a>/<a href="https://github.com/amdjs/amdjs-api/wiki/AMD" target="_blank" rel="external">AMD</a></li>
-<li><a href="http://www.w3.org/html/wg/drafts/html/master/" target="_blank" rel="external">HTML5</a>/<a href="http://www.w3.org/Style/CSS/specs.en.html" target="_blank" rel="external">CSS3</a></li>
-<li><a href="http://semanticweb.org/" target="_blank" rel="external">Semantic Web</a><ul>
-<li><a href="http://schema.org" target="_blank" rel="external">MicroData</a></li>
-<li><a href="http://www.w3.org/TR/rdfa-core/" target="_blank" rel="external">RDFa</a></li>
-</ul>
-</li>
-<li><a href="http://www.w3.org/WAI/" target="_blank" rel="external">Web Accessibility</a><ul>
-<li><a href="http://www.w3.org/TR/WAI-WEBCONTENT/" target="_blank" rel="external">WCAG</a></li>
-<li><a href="http://www.w3.org/TR/role-attribute/" target="_blank" rel="external">Role Attribute</a></li>
-<li><a href="http://www.w3.org/TR/wai-aria/" target="_blank" rel="external">WAI-ARIA</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>性能<ul>
-<li><a href="http://jsperf.com/" target="_blank" rel="external">JSPerf</a></li>
-<li><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="external">YSlow 35 rules</a></li>
-<li><a href="https://developers.google.com/speed/pagespeed/" target="_blank" rel="external">PageSpeed</a></li>
-<li><a href="http://www.httpwatch.com/" target="_blank" rel="external">HTTPWatch</a></li>
-<li><a href="http://www.compuware.com/application-performance-management/dynatrace-ajax-download.html" target="_blank" rel="external">DynaTrace’s Ajax</a></li>
-<li><a href="http://book.douban.com/subject/5362856/" target="_blank" rel="external">高性能JavaScript</a></li>
-</ul>
-</li>
-<li>SEO</li>
-<li>编程知识储备<ul>
-<li><a href="http://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" target="_blank" rel="external">数据结构</a></li>
-<li>OOP/AOP</li>
-<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/prototypes-in-javascript-what-you-need-to-know/" target="_blank" rel="external">原型链</a>/作用域链</li>
-<li><a href="http://www.jibbering.com/faq/notes/closures/" target="_blank" rel="external">闭包</a></li>
-<li><a href="http://zh.wikipedia.org/wiki/%E7%BC%96%E7%A8%8B%E8%8C%83%E5%9E%8B" target="_blank" rel="external">编程范型</a></li>
-<li><a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank" rel="external">设计模式</a></li>
-<li><a href="http://sanshi.me/articles/JavaScript-Garden-CN/html/index.html" target="_blank" rel="external">Javascript Tips</a></li>
-</ul>
-</li>
-<li>部署流程<ul>
-<li>压缩合并<ul>
-<li><a href="http://developer.yahoo.com/yui/compressor/" target="_blank" rel="external">YUI Compressor</a></li>
-<li><a href="https://developers.google.com/closure/compiler/" target="_blank" rel="external">Google Clousure Complier</a></li>
-<li><a href="https://github.com/mishoo/UglifyJS" target="_blank" rel="external">UglifyJS</a></li>
-<li><a href="https://github.com/GoalSmashers/clean-css" target="_blank" rel="external">CleanCSS</a></li>
-</ul>
-</li>
-<li>文档输出<ul>
-<li><a href="https://github.com/jsdoc3/jsdoc" target="_blank" rel="external">JSDoc</a></li>
-<li><a href="https://github.com/visionmedia/dox" target="_blank" rel="external">Dox</a>/<a href="https://github.com/JacksonTian/doxmate" target="_blank" rel="external">Doxmate</a>/<a href="https://github.com/luozhihua/grunt-doxmate" target="_blank" rel="external">Grunt-Doxmate</a></li>
-</ul>
-</li>
-<li>项目构建工具<ul>
-<li><a href="http://www.gnu.org/software/make/" target="_blank" rel="external">make</a>/<a href="http://ant.apache.org/" target="_blank" rel="external">Ant</a></li>
-<li><a href="http://code.google.com/p/gyp/" target="_blank" rel="external">GYP</a></li>
-<li><a href="http://gruntjs.com/" target="_blank" rel="external">Grunt</a></li>
-<li><a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a></li>
-<li><a href="http://yeoman.io/" target="_blank" rel="external">Yeoman</a></li>
-<li><a href="http://fis.baidu.com/" target="_blank" rel="external">FIS</a></li>
-<li><a href="https://github.com/modulejs/modjs" target="_blank" rel="external">Mod</a></li>
-</ul>
-</li>
-<li>ES6＋ 转换器<ul>
-<li><a href="https://github.com/google/traceur-compiler" target="_blank" rel="external">Traceur</a></li>
-<li><a href="https://babeljs.io/" target="_blank" rel="external">Babel</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>代码组织<ul>
-<li>类库模块化<ul>
-<li><a href="http://www.commonjs.org/" target="_blank" rel="external">CommonJS</a>/AMD</li>
-<li><a href="http://yuilibrary.com/projects/yui3/" target="_blank" rel="external">YUI3模块</a></li>
-<li><a href="http://webpack.github.io/" target="_blank" rel="external">webpack</a></li>
-</ul>
-</li>
-<li>业务逻辑模块化<ul>
-<li><a href="https://github.com/twitter/bower" target="_blank" rel="external">bower</a>/<a href="https://github.com/component/component" target="_blank" rel="external">component</a></li>
-</ul>
-</li>
-<li>文件加载<ul>
-<li><a href="http://labjs.com/" target="_blank" rel="external">LABjs</a></li>
-<li><a href="http://seajs.org/" target="_blank" rel="external">SeaJS</a>/<a href="http://requirejs.org/" target="_blank" rel="external">Require.js</a></li>
-</ul>
-</li>
-<li>模块化预处理器<ul>
-<li><a href="https://github.com/substack/node-browserify" target="_blank" rel="external">Browserify</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>安全<ul>
-<li><a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank" rel="external">CSRF</a>/<a href="http://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="external">XSS</a></li>
-<li><a href="http://www.w3.org/TR/CSP/" target="_blank" rel="external">CSP</a></li>
-<li><a href="https://developer.mozilla.org/docs/Web/Security/Same-origin_policy" target="_blank" rel="external">Same-origin policy</a></li>
-<li>ADsafe/Caja/Sandbox</li>
-</ul>
-</li>
-<li>移动Web<ul>
-<li>HTML5/CSS3</li>
-<li><a href="http://zh.wikipedia.org/wiki/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1" target="_blank" rel="external">响应式网页设计</a></li>
-<li><a href="http://zeptojs.com/" target="_blank" rel="external">Zeptojs</a>/<a href="http://cubiq.org/iscroll" target="_blank" rel="external">iScroll</a></li>
-<li>V5/<a href="http://www.sencha.com/products/touch" target="_blank" rel="external">Sencha Touch</a></li>
-<li><a href="http://phonegap.com/" target="_blank" rel="external">PhoneGap</a></li>
-<li><a href="http://jquerymobile.com/" target="_blank" rel="external">jQuery Mobile</a></li>
-<li><a href="http://www.w3.org/Mobile/" target="_blank" rel="external">W3C Mobile Web Initiative</a></li>
-<li><a href="http://validator.w3.org/mobile/" target="_blank" rel="external">W3C mobileOK Checker</a></li>
-<li><a href="http://openmobilealliance.org/" target="_blank" rel="external">Open Mobile Alliance</a></li>
-<li><a href="https://facebook.github.io/react-native/" target="_blank" rel="external">React Native</a></li>
-</ul>
-</li>
-<li>前沿技术社区/会议<ul>
-<li><a href="http://d2forum.org" target="_blank" rel="external">D2</a>/<a href="http://www.webrebuild.org/" target="_blank" rel="external">WebRebuild</a></li>
-<li>NodeParty/<a href="http://w3ctech.com" target="_blank" rel="external">W3CTech</a>/<a href="http://www.html5dw.com" target="_blank" rel="external">HTML5梦工厂</a></li>
-<li><a href="http://jsconf.com/" target="_blank" rel="external">JSConf</a>/<a href="http://jsconf.cn" target="_blank" rel="external">沪JS(JSConf.cn)</a></li>
-<li>QCon/Velocity/SDCC</li>
-<li><a href="http://jsconf.com/" target="_blank" rel="external">JSConf</a>/<a href="http://www.nodeconf.com/" target="_blank" rel="external">NodeConf</a></li>
-<li><a href="http://cssconf.com/" target="_blank" rel="external">CSSConf</a></li>
-<li>YDN/YUIConf</li>
-<li>HybridApp</li>
-<li><a href="http://whatwg.org/" target="_blank" rel="external">WHATWG</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="external">MDN</a></li>
-<li><a href="http://codepen.io/" target="_blank" rel="external">codepen</a></li>
-<li><a href="http://www.w3cplus.com/" target="_blank" rel="external">w3cplus</a></li>
-<li><a href="https://cnodejs.org/" target="_blank" rel="external">CNode</a></li>
-</ul>
-</li>
-<li>计算机知识储备<ul>
-<li>编译原理</li>
-<li><a href="http://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C" target="_blank" rel="external">计算机网络</a></li>
-<li><a href="http://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F" target="_blank" rel="external">操作系统</a></li>
-<li>算法原理</li>
-<li>软件工程/软件测试原理</li>
-<li><a href="http://www.unicode.org/" target="_blank" rel="external">Unicode</a></li>
-</ul>
-</li>
-<li>软技能<ul>
-<li>知识管理/总结分享</li>
-<li>沟通技巧/团队协作</li>
-<li>需求管理/PM</li>
-<li>交互设计/可用性/可访问性知识</li>
-</ul>
-</li>
-<li>可视化<ul>
-<li>SVG/Canvas/VML</li>
-<li>SVG: <a href="http://d3js.org/" target="_blank" rel="external">D3</a>/<a href="http://dmitrybaranovskiy.github.io/raphael/" target="_blank" rel="external">Raphaël</a>/<a href="http://snapsvg.io/" target="_blank" rel="external">Snap.svg</a>/<a href="http://datavlab.org/datavjs/" target="_blank" rel="external">DataV</a></li>
-<li>Canvas: <a href="http://www.createjs.com/" target="_blank" rel="external">CreateJS</a>/<a href="http://kineticjs.com/" target="_blank" rel="external">KineticJS</a></li>
-<li><a href="http://en.wikipedia.org/wiki/WebGL" target="_blank" rel="external">WebGL</a>/<a href="http://threejs.org/" target="_blank" rel="external">Three.JS</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>后端工程师</p>
-<ul>
-<li>编程语言<ul>
-<li>C/C++/Java/PHP/Ruby/Python/…</li>
-</ul>
-</li>
-<li>网页服务器<ul>
-<li><a href="http://nginx.org/en/" target="_blank" rel="external">Nginx</a></li>
-<li><a href="http://httpd.apache.org/" target="_blank" rel="external">Apache</a></li>
-<li><a href="http://www.lighttpd.net/" target="_blank" rel="external">Lighttpd</a></li>
-</ul>
-</li>
-<li>数据库<ul>
-<li>SQL</li>
-<li><a href="http://www.mysql.com/" target="_blank" rel="external">MySQL</a>/<a href="http://www.postgresql.org/" target="_blank" rel="external">PostgreSQL</a>/<a href="http://www.oracle.com/us/products/database/overview/index.html" target="_blank" rel="external">Oracle</a>/<a href="http://www-01.ibm.com/software/data/db2" target="_blank" rel="external">DB2</a></li>
-<li><a href="http://www.mongodb.org/" target="_blank" rel="external">MongoDB</a>/<a href="http://couchdb.apache.org/" target="_blank" rel="external">CouchDB</a></li>
-</ul>
-</li>
-<li>数据缓存<ul>
-<li><a href="http://redis.io/" target="_blank" rel="external">Redis</a></li>
-<li><a href="http://memcached.org/" target="_blank" rel="external">Memcached</a></li>
-</ul>
-</li>
-<li>文件缓存/代理<ul>
-<li><a href="https://www.varnish-cache.org/" target="_blank" rel="external">Varnish</a></li>
-<li><a href="http://www.squid-cache.org/" target="_blank" rel="external">Squid</a></li>
-</ul>
-</li>
-<li>操作系统<ul>
-<li>Unix/Linux/OS X/Windows</li>
-</ul>
-</li>
-<li>数据结构</li>
-</ul>
-</li>
-</ul>
-<h2 id="前端书籍推荐"><a href="#前端书籍推荐" class="headerlink" title="前端书籍推荐"></a>前端书籍推荐</h2><p>★越少越简单,越适合入门,★多的要么是难度比较高,要么是比较适合在后面看,比如讲性能之类的书.</p>
-<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><ul>
-<li><a href="http://www.amazon.cn/Eric-Meyer-谈-CSS-迈耶/dp/B00170M84I/" target="_blank" rel="external">Eric Meyer 谈 CSS（卷二）</a>★★★</li>
-<li><a href="http://book.douban.com/subject/2308234/" target="_blank" rel="external">CSS权威指南 （第3版）</a>★★</li>
-<li><a href="http://book.douban.com/subject/4736167/" target="_blank" rel="external">精通CSS</a>★★★</li>
-<li><a href="http://book.douban.com/subject/21338365/" target="_blank" rel="external">HTML &amp; CSS设计与构建网站</a>★</li>
-</ul>
-<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><ul>
-<li><a href="http://book.douban.com/subject/26433805/" target="_blank" rel="external">JavaScript &amp; jQuery交互式Web前端开发</a>★</li>
-<li><a href="http://book.douban.com/subject/6038371/" target="_blank" rel="external">JavaScript DOM编程艺术 （第2版）</a>★</li>
-<li><a href="http://book.douban.com/subject/10546125/" target="_blank" rel="external">JavaScript高级程序设计（第3版）</a>★★</li>
-<li><a href="http://book.douban.com/subject/10792216/" target="_blank" rel="external">锋利的jQuery</a>★★</li>
-<li><a href="http://book.douban.com/subject/5362856/" target="_blank" rel="external">高性能JavaScript</a>★★★</li>
-<li><a href="http://book.douban.com/subject/3590768/" target="_blank" rel="external">JavaScript语言精粹</a>★★★</li>
-<li><a href="http://book.douban.com/subject/10549733/" target="_blank" rel="external">JavaScript权威指南</a>★★★</li>
-<li><a href="http://book.douban.com/subject/21792530/" target="_blank" rel="external">编写可维护的JavaScript</a>★★★</li>
-<li><a href="http://book.douban.com/subject/3012828/" target="_blank" rel="external">JAVASCRIPT语言精髓与编程实践</a>★★★</li>
-<li><a href="http://www.amazon.com/Effective-JavaScript-Specific-Software-Development/dp/0321812182" target="_blank" rel="external">Effective Javascript</a>★★★</li>
-<li><a href="http://book.douban.com/subject/3176860/" target="_blank" rel="external">Secrets of the JavaScript Ninja</a>★★★</li>
-<li><a href="http://book.douban.com/subject/11506062/" target="_blank" rel="external">JavaScript模式</a>★★★</li>
-<li><a href="http://book.douban.com/subject/3329540/" target="_blank" rel="external">JavaScript设计模式</a>★★★★</li>
-<li><a href="http://book.douban.com/subject/10733304/" target="_blank" rel="external">基于MVC的JavaScript Web富应用开发</a>★★★</li>
-</ul>
-<h3 id="性能实践"><a href="#性能实践" class="headerlink" title="性能实践"></a>性能实践</h3><ul>
-<li><a href="https://book.douban.com/subject/3132277/" target="_blank" rel="external">高性能网站建设指南</a>★</li>
-<li><a href="https://book.douban.com/subject/4719162/" target="_blank" rel="external">高性能网站建设进阶指南</a>★★</li>
-<li><a href="http://book.douban.com/subject/25891125/" target="_blank" rel="external">Web性能实践日志</a>★★★</li>
-<li><a href="http://book.douban.com/subject/25856314/" target="_blank" rel="external">Web性能权威指南</a>★★★</li>
-</ul>
-<h3 id="版本控制工具"><a href="#版本控制工具" class="headerlink" title="版本控制工具"></a>版本控制工具</h3><ul>
-<li><a href="http://book.douban.com/subject/4813786/" target="_blank" rel="external">版本控制之道 (git)</a>★★</li>
-<li><a href="http://iissnan.com/progit/" target="_blank" rel="external">Pro Git</a>★★★</li>
-<li><a href="http://book.douban.com/subject/6526452/" target="_blank" rel="external">Git权威指南</a>★★★★</li>
-</ul>
-<h2 id="后端书籍推荐"><a href="#后端书籍推荐" class="headerlink" title="后端书籍推荐"></a>后端书籍推荐</h2><h3 id="Linux管理"><a href="#Linux管理" class="headerlink" title="Linux管理"></a>Linux管理</h3><ul>
-<li><a href="http://book.douban.com/subject/3042029/" target="_blank" rel="external">Linux 系统管理技术手册</a></li>
-<li><a href="http://book.douban.com/subject/4889838/" target="_blank" rel="external">鸟哥的 Linux 私房菜</a></li>
-<li><a href="http://www.thegeekstuff.com/linux-101-hacks-free-ebook-non-english/" target="_blank" rel="external">Linux 101 Hacks</a></li>
-<li><a href="http://book.douban.com/subject/3519360/" target="_blank" rel="external">UNIX Shell Scripting</a></li>
-<li><a href="http://book.douban.com/subject/6806862/" target="_blank" rel="external">The Linux Command Line</a></li>
-<li><a href="http://oreilly.com/openbook/linag2/book/index.html" target="_blank" rel="external">Linux Network Administrator’s Guide</a></li>
-</ul>
-<h3 id="Linux编程"><a href="#Linux编程" class="headerlink" title="Linux编程"></a>Linux编程</h3><ul>
-<li><a href="http://book.douban.com/subject/4831448/" target="_blank" rel="external">Linux程序设计</a></li>
-<li><a href="http://book.douban.com/subject/3907181/" target="_blank" rel="external">Linux系统编程</a></li>
-<li><a href="http://book.douban.com/subject/1788421/" target="_blank" rel="external">Unix环境高级编程</a></li>
-<li><a href="http://book.douban.com/subject/1467587/" target="_blank" rel="external">Unix编程艺术</a></li>
-<li><a href="http://book.douban.com/subject/4292217/" target="_blank" rel="external">The Linux Programming Interface</a></li>
-<li><a href="http://book.douban.com/subject/3652388/" target="_blank" rel="external">程序员的自我修养</a></li>
-<li><a href="http://book.douban.com/subject/2287506/" target="_blank" rel="external">深入理解Linux内核</a></li>
-<li><a href="http://book.douban.com/subject/1500149/" target="_blank" rel="external">Unix网络编程</a></li>
-<li><a href="http://book.douban.com/subject/1088054/" target="_blank" rel="external">TCP/IP高级编程</a></li>
-</ul>
-<h3 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h3><ul>
-<li><a href="http://book.douban.com/subject/4141733/" target="_blank" rel="external">Linux C编程一站式学习</a></li>
-<li><a href="http://book.douban.com/subject/3012360/" target="_blank" rel="external">C和指针</a></li>
-<li><a href="http://book.douban.com/subject/2778632/" target="_blank" rel="external">C陷阱与缺陷</a></li>
-<li><a href="http://book.douban.com/subject/2377310/" target="_blank" rel="external">C专家编程</a></li>
-<li><a href="http://book.douban.com/subject/2226913/" target="_blank" rel="external">C语言核心技术</a></li>
-<li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0CDEQFjAA&amp;url=http%3A%2F%2Fblogimg.chinaunix.net%2Fblog%2Fupfile2%2F110210170023.pdf&amp;ei=P95mUfrmNKKriALS04HAAw&amp;usg=AFQjCNEzB88PnpfL0fRgJDkP3O9TlBPswA&amp;sig2=isyd4ktsByNBMa5M9EPhRQ&amp;bvm=bv.45107431,d.cGE&amp;cad=rjt" target="_blank" rel="external">彻底搞定C指针</a></li>
-<li><a href="http://book.douban.com/subject/21317828/" target="_blank" rel="external">征服C指针</a></li>
-<li><a href="http://book.douban.com/subject/1094797/" target="_blank" rel="external">C++编程思想</a></li>
-<li><a href="http://book.douban.com/subject/2116929/" target="_blank" rel="external">高质量程序设计指南—C/C++语言</a></li>
-<li><a href="http://book.douban.com/subject/1484262/" target="_blank" rel="external">Inside the C++ Object Model</a></li>
-<li><a href="http://www.stroustrup.com/Tour.html" target="_blank" rel="external">A Tour of C++</a></li>
-<li><a href="http://en.wikipedia.org/wiki/The_C%2B%2B_Programming_Language" target="_blank" rel="external">The C++ Programming Language</a></li>
-<li><a href="http://www.cppstdlib.com/" target="_blank" rel="external">The C++ Standard Library - A Tutorial and Reference</a></li>
-<li><a href="http://webstore.ansi.org/RecordDetail.aspx?sku=INCITS%2fISO%2fIEC+14882-2012" target="_blank" rel="external">The C++ Standard (INCITS/ISO/IEC 14882-2011)</a></li>
-<li><a href="http://www.artima.com/shop/overview_of_the_new_cpp" target="_blank" rel="external">Overview of the New C++</a></li>
-</ul>
-<h2 id="前端工作面试"><a href="#前端工作面试" class="headerlink" title="前端工作面试"></a>前端工作面试</h2><ul>
-<li><a href="https://github.com/darcyclarke/Front-end-Developer-Interview-Questions" target="_blank" rel="external">前端工作面试问题</a></li>
-<li><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Question" target="_blank" rel="external">前端开发面试题（中文）</a></li>
-</ul>
+          项目起源还记得@jayli 的这幅前端知识结构图么。
 
-          
+图片的形式具有诸多的不便。缺失源图的我们，无法为此图贡献些什么，随着时间的迁移，或许有些技术点会发生改变，所以有了这个GitHub项目。我们可以通过协作的方式来共同维护这个项目。Git的历史记录也可以见证前端行业的一些变迁。
+可视化效果
+前端开
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/22/前端知识体系/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1297,7 +610,7 @@ wx.navigateTo({
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="TakoZhang">
     <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
+    <meta itemprop="image" content="http://oe51jhwvd.bkt.clouddn.com/nver.jpg">
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1328,38 +641,12 @@ wx.navigateTo({
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-21T15:11:05+08:00">
-                2016-01-21
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1388,1159 +675,34 @@ wx.navigateTo({
       
         
           
-            <p>在前端路上摸索前行，在这里分享自己长期关注的前端开发相关的优秀网站、博客、以及活跃开发者。欢迎更新，以下各排名不分先后顺序。</p>
-<h4 id="前端收集图谱"><a href="#前端收集图谱" class="headerlink" title="前端收集图谱"></a><a href="http://get-set.cn/front-end-collect/" target="_blank" rel="external">前端收集图谱</a></h4><p><img src="https://raw.githubusercontent.com/hjzheng/front-end-collect/master/img/front-end-chart.png" alt="image"></p>
-<h4 id="聚合-amp-amp-周报订阅"><a href="#聚合-amp-amp-周报订阅" class="headerlink" title="聚合&amp;&amp;周报订阅"></a>聚合&amp;&amp;周报订阅</h4><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>订阅地址</th>
-<th>介绍</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>英文推送</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Html5 Weekly</td>
-<td><a href="http://html5weekly.com/" target="_blank" rel="external">http://html5weekly.com/</a></td>
-<td>Html 技术类</td>
-</tr>
-<tr>
-<td>CSS Weekly</td>
-<td><a href="http://css-weekly.com/" target="_blank" rel="external">http://css-weekly.com/</a></td>
-<td></td>
-</tr>
-<tr>
-<td>Javascript Weekly</td>
-<td><a href="http://javascriptweekly.com/" target="_blank" rel="external">http://javascriptweekly.com/</a></td>
-<td>JS相关，同样有 html,css 和工具相关</td>
-</tr>
-<tr>
-<td>Web Design Weekly</td>
-<td><a href="http://web-design-weekly.com/" target="_blank" rel="external">http://web-design-weekly.com/</a></td>
-<td>设计、技术、技巧、工具聚合</td>
-</tr>
-<tr>
-<td>UX Weekly</td>
-<td><a href="http://uxwkly.com/" target="_blank" rel="external">http://uxwkly.com/</a></td>
-<td>用户体验、网页设计推送</td>
-</tr>
-<tr>
-<td>Web Tools Weekly</td>
-<td><a href="http://webtoolsweekly.com/" target="_blank" rel="external">http://webtoolsweekly.com/</a></td>
-<td>Js，工具推送</td>
-</tr>
-<tr>
-<td>RESPONSIVE DESIGN NEWSLETTER</td>
-<td><a href="http://responsivedesignweekly.com/" target="_blank" rel="external">http://responsivedesignweekly.com/</a></td>
-<td>每周推送一次响应式设计相关</td>
-</tr>
-<tr>
-<td>Tutorialzine</td>
-<td><a href="http://tutorialzine.com/" target="_blank" rel="external">http://tutorialzine.com/</a></td>
-<td>精品教程和资源推送</td>
-</tr>
-<tr>
-<td>Sidebar</td>
-<td><a href="http://sidebar.io/" target="_blank" rel="external">http://sidebar.io/</a></td>
-<td>每天、每半周、每周推送5条设计相关</td>
-</tr>
-<tr>
-<td>The Hacker News Newsletter</td>
-<td><a href="http://www.hackernewsletter.com/" target="_blank" rel="external">http://www.hackernewsletter.com/</a></td>
-<td>HN 每周精选</td>
-</tr>
-<tr>
-<td>Design News</td>
-<td><a href="https://news.layervault.com/" target="_blank" rel="external">https://news.layervault.com/</a></td>
-<td>F2类资讯聚合</td>
-</tr>
-<tr>
-<td>Css Animations</td>
-<td><a href="http://cssanimation.rocks/" target="_blank" rel="external">http://cssanimation.rocks/</a></td>
-<td>关于CSS动画的订阅</td>
-</tr>
-<tr>
-<td>HACKDESIGN</td>
-<td><a href="http://hackdesign.org/" target="_blank" rel="external">http://hackdesign.org/</a></td>
-<td>每周发布一个设计类课程</td>
-</tr>
-<tr>
-<td><strong>中文推送</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>稀土:掘金</td>
-<td><a href="http://gold.xitu.io/" target="_blank" rel="external">http://gold.xitu.io/</a></td>
-<td>国内十分用心的开发者技术分享、交流平台</td>
-</tr>
-<tr>
-<td>SegmentFault精选</td>
-<td><a href="http://segmentfault.com/" target="_blank" rel="external">http://segmentfault.com/</a></td>
-<td>国内开发者技术问答社区每周精选问答</td>
-</tr>
-<tr>
-<td>FE Weekly</td>
-<td><a href="http://www.feweekly.com/" target="_blank" rel="external">http://www.feweekly.com/</a></td>
-<td>每周一次，内容主要是英文的，不过有中文导读</td>
-</tr>
-<tr>
-<td>EchoJs_News</td>
-<td><a href="http://www.echojs.com/" target="_blank" rel="external">http://www.echojs.com/</a></td>
-<td>每天推送若干好文，都是英文的，JS技术类</td>
-</tr>
-<tr>
-<td>碼天狗週刊</td>
-<td><a href="http://weekly.codetengu.com/" target="_blank" rel="external">http://weekly.codetengu.com/</a></td>
-<td>台湾的，一份開發者導向的IT 技術週刊，適合所有患有資訊焦慮症、氣血循環不順以及性受挫的軟體工程師們。</td>
-</tr>
-<tr>
-<td>前端资源分享 半月刊</td>
-<td><a href="http://www.hacke2.cn/monthly/" target="_blank" rel="external">http://www.hacke2.cn/monthly/</a></td>
-<td>每半月发布最新高质量的前端资源</td>
-</tr>
-</tbody>
-</table>
-<h4 id="中文博客"><a href="#中文博客" class="headerlink" title="中文博客"></a>中文博客</h4><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>活跃度</th>
-<th>原创度</th>
-<th>维护者</th>
-<th>其他</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://www.w3cplus.com/" target="_blank" rel="external">W3Cplus</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>携程 @大漠</td>
-<td>国内最优秀的前端博客，原创居多</td>
-</tr>
-<tr>
-<td><a href="http://www.w3cfuns.com/" target="_blank" rel="external">W3Cfuns</a></td>
-<td>★★★★★</td>
-<td>★★★★☆</td>
-<td><a href="http://www.w3cfuns.com/misc.php?mod=faq&amp;action=faq&amp;id=1" target="_blank" rel="external">#</a></td>
-<td>专注于web前端开发行业的综合性门户网站</td>
-</tr>
-<tr>
-<td><a href="http://www.qianduan.net/" target="_blank" rel="external">前端观察</a></td>
-<td>★★★★☆</td>
-<td>★★★★☆</td>
-<td>腾讯 ISUX @神飞</td>
-<td>曾经最优秀，最近更新不频繁了</td>
-</tr>
-<tr>
-<td><a href="http://www.alloyteam.com/" target="_blank" rel="external">腾讯web前端 AlloyTeam 团队</a></td>
-<td>★★★★</td>
-<td>★★★★</td>
-<td><a href="http://t.qq.com/AlloyTeam" target="_blank" rel="external">@腾讯AlloyTeam</a></td>
-<td>来自于腾讯SNG(社交网络事业群)</td>
-</tr>
-<tr>
-<td><a href="http://www.zhangxinxu.com/wordpress/" target="_blank" rel="external">张鑫旭-鑫空间-鑫生活</a></td>
-<td>★★★★☆</td>
-<td>★★★★★</td>
-<td>张鑫旭</td>
-<td>重构很厉害，不少经典文章经验</td>
-</tr>
-<tr>
-<td><a href="http://www.36ria.com/" target="_blank" rel="external">ria之家</a></td>
-<td>★★★★☆</td>
-<td>★★★★☆</td>
-<td>淘宝 @明河</td>
-<td>#</td>
-</tr>
-<tr>
-<td><a href="http://www.daqianduan.com/" target="_blank" rel="external">大前端</a></td>
-<td>★★★★☆</td>
-<td>★★★★☆</td>
-<td><a href="http://www.cssforest.org/blog/index.php?s=about" target="_blank" rel="external">#</a></td>
-<td>#</td>
-</tr>
-<tr>
-<td><a href="http://www.cssforest.org/blog/" target="_blank" rel="external">CSS森林</a></td>
-<td>★★★★☆</td>
-<td>★★★★☆</td>
-<td><a href="http://www.cssforest.org/blog/index.php?s=about" target="_blank" rel="external">关于</a></td>
-<td>#</td>
-</tr>
-<tr>
-<td><a href="http://www.shejidaren.com/" target="_blank" rel="external">设计达人</a></td>
-<td>★★★★☆</td>
-<td>★★★☆☆</td>
-<td><a href="http://www.cssforest.org/blog/index.php?s=about" target="_blank" rel="external">#</a></td>
-<td>更新较频繁，但转载也较多</td>
-</tr>
-<tr>
-<td><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="external">阮一峰博客</a></td>
-<td>★★★★☆</td>
-<td>★★★☆☆</td>
-<td><a href="http://www.ruanyifeng.com/about.html" target="_blank" rel="external">#</a></td>
-<td>牛人一个</td>
-</tr>
-<tr>
-<td><a href="http://beforweb.com/" target="_blank" rel="external">Be For Web - 为网而生 - 原创译文博客</a></td>
-<td>★★★★☆</td>
-<td>★★★★☆</td>
-<td><a href="http://weibo.com/c7210" target="_blank" rel="external">@C7210</a></td>
-<td>关注移动应用及互联网产品、用户体验设计、前端开发</td>
-</tr>
-</tbody>
-</table>
-<h4 id="国外博客"><a href="#国外博客" class="headerlink" title="国外博客"></a>国外博客</h4><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>活跃度</th>
-<th>原创度</th>
-<th>维护者</th>
-<th>其他</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://www.smashingmagazine.com/" target="_blank" rel="external">Smashing Magazine</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>#</td>
-<td>业界权威，web 设计很赞</td>
-</tr>
-<tr>
-<td><a href="http://hub.tutsplus.com/" target="_blank" rel="external">Tuts</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>-</td>
-<td>国外知名开发者网站</td>
-</tr>
-<tr>
-<td><a href="http://www.developerdrive.com/" target="_blank" rel="external">DeveloperDrive</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>-</td>
-<td>优质前端技术信息</td>
-</tr>
-<tr>
-<td><a href="http://css-tricks.com/" target="_blank" rel="external">CSS-TRICKS</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>Chris Coyier</td>
-<td>左边这位是大神</td>
-</tr>
-<tr>
-<td><a href="http://webdesignerwall.com/" target="_blank" rel="external">Web Designer Wall</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>Nick La.</td>
-<td>优质 Html5,CSS3等教程</td>
-</tr>
-<tr>
-<td><a href="http://tutorialzine.com/" target="_blank" rel="external">Tutorialzine</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>#</td>
-<td>大量 web 教程和资源</td>
-</tr>
-<tr>
-<td><a href="http://inspectelement.com/" target="_blank" rel="external">Inspect Element</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>#</td>
-<td>CSS,wordpress 相关教程挺多</td>
-</tr>
-<tr>
-<td><a href="http://tympanus.net/codrops/" target="_blank" rel="external">Codrops</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>#</td>
-<td>设计、交互、CSS</td>
-</tr>
-<tr>
-<td><a href="http://www.onerutter.com/" target="_blank" rel="external">Jake Rutter</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>Jake Rutter</td>
-<td>Jquery 作者，不解释了</td>
-</tr>
-<tr>
-<td><a href="http://www.paulirish.com/" target="_blank" rel="external">Paul Irish</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>Paul Irish</td>
-<td>大神,Google Chrome团队,Yeoman</td>
-</tr>
-<tr>
-<td><a href="http://krasimirtsonev.com/blog" target="_blank" rel="external">Krasimir Tsonev</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>Krasimir Tsonev</td>
-<td>html5,ccs3,javascript</td>
-</tr>
-<tr>
-<td><a href="http://www.nczonline.net/" target="_blank" rel="external">NCZOnline</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>Nicholas C. Zakas</td>
-<td>html5,ccs3,javascript</td>
-</tr>
-<tr>
-<td><a href="http://www.html5rocks.com/en/" target="_blank" rel="external">HTML5 Rocks</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>#</td>
-<td>html5权威网站</td>
-</tr>
-<tr>
-<td><a href="http://alistapart.com/" target="_blank" rel="external">A List Apart</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>#</td>
-<td>可以改变世界的文章</td>
-</tr>
-<tr>
-<td><a href="http://hakim.se/" target="_blank" rel="external">hakim</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>HAKIM EL HATTAB</td>
-<td>ccs3,javascript</td>
-</tr>
-<tr>
-<td><a href="http://dailyjs.com/" target="_blank" rel="external">DailyJS</a></td>
-<td>★★★★★</td>
-<td>★★★★★</td>
-<td>#</td>
-<td>javascript</td>
-</tr>
-</tbody>
-</table>
-<h4 id="活跃微博"><a href="#活跃微博" class="headerlink" title="活跃微博"></a>活跃微博</h4><table>
-<thead>
-<tr>
-<th>ID</th>
-<th>公司</th>
-<th>简介</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://weibo.com/xitucircle" target="_blank" rel="external">@稀土圈</a></td>
-<td>#</td>
-<td>强烈推荐，分享一些技术文章和Github项目</td>
-</tr>
-<tr>
-<td><a href="http://weibo.com/w3cchina" target="_blank" rel="external">@w3c中国</a></td>
-<td>#</td>
-<td>万维网联盟中国办事处官方微博</td>
-</tr>
-<tr>
-<td><a href="http://weibo.com/javascriptdev" target="_blank" rel="external">@TheFrontEnd</a></td>
-<td>#</td>
-<td>JavaScript技术资讯、新闻、教程、深度文章。</td>
-</tr>
-<tr>
-<td><a href="http://weibo.com/fekb" target="_blank" rel="external">@前端快爆</a></td>
-<td>阿里巴巴</td>
-<td>有HTML5、CSS3、JS</td>
-</tr>
-<tr>
-<td><a href="http://e.weibo.com/html5cn" target="_blank" rel="external">@HTML5中国</a></td>
-<td>#</td>
-<td>中国www.html5cn.org官方微博</td>
-</tr>
-</tbody>
-</table>
-<h4 id="开发者博客"><a href="#开发者博客" class="headerlink" title="开发者博客"></a>开发者博客</h4><p>微博微信流行后，明显感觉到写博客的人还是越来越少了，下面推荐的这些开发者属于在网上比较活跃的，或者博客积累了大量优质资源的。</p>
-<h4 id="国内开发者"><a href="#国内开发者" class="headerlink" title="国内开发者"></a>国内开发者</h4><p>国内开发者一块欢迎大家 <code>Fork</code>提交推荐，最好能推荐一些在前端界较活跃的的开发者。</p>
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>博客</th>
-<th>微博</th>
-<th>Github</th>
-<th>Twitter</th>
-<th>公司</th>
-<th>关键字</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>阮一峰</td>
-<td><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="external">阮一峰博客</a></td>
-<td><a href="http://weibo.com/ruanyf" target="_blank" rel="external">@ruanyf</a></td>
-<td>#</td>
-<td><a href="https://twitter.com/ruanyf" target="_blank" rel="external">@ruanyf</a></td>
-<td>上海金融学院国际金融学院</td>
-<td>教师，博客写作人，翻译人，《黑客与画家》的译者</td>
-</tr>
-<tr>
-<td>老赵</td>
-<td><a href="http://blog.zhaojie.me/" target="_blank" rel="external">http://blog.zhaojie.me/</a></td>
-<td><a href="http://weibo.com/jeffz" target="_blank" rel="external">@老赵</a></td>
-<td>#</td>
-<td><a href="">#</a></td>
-<td>摩根大通（香港）</td>
-<td>资深码农</td>
-</tr>
-<tr>
-<td>玉伯</td>
-<td><a href="http://lifesinger.wordpress.com/" target="_blank" rel="external">岁月如歌</a></td>
-<td><a href="http://weibo.com/lifesinger" target="_blank" rel="external">@玉伯也叫射雕</a></td>
-<td><a href="https://github.com/lifesinger" target="_blank" rel="external">@lifesinger</a></td>
-<td><a href="https://twitter.com/lifesinger" target="_blank" rel="external">@lifesinger</a></td>
-<td>支付宝</td>
-<td>大牛</td>
-</tr>
-<tr>
-<td>kejun</td>
-<td><a href="http://hikejun.com/" target="_blank" rel="external">http://hikejun.com/</a></td>
-<td><a href="http://weibo.com/kejunz" target="_blank" rel="external">@kejunz</a></td>
-<td><a href="https://github.com/kejun" target="_blank" rel="external">@kejunz</a></td>
-<td>#</td>
-<td>豆瓣</td>
-<td>前端大神</td>
-</tr>
-<tr>
-<td>寒冬winter</td>
-<td><a href="http://winter-cn.cnblogs.com/" target="_blank" rel="external">winter-cn</a></td>
-<td><a href="http://weibo.com/wintercn" target="_blank" rel="external">@寒冬winter</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-</tr>
-<tr>
-<td>左耳朵耗子</td>
-<td><a href="http://coolshell.cn/" target="_blank" rel="external">酷壳</a></td>
-<td><a href="http://weibo.com/haoel" target="_blank" rel="external">@左耳朵耗子</a></td>
-<td>#</td>
-<td><a href="https://twitter.com/haoel" target="_blank" rel="external">@haoel</a></td>
-<td>淘宝</td>
-<td>#</td>
-</tr>
-<tr>
-<td>fool2fish</td>
-<td>#</td>
-<td><a href="http://weibo.com/fool2fish" target="_blank" rel="external">@fool2fish</a></td>
-<td>#</td>
-<td>#</td>
-<td>支付宝</td>
-<td>#</td>
-</tr>
-<tr>
-<td>朴灵</td>
-<td><a href="http://html5ify.com/" target="_blank" rel="external">Html5fiy</a></td>
-<td><a href="http://weibo.com/shyvo" target="_blank" rel="external">@朴灵</a></td>
-<td><a href="https://github.com/JacksonTian" target="_blank" rel="external">JacksonTian</a></td>
-<td>#</td>
-<td>阿里巴巴</td>
-<td>《深入浅出Node.js》作者,大牛</td>
-</tr>
-<tr>
-<td>Cat Chen</td>
-<td><a href="http://catchen.biz/home.zh-CN.html" target="_blank" rel="external">陈广琛</a></td>
-<td><a href="http://weibo.com/u/1640352230" target="_blank" rel="external">@CatChen</a></td>
-<td><a href="https://github.com/CatChen" target="_blank" rel="external">@CatChen</a></td>
-<td><a href="https://twitter.com/CatChen" target="_blank" rel="external">@CatChen</a></td>
-<td>Facebook</td>
-<td>大牛</td>
-</tr>
-<tr>
-<td>BYVod</td>
-<td><a href="https://www.byvoid.com/" target="_blank" rel="external">Beyond the Void</a></td>
-<td><a href="http://weibo.com/byvoid" target="_blank" rel="external">@BYVoid</a></td>
-<td><a href="https://github.com/BYVoid" target="_blank" rel="external">@byvoid</a></td>
-<td><a href="https://twitter.com/byvoid" target="_blank" rel="external">@BYVoid</a></td>
-<td>Facebook 英国</td>
-<td>《Node.js 开发指南》作者,大牛</td>
-</tr>
-<tr>
-<td>郭宇</td>
-<td><a href="http://blog.guoyu.me/" target="_blank" rel="external">Einmal ist keinmal</a></td>
-<td><a href="http://weibo.com/137601206" target="_blank" rel="external">@郭宇</a></td>
-<td><a href="https://github.com/turingou" target="_blank" rel="external">@turingou</a></td>
-<td><a href="https://twitter.com/turingou" target="_blank" rel="external">@turingou</a></td>
-<td>糗事百科,原支付宝</td>
-<td>Node.js</td>
-</tr>
-<tr>
-<td>勾三股四</td>
-<td>#</td>
-<td><a href="http://weibo.com/mx006" target="_blank" rel="external">@勾三股四</a></td>
-<td>#</td>
-<td>#</td>
-<td>淘宝</td>
-<td>#</td>
-</tr>
-<tr>
-<td>cnberg</td>
-<td><a href="http://cnberg.com" target="_blank" rel="external">冰山一角</a></td>
-<td><a href="http://weibo.com/berg" target="_blank" rel="external">@berg</a></td>
-<td>@cnberg</td>
-<td><a href="">@cnberg</a></td>
-<td>百度</td>
-<td>骑行</td>
-</tr>
-<tr>
-<td>大猫</td>
-<td><a href="http://bigc.at" target="_blank" rel="external">意淫笔记</a></td>
-<td><a href="http://weibo.com/daemao" target="_blank" rel="external">@daemao</a></td>
-<td><a href="https://github.com/Damao" target="_blank" rel="external">@Damao</a></td>
-<td><a href="https://twitter.com/13igcat" target="_blank" rel="external">@13igcat</a></td>
-<td>腾讯</td>
-<td><a href="http://www.zhihu.com/people/13igcat" target="_blank" rel="external">知乎</a></td>
-</tr>
-<tr>
-<td>hzlzh</td>
-<td><a href="https://zlz.im" target="_blank" rel="external">自力博客</a></td>
-<td><a href="http://weibo.com/hzlzh" target="_blank" rel="external">@hzlzh</a></td>
-<td><a href="http://github.com/hzlzh" target="_blank" rel="external">@hzlzh</a></td>
-<td><a href="http://twitter.com/hzlzh" target="_blank" rel="external">@hzlzh</a></td>
-<td>腾讯</td>
-<td>前端开发</td>
-</tr>
-<tr>
-<td>C7210</td>
-<td>beforweb.com/</td>
-<td><a href="http://weibo.com/c7210" target="_blank" rel="external">@C7210</a></td>
-<td><a href="http://twittercom/hzlzh" target="_blank" rel="external">@C7210</a></td>
-<td><a href="http://github.com/hzlzh" target="_blank" rel="external">@C7210</a></td>
-<td>#</td>
-<td>UX、交互设计师、视觉与前端</td>
-</tr>
-<tr>
-<td>kejun</td>
-<td><a href="http://hikejun.com/" target="_blank" rel="external">http://hikejun.com/</a></td>
-<td><a href="http://weibo.com/kejun" target="_blank" rel="external">#</a></td>
-<td><a href="http://twittercom/kejun" target="_blank" rel="external">#</a></td>
-<td><a href="http://github.com/hzlzh" target="_blank" rel="external">#</a></td>
-<td>腾讯</td>
-<td>前端开发</td>
-</tr>
-<tr>
-<td>张鑫旭</td>
-<td><a href="http://www.zhangxinxu.com/wordpress/" target="_blank" rel="external">张鑫旭博客</a></td>
-<td><a href="http://weibo.com/zhangxinxu" target="_blank" rel="external">@张鑫旭</a></td>
-<td><a href="https://github.com/zhangxinxu" target="_blank" rel="external">@zhangxinxu</a></td>
-<td><a href="https://twitter.com/zhangxinxu" target="_blank" rel="external">@zhangxinxu</a></td>
-<td>腾讯 上海 ISUX</td>
-<td>前端开发</td>
-</tr>
-<tr>
-<td>lucifr</td>
-<td><a href="http://lucifr.com/" target="_blank" rel="external">http://lucifr.com/</a></td>
-<td><a href="http://weibo.com/lucifr" target="_blank" rel="external">@lucifr</a></td>
-<td><a href="http://twittercom/lucifr" target="_blank" rel="external">@lucifr</a></td>
-<td><a href="http://github.com/lucifr" target="_blank" rel="external">@lucifr</a></td>
-<td>#</td>
-<td>Mac,ios</td>
-</tr>
-<tr>
-<td>smallni</td>
-<td><a href="http://www.smallni.com/" target="_blank" rel="external">http://www.smallni.com/</a></td>
-<td><a href="http://weibo.com/hzlzh" target="_blank" rel="external">#</a></td>
-<td><a href="https://twitter.com/smallniding/" target="_blank" rel="external">@Smallni</a></td>
-<td><a href="http://github.com/hzlzh" target="_blank" rel="external">#</a></td>
-<td>腾讯</td>
-<td>前端开发</td>
-</tr>
-<tr>
-<td>TQ</td>
-<td><a href="http://targetkiller.net/" target="_blank" rel="external">http://targetkiller.net/</a></td>
-<td><a href="http://weibo.com/targetkiller" target="_blank" rel="external">@Piser-TQ</a></td>
-<td><a href="https://twitter.com/tqtan/" target="_blank" rel="external">@tqtan</a></td>
-<td><a href="https://github.com/targetkiller" target="_blank" rel="external">@targetkiller</a></td>
-<td>腾讯 ISUX</td>
-<td>网页重构</td>
-</tr>
-<tr>
-<td>LOO2K</td>
-<td><a href="http://loo2k.com/blog/" target="_blank" rel="external">LOO2K</a></td>
-<td><a href="http://weibo.com/loo2k" target="_blank" rel="external">@LOO2K</a></td>
-<td><a href="https://github.com/loo2k" target="_blank" rel="external">LOO2K</a></td>
-<td><a href="https://twitter.com/loo2k/" target="_blank" rel="external">LOO2K</a></td>
-<td>墨筹网</td>
-<td>少年才俊</td>
-</tr>
-<tr>
-<td>qiqiboy</td>
-<td><a href="http://www.qiqiboy.com/" target="_blank" rel="external">qiqiboy</a></td>
-<td><a href="http://weibo.com/qiqiboy" target="_blank" rel="external">@qiqiboy</a></td>
-<td>#</td>
-<td>#</td>
-<td>金山网络 UX</td>
-<td>吐槽清理大师开发者</td>
-</tr>
-<tr>
-<td>foru17</td>
-<td><a href="http://luolei.org" target="_blank" rel="external">罗磊的独立博客</a></td>
-<td><a href="http://weibo.com/foru17" target="_blank" rel="external">@罗罗磊磊</a></td>
-<td><a href="https://github.com/foru17" target="_blank" rel="external">@foru17</a></td>
-<td><a href="https://twitter.com/foru17" target="_blank" rel="external">@foru17</a></td>
-<td></td>
-<td>打酱油的</td>
-</tr>
-<tr>
-<td>周爱民</td>
-<td><a href="http://blog.csdn.net/aimingoo/" target="_blank" rel="external">aimingoo专栏</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>支付宝</td>
-<td>JavaScript语言精髓与编程实践作者</td>
-</tr>
-<tr>
-<td>hax</td>
-<td><a href="http://hax.iteye.com/" target="_blank" rel="external">hax的技术部落格</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>前端大牛</td>
-</tr>
-<tr>
-<td>三生石上</td>
-<td><a href="http://www.cnblogs.com/sanshi" target="_blank" rel="external">三生石上</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>js秘密花园译者</td>
-</tr>
-<tr>
-<td>司徒正美</td>
-<td><a href="http://www.cnblogs.com/rubylouvre" target="_blank" rel="external">Ruby’s Louvre</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>前端开发</td>
-</tr>
-<tr>
-<td>叶小钗</td>
-<td><a href="http://www.cnblogs.com/yexiaochai" target="_blank" rel="external">叶小钗</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>前端开发</td>
-</tr>
-<tr>
-<td>聂微东</td>
-<td><a href="http://www.cnblogs.com/Darren_code/" target="_blank" rel="external">Darren</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>百度移动云</td>
-<td>前端开发</td>
-</tr>
-<tr>
-<td>当耐特</td>
-<td><a href="http://www.cnblogs.com/iamzhanglei/" target="_blank" rel="external">iamzhanglei</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>HTML5实验室作者</td>
-</tr>
-<tr>
-<td>教主</td>
-<td><a href="http://www.cnblogs.com/_franky" target="_blank" rel="external">_frank</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>又一牛</td>
-</tr>
-<tr>
-<td>typeof</td>
-<td><a href="http://typeof.net/" target="_blank" rel="external">typeof</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>又一牛</td>
-</tr>
-<tr>
-<td>Gray Zhang</td>
-<td><a href="http://www.cnblogs.com/GrayZhang" target="_blank" rel="external">Gray Zhang</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>百度一牛</td>
-</tr>
-<tr>
-<td>李松峰</td>
-<td><a href="http://www.cn-cuckoo.com" target="_blank" rel="external">为之漫笔</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>高程2等书的译者</td>
-</tr>
-<tr>
-<td>小鱼</td>
-<td><a href="http://sofish.de/" target="_blank" rel="external">sofish</a></td>
-<td><a href="http://weibo.com/sofish" target="_blank" rel="external">@sofish</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>饿了么前端Leader</td>
-</tr>
-<tr>
-<td>vilic</td>
-<td><a href="http://vilic.info/" target="_blank" rel="external">vilic</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>年轻一牛</td>
-</tr>
-<tr>
-<td>彬Go</td>
-<td><a href="http://blog.bingo929.com/" target="_blank" rel="external">彬Go</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>人人网一牛</td>
-</tr>
-<tr>
-<td>PuterJam</td>
-<td><a href="http://www.pjhome.net" target="_blank" rel="external">PuterJam’s Blog</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>腾讯一牛</td>
-</tr>
-<tr>
-<td>css森林</td>
-<td><a href="http://www.cssforest.org" target="_blank" rel="external">cssforest</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>前端博客</td>
-</tr>
-<tr>
-<td>99css</td>
-<td><a href="http://www.99css.com/" target="_blank" rel="external">99css</a></td>
-<td><a href="http://weibo.com/ytzong" target="_blank" rel="external">@ytzong</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>腾讯一牛</td>
-</tr>
-<tr>
-<td>秦歌</td>
-<td><a href="http://dancewithnet.com/" target="_blank" rel="external">Kaven</a></td>
-<td>#</td>
-<td><a href="http://twitter.com/kavenyan" target="_blank" rel="external">@kavenyan</a></td>
-<td>#</td>
-<td>#</td>
-<td>js语言精粹译者</td>
-</tr>
-<tr>
-<td>linxz</td>
-<td><a href="http://www.linxz.de/" target="_blank" rel="external">linxz</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>css那些事儿的作者</td>
-</tr>
-<tr>
-<td>米随随</td>
-<td><a href="http://s5s5.me/" target="_blank" rel="external">米随随</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>腾讯ISUX 一牛</td>
-</tr>
-<tr>
-<td>飘飘</td>
-<td><a href="http://pufen.net/" target="_blank" rel="external">飘飘</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>腾讯一牛</td>
-</tr>
-<tr>
-<td>Along</td>
-<td><a href="http://jinlong.github.io/" target="_blank" rel="external">Along’s Blog</a></td>
-<td><a href="http://weibo.com/newwave" target="_blank" rel="external">@newwave</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>Opera 欧朋一牛</td>
-</tr>
-<tr>
-<td>安记</td>
-<td><a href="http://www.cssha.com/" target="_blank" rel="external">cssha</a></td>
-<td><a href="http://weibo.com/hanan321" target="_blank" rel="external">@hanan321</a></td>
-<td><a href="https://github.com/hanan198501" target="_blank" rel="external">hanan198501</a></td>
-<td>#</td>
-<td>#</td>
-<td>去哪网一牛</td>
-</tr>
-<tr>
-<td>余弦</td>
-<td><a href="http://evilcos.me/" target="_blank" rel="external">EVILCOS</a></td>
-<td><a href="http://weibo.com/evilcos" target="_blank" rel="external">余弦</a></td>
-<td><a href="https://github.com/evilcos" target="_blank" rel="external">evilcos</a></td>
-<td>#</td>
-<td><a href="http://www.knownsec.com/" target="_blank" rel="external">知道创宇</a></td>
-<td>安全（黑客）、架构、团队的各种观点与分享</td>
-</tr>
-<tr>
-<td>冯大辉</td>
-<td>#</td>
-<td><a href="http://dbanotes.net/" target="_blank" rel="external">冯大辉</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>现在就职于丁香园 (<a href="http://dxy.cn" target="_blank" rel="external">http://dxy.cn</a>) ，担任技术团队负责人</td>
-</tr>
-<tr>
-<td>汤姆大叔</td>
-<td><a href="http://www.cnblogs.com/TomXu/" target="_blank" rel="external">汤姆大叔的博客</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>《深入理解Bootstrap》、《JavaScript启示录》、《JavaScript设计模式》等多本前端书籍翻译作者</td>
-</tr>
-<tr>
-<td>屈光宇</td>
-<td><a href="https://imququ.com/" target="_blank" rel="external">Jerry Qu的小站</a></td>
-<td><a href="http://weibo.com/jerryqu" target="_blank" rel="external">屈光宇</a></td>
-<td>#</td>
-<td>#</td>
-<td>#</td>
-<td>奇虎360前端，对WEB性能研究很深入</td>
-</tr>
-</tbody>
-</table>
-<p>####一些社区</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>地址</th>
-<th>介绍</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V2EX</td>
-<td><a href="http://v2ex.com/" target="_blank" rel="external">http://v2ex.com/</a></td>
-<td>小众活跃社区</td>
-</tr>
-<tr>
-<td>知乎</td>
-<td><a href="http://www.zhihu.com/" target="_blank" rel="external">http://www.zhihu.com/</a></td>
-<td>综合问答社区</td>
-</tr>
-<tr>
-<td>前端乱炖</td>
-<td><a href="http://www.html-js.com/" target="_blank" rel="external">http://www.html-js.com/</a></td>
-<td>专业的前端知识平台</td>
-</tr>
-<tr>
-<td>segmentfault</td>
-<td><a href="http://segmentfault.com/" target="_blank" rel="external">http://segmentfault.com/</a></td>
-<td>综合问答社区</td>
-</tr>
-<tr>
-<td>果壳问答</td>
-<td><a href="http://www.guokr.com/ask/pending/" target="_blank" rel="external">http://www.guokr.com/ask/pending/</a></td>
-<td>综合问答社区</td>
-</tr>
-<tr>
-<td>Ruby</td>
-<td><a href="http://ruby-china.org/" target="_blank" rel="external">http://ruby-china.org/</a></td>
-<td>同 V2EX 氛围类似，不局限于Ruby</td>
-</tr>
-<tr>
-<td>Node.js 中文社区</td>
-<td><a href="http://cnodejs.org/" target="_blank" rel="external">http://cnodejs.org/</a></td>
-<td>Node.js 国内最活跃的社区</td>
-</tr>
-<tr>
-<td>Code Wall</td>
-<td><a href="https://coderwall.com/" target="_blank" rel="external">https://coderwall.com/</a></td>
-<td>国外技术社区</td>
-</tr>
-<tr>
-<td>DIV.IO</td>
-<td><a href="http://div.io/" target="_blank" rel="external">http://div.io/</a></td>
-<td>国内前端技术社区</td>
-</tr>
-<tr>
-<td>w3ctech</td>
-<td><a href="http://www.w3ctech.com/" target="_blank" rel="external">http://www.w3ctech.com/</a></td>
-<td>国内前端技术社区，常有一些线下活动发布</td>
-</tr>
-</tbody>
-</table>
-<h4 id="企业官方博客"><a href="#企业官方博客" class="headerlink" title="企业官方博客"></a>企业官方博客</h4><p>在开头我的 Feedly 订阅 opml 文件里比较全面。</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>公司</th>
-<th>部门</th>
-<th>活跃度</th>
-<th>简介</th>
-<th>微博</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://isux.tencent.com/" target="_blank" rel="external">ISUX 社交用户体验设计</a></td>
-<td>腾讯</td>
-<td>ISUX</td>
-<td>★★★★☆</td>
-<td>负责腾讯的社交网络相关产品的用户体验设计与研究。</td>
-<td>#</td>
-</tr>
-<tr>
-<td><a href="http://cdc.tencent.com/" target="_blank" rel="external">腾讯 CDC</a></td>
-<td>腾讯</td>
-<td>CDC</td>
-<td>★★★★☆</td>
-<td>简介</td>
-<td>#</td>
-</tr>
-<tr>
-<td><a href="http://www.alloyteam.com/" target="_blank" rel="external">腾讯Web前端 Alloy 团队 Blog</a></td>
-<td>腾讯</td>
-<td>SNG</td>
-<td>★★★★☆</td>
-<td>主要负责手机QQ、QQ互联、腾讯Q+、WebQQ项目的团队。</td>
-<td><a href="http://weibo.com/alloyteam" target="_blank" rel="external">alloyteam</a></td>
-</tr>
-<tr>
-<td><a href="http://tid.tenpay.com/" target="_blank" rel="external">TID-财付通设计中心</a></td>
-<td>腾讯</td>
-<td>TID</td>
-<td>★★★★☆</td>
-<td>简介</td>
-<td>#</td>
-</tr>
-<tr>
-<td><a href="http://mxd.tencent.com/" target="_blank" rel="external">腾讯MXD移动互联网设计中心</a></td>
-<td>腾讯</td>
-<td>MXD</td>
-<td>★★★★☆</td>
-<td>简介</td>
-<td><a href="http://e.t.qq.com/tencent_mxd" target="_blank" rel="external">@腾讯MXD</a></td>
-</tr>
-<tr>
-<td><a href="http://fed.renren.com/" target="_blank" rel="external">人人网FED Team</a></td>
-<td>人人网</td>
-<td>FED</td>
-<td>★★★★☆</td>
-<td>简介</td>
-<td>#</td>
-</tr>
-<tr>
-<td><a href="http://udc.weibo.com/" target="_blank" rel="external">微博UDC</a></td>
-<td>新浪</td>
-<td>UDC</td>
-<td>★★★★☆</td>
-<td>简介</td>
-<td><a href="http://weibo.com/sudc" target="_blank" rel="external">@微博UDC设计中心</a></td>
-</tr>
-<tr>
-<td><a href="http://ued.sina.com.cn/" target="_blank" rel="external">新浪UED</a></td>
-<td>新浪</td>
-<td>UED</td>
-<td>★★★★☆</td>
-<td>简介</td>
-<td><a href="http://weibo.com/sudc" target="_blank" rel="external">#</a></td>
-</tr>
-<tr>
-<td><a href="http://uedc.163.com/" target="_blank" rel="external">网易用户体验设计中心</a></td>
-<td>网易</td>
-<td>UED</td>
-<td>★★★★☆</td>
-<td>简介</td>
-<td><a href="http://weibo.com/sudc" target="_blank" rel="external">#</a></td>
-</tr>
-<tr>
-<td><a href="http://www.aliued.cn/" target="_blank" rel="external">阿里巴巴（中国站）用户体验设计部博客</a></td>
-<td>阿里巴巴</td>
-<td>UED</td>
-<td>★★★★☆</td>
-<td>简介</td>
-<td><a href="http://weibo.com/aliued" target="_blank" rel="external">@Alibaba-UED</a></td>
-</tr>
-<tr>
-<td><a href="http://ued.ctrip.com/blog/" target="_blank" rel="external">携程UED-携程旅行前端开发团队</a></td>
-<td>携程网</td>
-<td>UED</td>
-<td>★★★☆☆</td>
-<td>携程UED,携程前端开发团队,UED,Javascript,重构,ux</td>
-<td>#</td>
-</tr>
-<tr>
-<td><a href="http://fex.baidu.com/" target="_blank" rel="external">百度FEX</a></td>
-<td>百度</td>
-<td>FEX</td>
-<td>★★★★☆</td>
-<td>百度前端团队Blog,关注前端技术，还更重视全端及全栈的能力。</td>
-<td>#</td>
-</tr>
-<tr>
-<td><a href="http://ued.taobao.org/blog/" target="_blank" rel="external">淘宝UED</a></td>
-<td>淘宝网</td>
-<td>UED</td>
-<td>★★★★☆</td>
-<td>用户体验、交互设计、视觉设计、前端技术博客</td>
-<td><a href="http://weibo.com/taobaoued" target="_blank" rel="external">@淘宝UED</a></td>
-</tr>
-</tbody>
-</table>
-<h4 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h4><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>作者</th>
-<th>价格</th>
-<th>出版社</th>
-<th>简评</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://book.douban.com/subject/3327829/" target="_blank" rel="external">Web标准设计</a></td>
-<td>刘杰（嗷嗷）</td>
-<td>RMB 60.00</td>
-<td>清华大学出版社</td>
-<td>基础入门</td>
-</tr>
-<tr>
-<td><a href="http://book.douban.com/subject/4914146/" target="_blank" rel="external">大巧不工 : Web前端设计修炼之道</a></td>
-<td>赖定清 / 林坚</td>
-<td>RMB 59.00</td>
-<td>机械工业出版社</td>
-<td>适合入门，了解前端全局</td>
-</tr>
-<tr>
-<td><a href="http://book.douban.com/subject/3132277/" target="_blank" rel="external">高性能网站建设指南:前端工程师技能精髓</a></td>
-<td>Steve Souders</td>
-<td>RMB 35.00</td>
-<td>电子工业出版社</td>
-<td>能从原理层理解各种方法</td>
-</tr>
-<tr>
-<td><a href="http://book.douban.com/subject/4719162/" target="_blank" rel="external">高性能网站建设指南:Web开发者性能优化最佳实践</a></td>
-<td>Steve Souders</td>
-<td>RMB 49.80</td>
-<td>电子工业出版社</td>
-<td>#</td>
-</tr>
-<tr>
-<td><a href="http://book.douban.com/subject/4124141/" target="_blank" rel="external">Web站点优化 : Web站点优化</a></td>
-<td>金</td>
-<td>RMB 55.00</td>
-<td>#</td>
-<td>#</td>
-</tr>
-<tr>
-<td><a href="http://book.douban.com/subject/10789820/" target="_blank" rel="external">Node.js开发指南</a></td>
-<td>郭家寶</td>
-<td>RMB 45.00</td>
-<td>#</td>
-<td>作者很牛</td>
-</tr>
-<tr>
-<td><a href="http://book.douban.com/subject/10546125/" target="_blank" rel="external">JavaScript高级程序设计</a></td>
-<td>Nicholas C. Zakas</td>
-<td>RMB 99.00</td>
-<td>人民邮电出版社</td>
-<td>适合没事就翻翻</td>
-</tr>
-<tr>
-<td><a href="http://book.douban.com/subject/2228378/" target="_blank" rel="external">JavaScript权威指南</a></td>
-<td>弗拉纳根</td>
-<td>RMB 109.00</td>
-<td>机械工业出版社</td>
-<td>犀牛书</td>
-</tr>
-<tr>
-<td><a href="http://book.douban.com/subject/3590768/" target="_blank" rel="external">JavaScript语言精粹</a></td>
-<td>Douglas Crockford</td>
-<td>RMB 35.00</td>
-<td>电子工业出版社</td>
-<td>绝对经典，相信看完后，对Javascript这门语言有了重新认识，原来这个语言是这么的美丽！</td>
-</tr>
-<tr>
-<td><a href="http://book.douban.com/subject/25768396/" target="_blank" rel="external">深入浅出node.js</a></td>
-<td>朴灵</td>
-<td>RMB 69.00</td>
-<td>人民邮电出版社</td>
-<td>一本从前端通往全端的好书</td>
-</tr>
-<tr>
-<td><a href="http://book.douban.com/subject/3137282/" target="_blank" rel="external">CSS开发王</a></td>
-<td>张亚飞</td>
-<td>RMB 49.00</td>
-<td>电子工业出版社</td>
-<td>适合有一定基础后CSS进阶用</td>
-</tr>
-<tr>
-<td><a href="http://book.douban.com/subject/6038371/" target="_blank" rel="external">JavaScript DOM编程艺术</a></td>
-<td>Jeremy Keith /Jeffrey Sambells</td>
-<td>RMB 49.00</td>
-<td>人民邮电出版社</td>
-<td>适合Javascript入门看</td>
-</tr>
-</tbody>
-</table>
-<p>####线上的一些翻译版好书</p>
-<table>
-<thead>
-<tr>
-<th>书名</th>
-<th>地址</th>
-<th>作者</th>
-<th>译者</th>
-<th>介绍</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JavaScript秘密花园</td>
-<td><a href="http://bonsaiden.github.io/JavaScript-Garden/zh/" target="_blank" rel="external">http://bonsaiden.github.io/JavaScript-Garden/zh/</a></td>
-<td>伊沃·韦特泽尔&amp;张易江</td>
-<td><a href="http://sanshi.me/" target="_blank" rel="external">三生石上</a></td>
-<td>完整书籍，界面美观，有详细demo</td>
-</tr>
-<tr>
-<td>Material Design 中文版</td>
-<td><a href="http://design.1sters.com/" target="_blank" rel="external">http://design.1sters.com/</a></td>
-<td>Google设计手册</td>
-<td>协同翻译</td>
-<td>Google I/O 2014 发布的 Material Design 官方手册的中文翻译</td>
-</tr>
-</tbody>
-</table>
+          在前端路上摸索前行，在这里分享自己长期关注的前端开发相关的优秀网站、博客、以及活跃开发者。欢迎更新，以下各排名不分先后顺序。
+前端收集图谱
+聚合&amp;&amp;周报订阅
 
-          
+
+名称
+订阅地址
+介绍
+
+
+
+
+英文推送
+
+
+
+
+Html5 Weekly
+http://html5weekly.com/
+
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/21/前端必须要逛的地方/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2605,7 +767,7 @@ wx.navigateTo({
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="http://oe51jhwvd.bkt.clouddn.com/nver.jpg"
                alt="TakoZhang" />
           <p class="site-author-name" itemprop="name">TakoZhang</p>
           <p class="site-description motion-element" itemprop="description">我随影而来，随影而去</p>
@@ -2620,10 +782,10 @@ wx.navigateTo({
 
           
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories">
                 <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -2635,12 +797,64 @@ wx.navigateTo({
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/dushao103500" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/dushaoxiaoxiao" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/d37fba7cef1d" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.cnblogs.com/dushao/" target="_blank" title="博客园">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  博客园
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ngblogs.com/dushao" title="杜少博客" target="_blank">杜少博客</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
         
@@ -2662,7 +876,7 @@ wx.navigateTo({
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2013 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -2670,17 +884,6 @@ wx.navigateTo({
   <span class="author" itemprop="copyrightHolder">TakoZhang</span>
 </div>
 
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
 
 
         
@@ -2715,42 +918,49 @@ wx.navigateTo({
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
 
 
 

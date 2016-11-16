@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -63,21 +63,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="杜少博客" />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
 
 
 
@@ -126,8 +126,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -138,8 +138,8 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      hits: "",
+      labels: ""
     }
   };
 </script>
@@ -215,6 +215,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -225,12 +235,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            标签
+            关于
           </a>
         </li>
       
@@ -268,7 +278,7 @@
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="TakoZhang">
     <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
+    <meta itemprop="image" content="http://oe51jhwvd.bkt.clouddn.com/nver.jpg">
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -296,38 +306,12 @@
         <div class="post-meta">
           <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-11T10:04:33+08:00">
-                2016-01-11
-              </time>
-            
 
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript编程知识/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript编程知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -743,6 +727,44 @@ function radixSort(arr, maxDigit) {
 
     <div class="post-spread">
       
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
     </div>
   </div>
 
@@ -788,7 +810,7 @@ function radixSort(arr, maxDigit) {
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="http://oe51jhwvd.bkt.clouddn.com/nver.jpg"
                alt="TakoZhang" />
           <p class="site-author-name" itemprop="name">TakoZhang</p>
           <p class="site-description motion-element" itemprop="description">我随影而来，随影而去</p>
@@ -803,10 +825,10 @@ function radixSort(arr, maxDigit) {
 
           
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories">
                 <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -818,12 +840,64 @@ function radixSort(arr, maxDigit) {
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/dushao103500" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/dushaoxiaoxiao" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/d37fba7cef1d" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.cnblogs.com/dushao/" target="_blank" title="博客园">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  博客园
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ngblogs.com/dushao" title="杜少博客" target="_blank">杜少博客</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
         
@@ -841,7 +915,7 @@ function radixSort(arr, maxDigit) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引子"><span class="nav-number">1.</span> <span class="nav-text">引子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十大经典算法排序总结对比"><span class="nav-number">2.</span> <span class="nav-text">十大经典算法排序总结对比</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#名词解释："><span class="nav-number">2.0.0.1.</span> <span class="nav-text">名词解释：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序（Bubble-Sort）"><span class="nav-number">3.</span> <span class="nav-text">冒泡排序（Bubble Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#冒泡排序须知："><span class="nav-number">3.0.0.1.</span> <span class="nav-text">冒泡排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最快（Best-Cases）："><span class="nav-number">3.0.0.2.</span> <span class="nav-text">什么时候最快（Best Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最慢（Worst-Cases）："><span class="nav-number">3.0.0.3.</span> <span class="nav-text">什么时候最慢（Worst Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#冒泡排序动图演示："><span class="nav-number">3.0.0.4.</span> <span class="nav-text">冒泡排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#冒泡排序JavaScript代码实现："><span class="nav-number">3.0.0.5.</span> <span class="nav-text">冒泡排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序（Selection-Sort）"><span class="nav-number">4.</span> <span class="nav-text">选择排序（Selection Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#选择排序须知："><span class="nav-number">4.0.0.1.</span> <span class="nav-text">选择排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#选择排序动图演示："><span class="nav-number">4.0.0.2.</span> <span class="nav-text">选择排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#选择排序JavaScript代码实现："><span class="nav-number">4.0.0.3.</span> <span class="nav-text">选择排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序（Insertion-Sort）"><span class="nav-number">5.</span> <span class="nav-text">插入排序（Insertion Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#插入排序须知："><span class="nav-number">5.0.0.1.</span> <span class="nav-text">插入排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插入排序动图演示："><span class="nav-number">5.0.0.2.</span> <span class="nav-text">插入排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插入排序JavaScript代码实现："><span class="nav-number">5.0.0.3.</span> <span class="nav-text">插入排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#希尔排序（Shell-Sort）"><span class="nav-number">6.</span> <span class="nav-text">希尔排序（Shell Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#希尔排序须知："><span class="nav-number">6.0.0.1.</span> <span class="nav-text">希尔排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#希尔排序JavaScript代码实现："><span class="nav-number">6.0.0.2.</span> <span class="nav-text">希尔排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序（Merge-Sort）"><span class="nav-number">7.</span> <span class="nav-text">归并排序（Merge Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#归并排序须知："><span class="nav-number">7.0.0.1.</span> <span class="nav-text">归并排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并排序动图演示："><span class="nav-number">7.0.0.2.</span> <span class="nav-text">归并排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并排序JavaScript代码实现："><span class="nav-number">7.0.0.3.</span> <span class="nav-text">归并排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序（Quick-Sort）"><span class="nav-number">8.</span> <span class="nav-text">快速排序（Quick Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#快速排序须知："><span class="nav-number">8.0.0.1.</span> <span class="nav-text">快速排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#快速排序动图演示："><span class="nav-number">8.0.0.2.</span> <span class="nav-text">快速排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#快速排序JavaScript代码实现："><span class="nav-number">8.0.0.3.</span> <span class="nav-text">快速排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序（Heap-Sort）"><span class="nav-number">9.</span> <span class="nav-text">堆排序（Heap Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#堆排序须知："><span class="nav-number">9.0.0.1.</span> <span class="nav-text">堆排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆排序动图演示："><span class="nav-number">9.0.0.2.</span> <span class="nav-text">堆排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆排序JavaScript代码实现："><span class="nav-number">9.0.0.3.</span> <span class="nav-text">堆排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计数排序（Counting-Sort）"><span class="nav-number">10.</span> <span class="nav-text">计数排序（Counting Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计数排序须知："><span class="nav-number">10.0.0.1.</span> <span class="nav-text">计数排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#计数排序动图演示："><span class="nav-number">10.0.0.2.</span> <span class="nav-text">计数排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#计数排序JavaScript代码实现："><span class="nav-number">10.0.0.3.</span> <span class="nav-text">计数排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#桶排序（Bucket-Sort）"><span class="nav-number">11.</span> <span class="nav-text">桶排序（Bucket Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#桶排序须知："><span class="nav-number">11.0.0.1.</span> <span class="nav-text">桶排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最快（Best-Cases）：-1"><span class="nav-number">11.0.0.2.</span> <span class="nav-text">什么时候最快（Best Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最慢（Worst-Cases）：-1"><span class="nav-number">11.0.0.3.</span> <span class="nav-text">什么时候最慢（Worst Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#桶排序JavaScript代码实现："><span class="nav-number">11.0.0.4.</span> <span class="nav-text">桶排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基数排序（Radix-Sort）"><span class="nav-number">12.</span> <span class="nav-text">基数排序（Radix Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基数排序须知："><span class="nav-number">12.0.0.1.</span> <span class="nav-text">基数排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基数排序-vs-计数排序-vs-桶排序"><span class="nav-number">12.0.0.2.</span> <span class="nav-text">基数排序 vs 计数排序 vs 桶排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#LSD基数排序动图演示："><span class="nav-number">12.0.0.3.</span> <span class="nav-text">LSD基数排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基数排序JavaScript代码实现："><span class="nav-number">12.0.0.4.</span> <span class="nav-text">基数排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-number">13.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引子"><span class="nav-text">引子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十大经典算法排序总结对比"><span class="nav-text">十大经典算法排序总结对比</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#名词解释："><span class="nav-text">名词解释：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序（Bubble-Sort）"><span class="nav-text">冒泡排序（Bubble Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#冒泡排序须知："><span class="nav-text">冒泡排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最快（Best-Cases）："><span class="nav-text">什么时候最快（Best Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最慢（Worst-Cases）："><span class="nav-text">什么时候最慢（Worst Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#冒泡排序动图演示："><span class="nav-text">冒泡排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#冒泡排序JavaScript代码实现："><span class="nav-text">冒泡排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序（Selection-Sort）"><span class="nav-text">选择排序（Selection Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#选择排序须知："><span class="nav-text">选择排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#选择排序动图演示："><span class="nav-text">选择排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#选择排序JavaScript代码实现："><span class="nav-text">选择排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序（Insertion-Sort）"><span class="nav-text">插入排序（Insertion Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#插入排序须知："><span class="nav-text">插入排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插入排序动图演示："><span class="nav-text">插入排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插入排序JavaScript代码实现："><span class="nav-text">插入排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#希尔排序（Shell-Sort）"><span class="nav-text">希尔排序（Shell Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#希尔排序须知："><span class="nav-text">希尔排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#希尔排序JavaScript代码实现："><span class="nav-text">希尔排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序（Merge-Sort）"><span class="nav-text">归并排序（Merge Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#归并排序须知："><span class="nav-text">归并排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并排序动图演示："><span class="nav-text">归并排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并排序JavaScript代码实现："><span class="nav-text">归并排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序（Quick-Sort）"><span class="nav-text">快速排序（Quick Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#快速排序须知："><span class="nav-text">快速排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#快速排序动图演示："><span class="nav-text">快速排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#快速排序JavaScript代码实现："><span class="nav-text">快速排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序（Heap-Sort）"><span class="nav-text">堆排序（Heap Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#堆排序须知："><span class="nav-text">堆排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆排序动图演示："><span class="nav-text">堆排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆排序JavaScript代码实现："><span class="nav-text">堆排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计数排序（Counting-Sort）"><span class="nav-text">计数排序（Counting Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#计数排序须知："><span class="nav-text">计数排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#计数排序动图演示："><span class="nav-text">计数排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#计数排序JavaScript代码实现："><span class="nav-text">计数排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#桶排序（Bucket-Sort）"><span class="nav-text">桶排序（Bucket Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#桶排序须知："><span class="nav-text">桶排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最快（Best-Cases）：-1"><span class="nav-text">什么时候最快（Best Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候最慢（Worst-Cases）：-1"><span class="nav-text">什么时候最慢（Worst Cases）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#桶排序JavaScript代码实现："><span class="nav-text">桶排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基数排序（Radix-Sort）"><span class="nav-text">基数排序（Radix Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基数排序须知："><span class="nav-text">基数排序须知：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基数排序-vs-计数排序-vs-桶排序"><span class="nav-text">基数排序 vs 计数排序 vs 桶排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#LSD基数排序动图演示："><span class="nav-text">LSD基数排序动图演示：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基数排序JavaScript代码实现："><span class="nav-text">基数排序JavaScript代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-text">写在最后</span></a></li></ol></div>
             
 
           </div>
@@ -861,7 +935,7 @@ function radixSort(arr, maxDigit) {
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2013 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -869,17 +943,6 @@ function radixSort(arr, maxDigit) {
   <span class="author" itemprop="copyrightHolder">TakoZhang</span>
 </div>
 
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
 
 
         
@@ -914,46 +977,53 @@ function radixSort(arr, maxDigit) {
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
 
 
 
