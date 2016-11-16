@@ -1,308 +1,344 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <!-- Title -->
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-    <title>
-        前端必须要了解的面试题 | 杜少博客
-    </title>
     
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-    <!-- Meta & INfo -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#039BE5">
-    <meta name="author" content="TakoZhang">
-    <meta name="description" content="我随影而来，随影而去">
-    <meta name="keywords" content="null">
     
-    <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-    
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="杜少博客">
-    
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="前端必须要了解的面试题 | 杜少博客">
-    <meta property="og:description" content="我随影而来，随影而去">
-    
-     <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-        
-        
-            <script src="/js/ie-blocker.en.js"></script>
-        
-    <![endif]-->
-    
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
-
-<!-- Theme Background -->
-
-    <style>
-        body{
-            background-color: #F5F5F5
-        }
-		
-        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-            background-color: #fff;
-        }
-		
-        #scheme-Paradox .MD-burger-layer {
-            background-color: #666;
-        }
-		
-        #scheme-Paradox .material-back{
-            color: #666;
-        }
-		
-        .material-layout .material-post>.material-nav,
-		.material-layout .material-index>.material-nav,
-        .material-nav a,
-        #scheme-Paradox .material-post_container .material-back{
-            color: #666;
-        }
-    </style>
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
 
-<!-- Fade Effect -->
-
-    <style>
-        .fade {
-            transition: all 800ms linear;
-            -webkit-transform: translate3d(0,0,0);
-            -moz-transform: translate3d(0,0,0);
-            -ms-transform: translate3d(0,0,0);
-            -o-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-            opacity: 1;
-        }
-
-        .fade.out{
-            opacity: 0;
-        }
-    </style>
 
 
-<!-- Other Styles -->
-<style>
-	body, html{
-		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-	}
-	
-    a{
-        color: #039BE5
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="杜少博客" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本文旨在加深对前端知识点的理解，资料来源于网络，由本人(https://github.com/dushao103500) 收集整理。
+一些开放性题目1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
+
+2.项目介绍
+
+3.如何看待前端开发？
+
+4.平时是如何学习前端开发的？
+
+5.未来三到五年的规划是怎样的？
+
+position的值， relative和absolut">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端必须要了解的面试题">
+<meta property="og:url" content="http://yoursite.com/2015/01/21/前端必须要了解的面试题/index.html">
+<meta property="og:site_name" content="杜少博客">
+<meta property="og:description" content="本文旨在加深对前端知识点的理解，资料来源于网络，由本人(https://github.com/dushao103500) 收集整理。
+一些开放性题目1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
+
+2.项目介绍
+
+3.如何看待前端开发？
+
+4.平时是如何学习前端开发的？
+
+5.未来三到五年的规划是怎样的？
+
+position的值， relative和absolut">
+<meta property="og:updated_time" content="2016-10-17T07:17:03.120Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端必须要了解的面试题">
+<meta name="twitter:description" content="本文旨在加深对前端知识点的理解，资料来源于网络，由本人(https://github.com/dushao103500) 收集整理。
+一些开放性题目1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
+
+2.项目介绍
+
+3.如何看待前端开发？
+
+4.平时是如何学习前端开发的？
+
+5.未来三到五年的规划是怎样的？
+
+position的值， relative和absolut">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
     }
-    
-    .mdl-card__media,
-    #search-label,
-    #search-form-label:after,
-    #scheme-Paradox .hot_tags-count,
-    #scheme-Paradox .sidebar_archives-count,
-    #scheme-Paradox .sidebar-colored .sidebar-header,
-    #scheme-Paradox .sidebar-colored .sidebar-badge{
-        background-color: #039BE5 !important
-    }
-    
-	/* Sidebar User Drop Down Menu Text Color */
-	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
-        color: #039BE5 !important
-    }
-    
-    #post_entry-right-info,
-    .sidebar-colored .sidebar-nav li:hover > a,
-    .sidebar-colored .sidebar-nav li:hover > a i,
-    .sidebar-colored .sidebar-nav li > a:hover,
-    .sidebar-colored .sidebar-nav li > a:hover i,
-    .sidebar-colored .sidebar-nav li > a:focus i,
-    .sidebar-colored .sidebar-nav > .open > a,
-    .sidebar-colored .sidebar-nav > .open > a:hover,
-    .sidebar-colored .sidebar-nav > .open > a:focus,
-    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
-        color: #039BE5 !important
-    }
-    
-    .toTop{
-        background: #00BCD4 !important
-    }
-</style>
-	<script src="/js/jquery.min.js"></script>
-	
-	<!-- UC Browser Compatible-->
-	<script>
-		var agent = navigator.userAgent.toLowerCase();
-		if(agent.indexOf('ucbrowser')>0) {
-			document.write('<link rel="stylesheet" href="/css/uc.css">');
-		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-		}
-	</script>
-    
-    <!-- Custom Head -->
-    
-</head>
-	
-	
-
-    <body id="scheme-Paradox">
-
-		
-        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-				
-			
-			
-            <!-- Main Container -->
-            <main class="material-layout__content" id="main">
-				
-                <!-- Top Anchor -->
-                <div id="top"></div>
-				
-				
-                <!-- Hamburger Button -->
-                <button class="MD-burger-icon sidebar-toggle">
-                    <span class="MD-burger-layer"></span>
-                </button>
-				
-				
-                
-	<!-- Back Button -->
-	<div class="material-back" id="backhome-div" tabindex="0">
-		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
-			<i class="material-icons" role="presentation">arrow_back</i>
-			<span class="mdl-button__ripple-container">
-				<span class="mdl-ripple"></span>
-			</span>
-		</a>
-	</div>			
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-	<!-- Paradox Post Header -->
-	
-		
-			<!-- Random Thumbnail -->
-			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-				<script>
-    
-    var randomNum;
-    randomNum = Math.floor(Math.random() * 5 + 1);
-    
-    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
-    
+  };
 </script>
 
-		
-	
-        <p class="article-headline-p">
-            前端必须要了解的面试题
-        </p>
-    </div>
 
-	
 
-				
-				
-					<!-- Paradox Post Info -->
-					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+  <link rel="canonical" href="http://yoursite.com/2015/01/21/前端必须要了解的面试题/"/>
+
+  <title> 前端必须要了解的面试题 | 杜少博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
     
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>TakoZhang</strong>
-        <span>Jan 21, 2015</span>
-    </div>
-    
-    <div class="section-spacer"></div>
-	
-    <!-- Favorite -->
-<!--
-    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-        <i class="material-icons" role="presentation">favorite</i>
-        <span class="visuallyhidden">favorites</span>
-    </button>
--->
-    
-    <!-- Tags (bookmark) -->
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        
-    </ul>
-    
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-    
-    
-    
-    
-    <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=前端必须要了解的面试题&url=http://yoursite.com//2015/01/21/前端必须要了解的面试题/index.html&via=TakoZhang" target="_blank">
-        <li class="mdl-menu__item">
-            Share to Twitter
-        </li>
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">杜少博客</span>
+      <span class="logo-line-after"><i></i></span>
     </a>
-    
-    <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2015/01/21/前端必须要了解的面试题/index.html" target="_blank">
-        <li class="mdl-menu__item">
-            Share to Google+
-        </li>
-    </a>
-    
-    <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=前端必须要了解的面试题&url=http://yoursite.com//2015/01/21/前端必须要了解的面试题/index.html&pic=&searchPic=false&style=simple" target="_blank">
-        <li class="mdl-menu__item">
-            Share to Weibo
-        </li>
-    </a>
-</ul>
+  </div>
+  <p class="site-subtitle">好运不会眷顾傻瓜</p>
 </div>
-				
 
-                <!-- Post Content -->
-                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-	
-		<p>本文旨在加深对前端知识点的理解，资料来源于网络，由本人(<a href="https://github.com/dushao103500" target="_blank" rel="external">https://github.com/dushao103500</a>) 收集整理。</p>
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端必须要了解的面试题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-01-21T15:11:05+08:00" content="2015-01-21">
+              2015-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Javascript编程知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript编程知识</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文旨在加深对前端知识点的理解，资料来源于网络，由本人(<a href="https://github.com/dushao103500" target="_blank" rel="external">https://github.com/dushao103500</a>) 收集整理。</p>
 <h4 id="一些开放性题目"><a href="#一些开放性题目" class="headerlink" title="一些开放性题目"></a>一些开放性题目</h4><pre><code>1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
 
 2.项目介绍
@@ -1564,310 +1600,291 @@ Model：数据访问层
 <li><a href="./readme.js">js代码题</a></li>
 </ul>
 
-	
-	
-	
-	
-</div>
-				
-				
-
-                <!-- Post Comments -->
-                
-
-
-				
-
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    
-    <!-- Prev Nav -->
-    
-        <a href="/2016/01/08/最全的网站资源汇总/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2014/09/19/程序员的十层楼/" id="post_nav-older" class="next-content">
-            Older
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-        </div>
+      
     </div>
 
-				
-				
-					<!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay "></div>
+    <div>
+      
+        
 
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
-	<div id="sidebar-main">
-	    <!-- Sidebar Header -->
-		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-    <i class="material-icons">clear_all</i>
-    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="TakoZhang's avatar">
+      
     </div>
 
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        youremail@email.com
-        <b class="caret"></b>
-    </a>
-</div>
+    <div>
+      
+        
 
-		<!-- Sidebar Navigation  -->
-		<ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-			
-                <li>
-                    <a href="#" target="_blank" title="Email Me">
-						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        Email Me
-                    </a>
-                </li>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2014/09/19/程序员的十层楼/" rel="next" title="程序员的十层楼">
+                <i class="fa fa-chevron-left"></i> 程序员的十层楼
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/08/最全的网站资源汇总/" rel="prev" title="最全的网络资源汇总">
+                最全的网络资源汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
         </ul>
-    </li>
+      
 
-    <!-- Homepage -->
-    <li id="sidebar-first-li">
-        <a href="/" target="_self">
-            <i class="material-icons sidebar-material-icons">home</i>
-             Home
-        </a>
-    </li>
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oe51jhwvd.bkt.clouddn.com/nver.jpg"
+               alt="TakoZhang" />
+          <p class="site-author-name" itemprop="name">TakoZhang</p>
+          <p class="site-description motion-element" itemprop="description">我随影而来，随影而去</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
 
-    <!-- I'm Feeling Lucky -->
-<!--
-    <li class="dropdown">
-        <a href="" target="_self">
-            <i class="material-icons sidebar-material-icons">explore</i>
-             sidebar.imlucky
-        </a>
-    </li>
--->
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
-	
-    <!-- Archives  -->
-    <li class="dropdown">
-        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-            <i class="material-icons sidebar-material-icons">inbox</i>
-             Archives
-            <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-            <li>
-            <a class="sidebar_archives-link" href="/archives/2016/10/">October 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">September 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">April 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">January 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/01/">January 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/09/">September 2014<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/07/">July 2014<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/04/">April 2014<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/08/">August 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/06/">June 2013<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2013/02/">February 2013<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/11/">November 2012<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/06/">June 2012<span class="sidebar_archives-count">1</span></a>
-        </ul>
-    </li>
+          
 
-    <!-- Divider -->
-    <li class="divider"></li>
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/dushao103500" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/dushaoxiaoxiao" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/d37fba7cef1d" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.cnblogs.com/dushao/" target="_blank" title="博客园">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  博客园
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://htmlk.github.io/" title="小k博客" target="_blank">小k博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一些开放性题目"><span class="nav-text">一些开放性题目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#position的值，-relative和absolute分别是相对于谁进行定位的？"><span class="nav-text">position的值， relative和absolute分别是相对于谁进行定位的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何解决跨域问题"><span class="nav-text">如何解决跨域问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XML和JSON的区别？"><span class="nav-text">XML和JSON的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谈谈你对webpack的看法"><span class="nav-text">谈谈你对webpack的看法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说TCP传输的三次握手四次挥手策略"><span class="nav-text">说说TCP传输的三次握手四次挥手策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP和UDP的区别"><span class="nav-text">TCP和UDP的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说你对作用域链的理解"><span class="nav-text">说说你对作用域链的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建ajax过程"><span class="nav-text">创建ajax过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#渐进增强和优雅降级"><span class="nav-text">渐进增强和优雅降级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见web安全及防护原理"><span class="nav-text">常见web安全及防护原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Web-Worker-和webSocket"><span class="nav-text">Web Worker 和webSocket</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP和HTTPS"><span class="nav-text">HTTP和HTTPS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么HTTPS安全"><span class="nav-text">为什么HTTPS安全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对前端模块化的认识"><span class="nav-text">对前端模块化的认识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Javascript垃圾回收方法"><span class="nav-text">Javascript垃圾回收方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#你觉得前端工程的价值体现在哪"><span class="nav-text">你觉得前端工程的价值体现在哪</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谈谈性能优化问题"><span class="nav-text">谈谈性能优化问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动端性能优化"><span class="nav-text">移动端性能优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Etag？"><span class="nav-text">什么是Etag？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Expires和Cache-Control"><span class="nav-text">Expires和Cache-Control</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ETag应用"><span class="nav-text">ETag应用:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈和队列的区别"><span class="nav-text">栈和队列的区别?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈和堆的区别？"><span class="nav-text">栈和堆的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速-排序的思想并实现一个快排？"><span class="nav-text">快速 排序的思想并实现一个快排？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#你觉得jQuery或zepto源码有哪些写的好的地方"><span class="nav-text">你觉得jQuery或zepto源码有哪些写的好的地方</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6的了解"><span class="nav-text">ES6的了解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js继承方式及其优缺点"><span class="nav-text">js继承方式及其优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于Http-2-0-你知道多少？"><span class="nav-text">关于Http 2.0 你知道多少？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#defer和async"><span class="nav-text">defer和async</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谈谈浮动和清除浮动"><span class="nav-text">谈谈浮动和清除浮动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何评价AngularJS和BackboneJS"><span class="nav-text">如何评价AngularJS和BackboneJS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用过哪些设计模式？"><span class="nav-text">用过哪些设计模式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说你对闭包的理解"><span class="nav-text">说说你对闭包的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请你谈谈Cookie的弊端"><span class="nav-text">请你谈谈Cookie的弊端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器本地存储"><span class="nav-text">浏览器本地存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#web-storage和cookie的区别"><span class="nav-text">web storage和cookie的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie-和session-的区别："><span class="nav-text">cookie 和session 的区别：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#content-box（默认）"><span class="nav-text">content-box（默认）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#padding-box"><span class="nav-text">padding-box</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-box"><span class="nav-text">border-box</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说你对语义化的理解？"><span class="nav-text">说说你对语义化的理解？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Doctype作用-严格模式与混杂模式如何区分？它们有何意义"><span class="nav-text">Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#你知道多少种Doctype文档类型？"><span class="nav-text">你知道多少种Doctype文档类型？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML与XHTML——二者有什么区别"><span class="nav-text">HTML与XHTML——二者有什么区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见兼容性问题？"><span class="nav-text">常见兼容性问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解释下浮动和它的工作原理？清除浮动的技巧"><span class="nav-text">解释下浮动和它的工作原理？清除浮动的技巧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮动元素引起的问题和解决办法？"><span class="nav-text">浮动元素引起的问题和解决办法？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM操作——怎样添加、移除、移动、复制、创建和查找节点。"><span class="nav-text">DOM操作——怎样添加、移除、移动、复制、创建和查找节点。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分-HTML-和-HTML5？"><span class="nav-text">html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何实现浏览器内多个标签页之间的通信"><span class="nav-text">如何实现浏览器内多个标签页之间的通信?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是-FOUC（无样式内容闪烁）？你如何来避免-FOUC？"><span class="nav-text">什么是 FOUC（无样式内容闪烁）？你如何来避免 FOUC？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null和undefined的区别？"><span class="nav-text">null和undefined的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new操作符具体干了什么呢"><span class="nav-text">new操作符具体干了什么呢?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js延迟加载的方式有哪些？"><span class="nav-text">js延迟加载的方式有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call-和-apply-的区别和作用？"><span class="nav-text">call() 和 apply() 的区别和作用？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#哪些操作会造成内存泄漏？"><span class="nav-text">哪些操作会造成内存泄漏？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列举IE-与其他浏览器不一样的特性？"><span class="nav-text">列举IE 与其他浏览器不一样的特性？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WEB应用从服务器主动推送Data到客户端有那些方式？"><span class="nav-text">WEB应用从服务器主动推送Data到客户端有那些方式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？"><span class="nav-text">对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？"><span class="nav-text">一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript对象的几种创建方式"><span class="nav-text">javascript对象的几种创建方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript继承的6种方法"><span class="nav-text">javascript继承的6种方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建ajax的过程"><span class="nav-text">创建ajax的过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步加载和延迟加载"><span class="nav-text">异步加载和延迟加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ie各版本和chrome可以并行下载多少个资源"><span class="nav-text">ie各版本和chrome可以并行下载多少个资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请解释一下-JavaScript-的同源策略。"><span class="nav-text">请解释一下 JavaScript 的同源策略。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要有同源限制？"><span class="nav-text">为什么要有同源限制？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GET和POST的区别，何时使用POST？"><span class="nav-text">GET和POST的区别，何时使用POST？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件、IE与火狐的事件机制有什么区别？-如何阻止冒泡？"><span class="nav-text">事件、IE与火狐的事件机制有什么区别？ 如何阻止冒泡？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ajax的缺点和在IE下的问题？"><span class="nav-text">ajax的缺点和在IE下的问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谈谈你对重构的理解"><span class="nav-text">谈谈你对重构的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP状态码"><span class="nav-text">HTTP状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说你对Promise的理解"><span class="nav-text">说说你对Promise的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说你对前端架构师的理解"><span class="nav-text">说说你对前端架构师的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现一个函数clone，可以对JavaScript中的5种主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制"><span class="nav-text">实现一个函数clone，可以对JavaScript中的5种主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说严格模式的限制"><span class="nav-text">说说严格模式的限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何删除一个cookie"><span class="nav-text">如何删除一个cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-strong-gt-，-lt-em-gt-和-lt-b-gt-，-lt-i-gt-标签"><span class="nav-text"><strong>，<em>和<b>，<i>标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说你对AMD和Commonjs的理解"><span class="nav-text">说说你对AMD和Commonjs的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document-write-的用法"><span class="nav-text">document.write()的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写一个方法-求一个字符串的字节长度"><span class="nav-text">编写一个方法 求一个字符串的字节长度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-fetch和git-pull的区别"><span class="nav-text">git fetch和git pull的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#说说你对MVC和MVVM的理解"><span class="nav-text">说说你对MVC和MVVM的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请解释什么是事件代理"><span class="nav-text">请解释什么是事件代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#attribute和property的区别是什么？"><span class="nav-text">attribute和property的区别是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说网络分层里七层模型是哪七层"><span class="nav-text">说说网络分层里七层模型是哪七层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说mongoDB和MySQL的区别"><span class="nav-text">说说mongoDB和MySQL的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#讲讲304缓存的原理"><span class="nav-text">讲讲304缓存的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么样的前端代码是好的"><span class="nav-text">什么样的前端代码是好的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码题"><span class="nav-text">代码题</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
 
 
-    <!-- Pages  -->
-	
+        
+      </div>
+    </main>
 
-    <!-- Article Numebr  -->
-    <li>
-        <a href="#">
-             Article Number
-             <span class="sidebar-badge">18</span>
-        </a>
-    </li>
-</ul>
-
-		<!-- Sidebar Divider -->
-		<div class="sidebar-divider"></div>
-
-		<!-- Sidebar Footer -->
-		<!-- 
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持。 :) 
--->
-
-<!-- Theme Material -->
-<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		Theme - Material
-		<span class="sidebar-badge badge-circle">i</span>
-	</div>
-</a>
-
-<!-- Help & Support -->
-<!--
-<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		sidebar.help
-		<span class="mdl-button__ripple-container">
-			<span class="mdl-ripple"></span>
-		</span>
-	</div>
-</a>
--->
-
-<!-- Feedback -->
-<!--
-<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.feedback
-                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>
--->
-
-<!-- Abount Theme -->
-<!--
-<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.about_theme
-        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>-->
-
-	</div>
-    
-    <!-- Sidebar Sponsor -->
-    
-
-
-</aside>
-
-				
-				
-				
-					<!-- Footer Top Button -->
-					<div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-				
-				
-				<!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-	
-	
-		<!-- Paradox Footer Left Section -->
-		<div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-    <a href="https://twitter.com/twitter" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
-        <span class="visuallyhidden">Twitter</span>
-    </button></a>
-    
-    
-    <!-- Facebook -->
-    
-    <a href="https://www.facebook.com/facebook" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
-        <span class="visuallyhidden">Facebook</span>
-    </button></a>
-    
-    
-    <!-- Google + -->
-    
-    <a href="https://www.google.com/" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
-        <span class="visuallyhidden">Google Plus</span>
-    </button></a>
-    
-    
-    <!-- Weibo -->
-    
-    
-    
-    <!-- Instagram -->
-    
-    
-    
-    <!-- Tumblr -->
-    
-    
-    
-    <!-- Github -->
-    
-    
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TakoZhang</span>
 </div>
 
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
 
-		<!--Copyright-->
-		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;杜少博客</div>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
 
-		<!-- Paradox Footer Right Section -->
+        
 
-		<!-- 
-		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-		It will not impact the appearance and can give developers a lot of support :)
+        
+      </div>
+    </footer>
 
-		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-		它不会影响美观并可以给开发者很大的支持。 :) 
-		-->
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
 
-		<div class="mdl-mini-footer--right-section">
-			<div>
-				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-			</div>
-		</div>
-	
-    
-</footer>
-                
-				<!-- Import File -->
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+  
 
 <script type="text/javascript">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    
-    $('#nprogress .bar').css({
-        'background': '#FF4081'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#FF4081',
-        'border-left-color': '#FF4081'
-    });
-    
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
@@ -1878,15 +1895,78 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
 
 
 
 
+  
+  
 
-            </main>
-        </div>
-		
-    </body>
-		
-	
+  
+
+  
+
+  
+
+</body>
 </html>
