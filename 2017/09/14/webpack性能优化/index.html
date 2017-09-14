@@ -84,16 +84,25 @@
 
 
 
-<meta name="description" content="我随影而来，随影而去">
+<meta name="description" content="1、前言随着前端的发展，在一个前端项目中，框架和构建工具已经成了编配，而webpack显然已经成了最火热的构架工具之一。React，Vue，angularjs2等诸多知名项目也都选用其作为官方构建工具，极受业内追捧，随者工程开发的复杂程度和代码规模不断地增加，webpack暴露出来的各种性能问题也愈发明显，极大的影响着开发过程中的体验。
+本文旨在分析 webpack 的性能问题，并提供不同的解决方">
 <meta property="og:type" content="article">
-<meta property="og:title" content="杜少博客">
+<meta property="og:title" content="webpack性能优化">
 <meta property="og:url" content="http://yoursite.com/2017/09/14/webpack性能优化/index.html">
 <meta property="og:site_name" content="杜少博客">
-<meta property="og:description" content="我随影而来，随影而去">
-<meta property="og:updated_time" content="2017-09-14T15:11:35.384Z">
+<meta property="og:description" content="1、前言随着前端的发展，在一个前端项目中，框架和构建工具已经成了编配，而webpack显然已经成了最火热的构架工具之一。React，Vue，angularjs2等诸多知名项目也都选用其作为官方构建工具，极受业内追捧，随者工程开发的复杂程度和代码规模不断地增加，webpack暴露出来的各种性能问题也愈发明显，极大的影响着开发过程中的体验。
+本文旨在分析 webpack 的性能问题，并提供不同的解决方">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21785332/30356003-57d2cc46-9869-11e7-8f0b-a4eed51eceb4.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21785332/30356590-5f67dc32-986c-11e7-9558-c6e62ffc95a7.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21785332/30361965-40086030-988c-11e7-86bc-d29988e929b0.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21785332/30361976-47e25f54-988c-11e7-8e86-6e3438bb9140.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21785332/30364279-1aa38f72-9896-11e7-9f2a-a8cc5d628eae.png">
+<meta property="og:updated_time" content="2017-09-14T15:15:24.581Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杜少博客">
-<meta name="twitter:description" content="我随影而来，随影而去">
+<meta name="twitter:title" content="webpack性能优化">
+<meta name="twitter:description" content="1、前言随着前端的发展，在一个前端项目中，框架和构建工具已经成了编配，而webpack显然已经成了最火热的构架工具之一。React，Vue，angularjs2等诸多知名项目也都选用其作为官方构建工具，极受业内追捧，随者工程开发的复杂程度和代码规模不断地增加，webpack暴露出来的各种性能问题也愈发明显，极大的影响着开发过程中的体验。
+本文旨在分析 webpack 的性能问题，并提供不同的解决方">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/21785332/30356003-57d2cc46-9869-11e7-8f0b-a4eed51eceb4.png">
 
 
 
@@ -127,7 +136,7 @@
 
 
 
-  <title>  | 杜少博客 </title>
+  <title> webpack性能优化 | 杜少博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +281,7 @@
             
             
               
-                
+                webpack性能优化
               
             
           </h1>
@@ -295,6 +304,24 @@
             
           </span>
 
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">Webpack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -321,7 +348,99 @@
       
 
       
-        
+        <h2 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h2><p>随着前端的发展，在一个前端项目中，框架和构建工具已经成了编配，而<a href="https://doc.webpack-china.org/" target="_blank" rel="external">webpack</a>显然已经成了最火热的构架工具之一。React，Vue，angularjs2等诸多知名项目也都选用其作为官方构建工具，极受业内追捧，随者工程开发的复杂程度和代码规模不断地增加，webpack暴露出来的各种性能问题也愈发明显，极大的影响着开发过程中的体验。<br><img src="https://user-images.githubusercontent.com/21785332/30356003-57d2cc46-9869-11e7-8f0b-a4eed51eceb4.png" alt="2810595339-585b9b07eef9a_articlex"></p>
+<p>本文旨在分析 <code>webpack</code> 的性能问题，并提供不同的解决方案。</p>
+<h2 id="2、性能问题源自何处"><a href="#2、性能问题源自何处" class="headerlink" title="2、性能问题源自何处"></a>2、性能问题源自何处</h2><ol>
+<li>项目体积过大，有时只是一个小改动，但热更新的全量构建导致编译时间出奇的长。</li>
+<li>多个模块之间共用基础资源存在重复打包，代码复用率不高。</li>
+<li>一些具有公共特性的代码没有提取成通用组件。</li>
+<li>一些代码库被打包在项目中，导致项目编译时间太长；而且不利于做缓存。</li>
+<li>图片等静态资源没有走cdn</li>
+<li>单页面项目过大，导致首次加载时间太长</li>
+</ol>
+<p>在此我们介绍一款 <code>wepback</code> 的可视化资源分析工具：<a href="http://chrisbateman.github.io/webpack-visualizer/" target="_blank" rel="external">webpack-visualizer</a>，这款工具可以在webpack构建的时候会自动帮你计算出各个模块在你的项目工程中的依赖与分布情况，方便做更精确的资源依赖和引用的分析。</p>
+<h2 id="3、解决方案"><a href="#3、解决方案" class="headerlink" title="3、解决方案"></a>3、解决方案</h2><p>我们主要针对不同的性能问题提供不同的解决方案。</p>
+<h3 id="3-1-合理去除对一些代码库的构建"><a href="#3-1-合理去除对一些代码库的构建" class="headerlink" title="3.1 合理去除对一些代码库的构建"></a>3.1 合理去除对一些代码库的构建</h3><p><img src="https://user-images.githubusercontent.com/21785332/30356590-5f67dc32-986c-11e7-9558-c6e62ffc95a7.png" alt="image"></p>
+<p>从上图中我们不难发现大多数的工程项目中，依赖库的体积永远是大头，通常体积可以占据整个工程项目的7-9成，而且在每次开发过程中也会重新读取和编译对应的依赖资源，这其实是很大的的资源开销浪费，而且对编译结果影响微乎其微，毕竟在实际业务开发中，我们很少会去主动修改第三方库中的源码，所以我们需要通过一些方案来抽离代码库。</p>
+<h4 id="1-使用-externals-配置来提取常用库"><a href="#1-使用-externals-配置来提取常用库" class="headerlink" title="1. 使用 externals 配置来提取常用库"></a>1. 使用 <code>externals</code> 配置来提取常用库</h4><p><code>externals</code>的官方定义是：防止将某些 <code>import</code> 的包(package)打包到 <code>bundle</code> 中，而是在运行时(runtime)再去从外部获取这些扩展依赖(external dependencies)。<br>例如，从 CDN 引入 <code>react</code> ，而不是把它打包：</p>
+<p>index.html<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/react/15.6.1/react.js"</span>&gt;&lt;/script&gt;</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">externals: &#123;</div><div class="line">  <span class="attr">react</span>: <span class="string">'React'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样就剥离了那些不需要改动的依赖模块，换句话，下面展示的代码还可以正常运行：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> react <span class="keyword">from</span> <span class="string">'react'</span>;</div></pre></td></tr></table></figure></p>
+<p>简单来说 <code>external</code> 就是把我们的依赖资源声明为一个外部依赖，然后通过 <code>script</code> 外链脚本引入。这也是我们早期页面开发中资源引入的一种翻版，只是通过配置后可以告知 <code>webapck</code> 遇到此类变量名时就可以不用解析和编译至模块的内部文件中，而改用从外部变量中读取，这样能极大的提升编译速度，同时也能更好的利用CDN来实现缓存。</p>
+<h4 id="2-利用-DllPlugin-和-DllReferencePlugin-预编译资源模块"><a href="#2-利用-DllPlugin-和-DllReferencePlugin-预编译资源模块" class="headerlink" title="2. 利用 DllPlugin 和 DllReferencePlugin 预编译资源模块"></a>2. 利用 <code>DllPlugin</code> 和 <code>DllReferencePlugin</code> 预编译资源模块</h4><p>我们的项目依赖中通常会引用大量的npm包，而这些包在正常的开发过程中并不会进行修改，但是在每一次构建过程中却需要反复的将其解析，如何来规避此类损耗呢？这两个插件就是干这个用的。</p>
+<p>简单来说 <code>DllPlugin</code> 的作用是预先编译一些模块，而 <code>DllReferencePlugin</code> 则是把这些预先编译好的模块引用起来。这边需要注意的是 <code>DllPlugin</code>必须要在 <code>DllReferencePlugin</code> 执行前先执行一次， <code>dll</code> 这个概念应该也是借鉴了windows程序开发中的 <code>dll</code> 文件的设计理念。</p>
+<p>相较于 <code>externals</code> ，<code>DllPlugin</code> 的主要是：</p>
+<ul>
+<li>由于 <code>externals</code> 的配置项需要对每个依赖库进行逐个定制，所以每次引入新的代码库的时候都需要手动修改外链的引入，并且在CDN上配置该代码库的资源，过程比较繁琐，而通过 <code>dllPlugin</code> 则能完全通过配置读取，减少维护的成本。</li>
+<li><code>DllPlugin</code> 会将多个代码库抽离成一个js资源，可以减少一些 <code>script</code> 标签。</li>
+</ul>
+<p>(1)  配置 <code>dllPlugin</code> 对应资源表并编译文件</p>
+<p>dll.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> vendors = [</div><div class="line">    <span class="string">'react'</span>,</div><div class="line">    <span class="string">'react-dom'</span>,</div><div class="line">    <span class="string">'react-router'</span></div><div class="line">];</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">output</span>: &#123;</div><div class="line">        <span class="attr">path</span>: __dirname + <span class="string">'/dist'</span>,</div><div class="line">        <span class="attr">filename</span>: <span class="string">'[name].js'</span>,</div><div class="line">        <span class="attr">library</span>: <span class="string">'[name]'</span>,</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">entry</span>: &#123;</div><div class="line">        <span class="attr">lib</span>: vendors,</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">plugins</span>: [</div><div class="line">        <span class="keyword">new</span> webpack.DllPlugin(&#123;</div><div class="line">            <span class="attr">path</span>: path.join(__dirname, <span class="string">'dll'</span>, <span class="string">'manifest.json'</span>),</div><div class="line">            <span class="attr">name</span>: <span class="string">'[name]'</span>,</div><div class="line">            <span class="attr">context</span>: __dirname,</div><div class="line">        &#125;),</div><div class="line">    ],</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>然后执行命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NODE_ENV=development webpack --config  webpack.dll.lib.js</div></pre></td></tr></table></figure></p>
+<p>结果会生成一个 <code>manifest.json</code> 文件和一个 <code>lib.js</code> 文件。</p>
+<ul>
+<li><code>manifest.json</code> 记录了webpack中的预编译信息，这样等于提前拿到了依赖库中的chunk信息，在实际开发过程中就无需要进行重复编译。</li>
+<li><code>lib.js</code> 就是将配置的代码库编译后生成的文件。</li>
+</ul>
+<p>(2)  <code>dllPlugin</code>的静态资源引入</p>
+<p>生成了 <code>manifest.json</code>  文件和 <code>lib.js</code> 文件之后，我们还要在我们的配置文件中配置 <code>manifest.json</code>，让 <code>webpack</code> 能够不自动编译这些代码库，配置如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">plugins: [</div><div class="line">    <span class="keyword">new</span> webpack.DllReferencePlugin(&#123;</div><div class="line">      <span class="attr">context</span>: __dirname,</div><div class="line">      <span class="attr">manifest</span>: <span class="built_in">require</span>(<span class="string">'./dll/manifest.json'</span>),</div><div class="line">    &#125;)</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p>注意：如果你有依赖代码库相同的项目，也可以使用同一份 <code>manifest.json</code>  和 <code>lib.js</code> 文件，只需在配置中将<code>manifest.json</code>引入，在 <code>script</code> 标签中引入 <code>lib.js</code> 即可。</p>
+<h3 id="3-2-多入口项目合理提取出公共代码"><a href="#3-2-多入口项目合理提取出公共代码" class="headerlink" title="3.2 多入口项目合理提取出公共代码"></a>3.2 多入口项目合理提取出公共代码</h3><p>当项目的入口很多，但是入口文件存在一些公共代码，对所有依赖的chunk进行公共部分的提取的必要性就会发挥出来。</p>
+<ol>
+<li><p>默认会把所有入口节点的公共代码提取出来, 生成一个common.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">'common.js'</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>有选择的提取公共代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">'common.js'</span>,[<span class="string">'entry1'</span>,<span class="string">'entry2'</span>]);</div></pre></td></tr></table></figure>
+</li>
+<li><p>指定模块必须被入口chunk 共享的数目</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">"commons"</span>,</div><div class="line">  <span class="attr">minChunks</span>: <span class="number">3</span></div><div class="line">  filename: <span class="string">"commons.js"</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>抽取enry中的一些lib抽取到vendors中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">entry = &#123;</div><div class="line">    <span class="attr">vendors</span>: [<span class="string">'fetch'</span>, <span class="string">'loadash'</span>]</div><div class="line">&#125;;</div><div class="line"><span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"vendors"</span>,</div><div class="line">    <span class="attr">minChunks</span>: <span class="literal">Infinity</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="3-3-单页面应用合理分割代码、按需加载"><a href="#3-3-单页面应用合理分割代码、按需加载" class="headerlink" title="3.3 单页面应用合理分割代码、按需加载"></a>3.3 单页面应用合理分割代码、按需加载</h3><p>现在很多项目都采用单页面开发，特别是一些移动端的网站；但是当网站规模越来越大的时候，首先出现的问题是 Javascript 文件变得巨大，这导致首页渲染的时间让人难以忍受。实际上程序应当只加载当前渲染页所需的 JavaScript，也就是大家说的“代码分拆” — 将所有的代码分拆成多个小包，在用户浏览过程中按需加载。<br>通过代码分割，我们得到的效果如下：</p>
+<blockquote>
+<p> 分割之前的页面<br><img width="1250" alt="01" src="https://user-images.githubusercontent.com/21785332/30361965-40086030-988c-11e7-86bc-d29988e929b0.png"></p>
+<p> 分割之后的效果<br><img width="1248" alt="02" src="https://user-images.githubusercontent.com/21785332/30361976-47e25f54-988c-11e7-8e86-6e3438bb9140.png"></p>
+</blockquote>
+<p>可以很清楚的看到，我们将一个大的js文件拆分成了若干个chunk文件。</p>
+<p>我们项目的结构如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">page</div><div class="line">├── home</div><div class="line">│   ├── home.js</div><div class="line">│   ├── home.scss</div><div class="line">├── guide</div><div class="line">│   ├── guide.js</div><div class="line">│   ├── guide.scss</div><div class="line">└── more</div><div class="line">│   ├── more.js</div><div class="line">│   └── more.scss</div><div class="line">└── app.js</div></pre></td></tr></table></figure></p>
+<p>按需加载之后，我们需要对Route进行改造，我们将component方法替换成getComponent，让路由去动态的加载组件。<br>app.js是项目入口，配置如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> rootRoute = &#123;</div><div class="line">  <span class="attr">indexRoute</span>: &#123;</div><div class="line">    getComponent(nextState, cb) &#123;</div><div class="line">      <span class="built_in">require</span>.ensure([], (<span class="built_in">require</span>) =&gt; &#123;</div><div class="line">        cb(<span class="literal">null</span>, <span class="built_in">require</span>(<span class="string">'./home'</span>))</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  getComponent(nextState, cb)  &#123;</div><div class="line">    <span class="built_in">require</span>.ensure([], (<span class="built_in">require</span>) =&gt; &#123;</div><div class="line">      cb(<span class="literal">null</span>, <span class="built_in">require</span>(<span class="string">'./index'</span>))</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">path</span>: <span class="string">'/'</span>,</div><div class="line">  <span class="attr">childRoutes</span>: [</div><div class="line">    <span class="built_in">require</span>(<span class="string">'./guide'</span>),</div><div class="line">    <span class="built_in">require</span>(<span class="string">'./more'</span>)</div><div class="line">  ]</div><div class="line">&#125;</div><div class="line"></div><div class="line">render((</div><div class="line">  &lt;Router</div><div class="line">    history=&#123;hashHistory&#125;</div><div class="line">    routes=&#123;rootRoute&#125;</div><div class="line">  /&gt;</div><div class="line">), document.getElementById('app'))</div></pre></td></tr></table></figure></p>
+<p>此处有四个属性：</p>
+<p><strong>path</strong></p>
+<p>将匹配的路由，也就是以前的 path。</p>
+<p><strong>getComponent</strong></p>
+<p>对应于以前的 component 属性，但是这个方法是异步的，也就是当路由匹配时，才会调用这个方法。<br>这里面有个 <code>require.ensure</code> 方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.ensure(dependencies, callback, chunkName)</div></pre></td></tr></table></figure></p>
+<p>这是 webpack 提供的方法，这也是按需加载的核心方法。第一个参数是依赖，第二个是回调函数，第三个就是上面提到的 chunkName，用来指定这个 chunk file 的 name。</p>
+<p>如果需要返回多个子组件，则使用 <code>getComponents</code> 方法，将多个组件作为一个对象的属性通过 cb 返回出去即可。这个在官方示例也有，但是我们这里并不需要，而且根组件是不能返回多个子组件的，所以使用 <code>getComponent</code>。</p>
+<p><strong>indexRoute</strong></p>
+<p><code>indexRoute</code>用来显示默认路由，不需要进行按需加载。</p>
+<p><strong>childRoutes</strong></p>
+<p>这里面放置的就是子路由的配置，这里的子路由都应该是按需加载的。</p>
+<p>我们还需要在子路由中进行配置。</p>
+<p>home.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="built_in">require</span>(<span class="string">'./home'</span>);</div></pre></td></tr></table></figure></p>
+<p>由于home是默认的路由，所以不需要进行按需加载</p>
+<p>guide.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;  </div><div class="line">  <span class="attr">path</span>: <span class="string">'/guide'</span>,</div><div class="line">  getComponent(nextState, cb) &#123;</div><div class="line">    <span class="built_in">require</span>.ensure([], (<span class="built_in">require</span>) =&gt; &#123;</div><div class="line">      cb(<span class="literal">null</span>, <span class="built_in">require</span>(<span class="string">'./guide'</span>))</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>more.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;  </div><div class="line">  <span class="attr">path</span>: <span class="string">'/more'</span>,</div><div class="line">  getComponent(nextState, cb) &#123;</div><div class="line">    <span class="built_in">require</span>.ensure([], (<span class="built_in">require</span>) =&gt; &#123;</div><div class="line">      cb(<span class="literal">null</span>, <span class="built_in">require</span>(<span class="string">'./more'</span>))</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>项目经过webpack打包之后，会生成包含子路由的chunk文件，并且在路由切换的时候进行按需加载。</p>
+<h3 id="3-4-加快代码压缩速度"><a href="#3-4-加快代码压缩速度" class="headerlink" title="3.4 加快代码压缩速度"></a>3.4 加快代码压缩速度</h3><p><code>UglifyJsPlugin</code> 凭借基于node开发，压缩比例高，使用方便等诸多优点已经成为了js压缩工具中的首选，但是我们在webpack的构建中观察发现，当webpack build进度走到80%前后时，会发生很长一段时间的停滞，经测试对比发现这一过程正是 <code>UglifyJsPlugin</code> 在对我们的 <code>output</code> 中的 <code>bunlde</code> 部分进行压缩耗时过长导致，针对这块我们推荐使用<a href="https://github.com/tradingview/webpack-uglify-parallel" target="_blank" rel="external">webpack-uglify-parallel</a>来提升压缩速度。</p>
+<p><code>webpack-uglify-parallel</code> 的实现原理是采用了多核并行压缩的方式来提升我们的压缩速度。</p>
+<p>使用配置也非常简单，只需要将我们原来webpack中自带的 <code>UglifyJsPlugin</code> 配置：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(&#123;</div><div class="line">   <span class="attr">exclude</span>:<span class="regexp">/\.min\.js$/</span></div><div class="line">   mangle:<span class="literal">true</span>,</div><div class="line">   <span class="attr">compress</span>: &#123; <span class="attr">warnings</span>: <span class="literal">false</span> &#125;,</div><div class="line">   <span class="attr">output</span>: &#123; <span class="attr">comments</span>: <span class="literal">false</span> &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>修改成如下代码即可：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> os = <span class="built_in">require</span>(<span class="string">'os'</span>);</div><div class="line"><span class="keyword">const</span> UglifyJsParallelPlugin = <span class="built_in">require</span>(<span class="string">'webpack-uglify-parallel'</span>);</div><div class="line"><span class="keyword">new</span> UglifyJsParallelPlugin(&#123;</div><div class="line">   <span class="attr">workers</span>: os.cpus().length,</div><div class="line">   <span class="attr">mangle</span>: <span class="literal">true</span>,</div><div class="line">   <span class="attr">compressor</span>: &#123;</div><div class="line">      <span class="attr">warnings</span>: <span class="literal">false</span>,</div><div class="line">      <span class="attr">drop_console</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">drop_debugger</span>: <span class="literal">true</span></div><div class="line">   &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="3-5-让loader多进程地去处理文件"><a href="#3-5-让loader多进程地去处理文件" class="headerlink" title="3.5 让loader多进程地去处理文件"></a>3.5 让loader多进程地去处理文件</h3><p><a href="https://github.com/amireh/happypack" target="_blank" rel="external">happypack</a> 的原理是让loader可以多进程去处理文件，原理如图示：</p>
+<p><img src="https://user-images.githubusercontent.com/21785332/30364279-1aa38f72-9896-11e7-9f2a-a8cc5d628eae.png" alt="68747470733a2f2f73692e6765696c6963646e2e636f6d2f687a5f696d675f303864623030303030313561333536326361363830613032363836305f3830305f3438365f756e61646a7573742e706e67"></p>
+<p>此外，happypack同时还利用缓存来使得rebuild 更快<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> HappyPack = <span class="built_in">require</span>(<span class="string">'happypack'</span>),</div><div class="line">  os = <span class="built_in">require</span>(<span class="string">'os'</span>),</div><div class="line">  happyThreadPool = HappyPack.ThreadPool(&#123; <span class="attr">size</span>: os.cpus().length &#125;);</div><div class="line"></div><div class="line">modules: &#123;</div><div class="line">	<span class="attr">loaders</span>: [</div><div class="line">	  &#123;</div><div class="line">        <span class="attr">test</span>: <span class="regexp">/\.js|jsx$/</span>,</div><div class="line">        <span class="attr">loader</span>: <span class="string">'HappyPack/loader?id=jsHappy'</span>,</div><div class="line">        <span class="attr">exclude</span>: <span class="regexp">/node_modules/</span></div><div class="line">      &#125;</div><div class="line">	]</div><div class="line">&#125;</div><div class="line"></div><div class="line">plugins: [</div><div class="line">    <span class="keyword">new</span> HappyPack(&#123;</div><div class="line">      <span class="attr">id</span>: <span class="string">'jsHappy'</span>,</div><div class="line">      <span class="attr">cache</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">threadPool</span>: happyThreadPool,</div><div class="line">      <span class="attr">loaders</span>: [&#123;</div><div class="line">        <span class="attr">path</span>: <span class="string">'babel'</span>,</div><div class="line">        <span class="attr">query</span>: &#123;</div><div class="line">          <span class="attr">cacheDirectory</span>: <span class="string">'.webpack_cache'</span>,</div><div class="line">          <span class="attr">presets</span>: [</div><div class="line">            <span class="string">'es2015'</span>,</div><div class="line">            <span class="string">'react'</span></div><div class="line">          ]</div><div class="line">        &#125;</div><div class="line">      &#125;]</div><div class="line">    &#125;),</div><div class="line">    <span class="comment">//如果有单独提取css文件的话</span></div><div class="line">    <span class="keyword">new</span> HappyPack(&#123;</div><div class="line">      <span class="attr">id</span>: <span class="string">'lessHappy'</span>,</div><div class="line">      <span class="attr">loaders</span>: [<span class="string">'style'</span>,<span class="string">'css'</span>,<span class="string">'less'</span>]</div><div class="line">    &#125;)</div><div class="line">  ]</div></pre></td></tr></table></figure></p>
+<h2 id="4、结尾"><a href="#4、结尾" class="headerlink" title="4、结尾"></a>4、结尾</h2><p>性能优化无小事，追求快没有止境，在前端工程日益庞大复杂的今天，针对实际项目，持续改进构建工具的性能，对项目开发效率的提升和工具深度理解都是极其有益的。</p>
+<h2 id="5、参考文章"><a href="#5、参考文章" class="headerlink" title="5、参考文章"></a>5、参考文章</h2><blockquote>
+<p> <a href="https://github.com/webpack-china/awesome-webpack-cn/" target="_blank" rel="external">webpack中文官方博客</a></p>
+<p> <a href="https://segmentfault.com/a/1190000007141049" target="_blank" rel="external">react-router 按需加载</a></p>
+<p> <a href="https://doc.webpack-china.org/" target="_blank" rel="external">webpack中文站</a></p>
+<p> <a href="https://github.com/amireh/happypack" target="_blank" rel="external">happypack</a></p>
+<p> <a href="https://github.com/yumu-webpack/yumu" target="_blank" rel="external">yumu脚手架</a></p>
+</blockquote>
+
       
     </div>
 
@@ -402,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://oe51jhwvd.bkt.clouddn.com/nver.jpg"
@@ -422,7 +550,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -501,6 +629,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、前言"><span class="nav-number">1.</span> <span class="nav-text">1、前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、性能问题源自何处"><span class="nav-number">2.</span> <span class="nav-text">2、性能问题源自何处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、解决方案"><span class="nav-number">3.</span> <span class="nav-text">3、解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-合理去除对一些代码库的构建"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 合理去除对一些代码库的构建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用-externals-配置来提取常用库"><span class="nav-number">3.1.1.</span> <span class="nav-text">1. 使用 externals 配置来提取常用库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-利用-DllPlugin-和-DllReferencePlugin-预编译资源模块"><span class="nav-number">3.1.2.</span> <span class="nav-text">2. 利用 DllPlugin 和 DllReferencePlugin 预编译资源模块</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-多入口项目合理提取出公共代码"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 多入口项目合理提取出公共代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-单页面应用合理分割代码、按需加载"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 单页面应用合理分割代码、按需加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-加快代码压缩速度"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 加快代码压缩速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-让loader多进程地去处理文件"><span class="nav-number">3.5.</span> <span class="nav-text">3.5 让loader多进程地去处理文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、结尾"><span class="nav-number">4.</span> <span class="nav-text">4、结尾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、参考文章"><span class="nav-number">5.</span> <span class="nav-text">5、参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
